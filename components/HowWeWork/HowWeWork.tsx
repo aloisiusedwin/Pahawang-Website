@@ -65,6 +65,11 @@ const Produk = () => {
       title: "Asbak Banana",
       label: "Asbak olahan dari limbah yang diperoleh dari sampah-sampah sekitar Pulau Pahawang.",
     },
+    {
+      image: "https://i.imgur.com/Hg0sUJP.png",
+      title: "Asbak Banana",
+      label: "Asbak olahan dari limbah yang diperoleh dari sampah-sampah sekitar Pulau Pahawang.",
+    },
   ];
 
   return (
@@ -77,22 +82,22 @@ const Produk = () => {
         <h1 className="flex flexCenter bg-opacity-50 bg-white p-8 rounded-3xl text-black font-bold mb-4 lg:m-10 regular-24 xl:regular-40">
           Produk
         </h1>
-        <div className="w-full py-[6rem] px-4">
-          <div className="max-w-[1240px] mx-auto grid md:grid-cols-3 gap-8">
+        <div className="w-100 py-[6rem] px-4">
+          <div className="max-w-[1200px] mx-auto grid md:grid-cols-4 gap-6">
             {cardData.map((card, index) => (
               <div
                 key={index}
                 className={`w-full shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300`}
               >
                 <img
-                  className="w-100 mt-[-2rem] bg-white"
+                  className="w-auto mt-[-2rem] h-auto"
                   src={card.image}
                   alt={card.title}
                 />
-                <h2 className="text-2xl font-bold text-center py-8">
+                <h2 className="text-2xl font-bold text-center py-4">
                   {card.title}
                 </h2>
-                <p className="text-center text-xl font-light">{card.label}</p>
+                <p className="text-center text-l font-light py-2">{card.label}</p>
                 <button
                   className={`bg-[#ecfccb] hover:text-[#3f6212] hover:bg-[#ecfccb] duration-150 w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3`}
                   onClick={() => openModal(card)}
