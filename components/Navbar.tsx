@@ -37,18 +37,6 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div className="lg:flexCenter hidden">
-          <a href="#pricing">
-            <Button
-              type="button"
-              title="Pricing"
-              icon="./bx-log-in-circle.svg"
-              variant="btn_light_lime"
-              width="160"
-            />
-          </a>
-        </div>
-
         <div className="lg:hidden" onClick={toggleMenu}>
           <Image
             src="./bx-menu-alt-right.svg"

@@ -9,7 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@nextui-org/card": "^2.2.8",
+    "@nextui-org/system": "^2.4.5",
+    "@nextui-org/theme": "^2.4.4",
     "boxicons": "^2.1.4",
+    "framer-motion": "^11.15.0",
     "next": "14.0.3",
     "react": "^18",
     "react-dom": "^18",
