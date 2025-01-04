@@ -30,10 +30,12 @@ const Tentang = () => {
       </div>
       <div className="p-4 bg-white rounded-3xl m-4 left-1/4 absolute xl:top-[80px] xl:left-2/3">
         <h1 className="regular-24 xl:regular-40 mb-5">Pulau Pahawang</h1>
-        <p className="regular-14 xl:regular-16">
-          Unique opportunities at the best prices! Here you will find specific
-          trip suggestions based on promotional prices for flights, hotels and
-          transfers.
+        <p className="regular-14 xl:regular-16 text-justify">
+        Surga Tersembunyi Nusantara yang Memikat dengan Keindahan Alam Bawah Laut, 
+        Pantai Berpasir Putih, dan Kehangatan Penduduk Lokal, Serta Kekayaan Kuliner 
+        Khas Seperti Dodol Mangrove dan Kerupuk Jengkol yang Mendukung UMKM Lokal, 
+        Menjadikannya Destinasi Sempurna untuk Menikmati Wisata, Budaya, dan 
+        Petualangan yang Tak Terlupakan.
         </p>
       </div>
     </section>

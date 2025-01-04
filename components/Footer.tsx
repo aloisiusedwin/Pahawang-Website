@@ -40,6 +40,7 @@ const Footer = () => {
         <div className="flex-col text-center">
           <h3 className="uppercase text-lg mb-4">Social Media</h3>
           <a href="#">
+            
             <i className="bx bxl-facebook-square mx-1 hover:text-[#00df9a]"></i>
           </a>
           <a href="#">
