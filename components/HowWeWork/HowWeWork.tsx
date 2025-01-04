@@ -1,7 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
 import sandImage from "./../../public/images/sand.jpg";
+const Modal = ({ isOpen, onClose, details }: { isOpen: boolean, onClose: () => void, details: any }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div
+      className="fixed inset-0 bg-gray-700 bg-opacity-50 flex justify-center items-center z-50"
+      style={{ pointerEvents: 'auto' }}
+    >
+      <div className="bg-white p-8 rounded-lg shadow-xl w-11/12 md:w-1/3 relative z-60 max-h-[90vh] overflow-y-auto">
+        <h2 className="text-2xl font-bold mb-4">{details.title}</h2>
+        <p className="text-xl font-light mb-4">{details.label}</p>
+
+        {details.image && (
+          <div className="my-4">
+            <img src={details.image} alt={details.title} className="w-full h-auto rounded-lg" />
+          </div>
+        )}
+
+        <div className="flex justify-center mt-4">
+          <button
+            className="bg-red-500 text-white rounded-md px-4 py-2"
+            onClick={onClose}
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const Produk = () => {
+  const [selectedProduct, setSelectedProduct] = useState<any>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = (product: any) => {
+    setSelectedProduct(product);
+    setIsModalOpen(true);
+    document.body.style.overflow = "hidden"; // Disable background scrolling
+  };
+
+  const closeModal = () => {
+    setSelectedProduct(null);
+    setIsModalOpen(false);
+    document.body.style.overflow = "auto"; // Re-enable background scrolling
+  };
+
   const cardData = [
     {
       image: "https://i.imgur.com/Ql4jRdB.png",
@@ -16,9 +61,10 @@ const Produk = () => {
     {
       image: "https://i.imgur.com/Hg0sUJP.png",
       title: "Asbak Banana",
-      label: "Asbak olahan dari limbah yang diperoleh dari sampah-sampah sekitar pulau pahawang ",
+      label: "Asbak olahan dari limbah yang diperoleh dari sampah-sampah sekitar Pulau Pahawang.",
     },
   ];
+
   return (
     <section
       id="Produk"
@@ -30,31 +76,34 @@ const Produk = () => {
           Produk
         </h1>
         <div className="w-full py-[6rem] px-4">
-        <div className="max-w-[1240px] mx-auto grid md:grid-cols-3 gap-8">
-          {cardData.map((card, index) => (
-            <div
-              key={index}
-              className={`w-full shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300`}
-            >
-              <img
-                className="w-20 mx-auto mt-[-3rem] bg-white"
-                src={card.image}
-                alt="/"
-              />
-              <h2 className="text-2xl font-bold text-center py-8">
-                {card.title}
-              </h2>
-              <p className="text-center text-xl font-light">{card.label}</p>
-              <button
-                className={`bg-[#00df9a] hover:text-[#00df9a] hover:bg-gray-50 duration-150 w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3`}
+          <div className="max-w-[1240px] mx-auto grid md:grid-cols-3 gap-8">
+            {cardData.map((card, index) => (
+              <div
+                key={index}
+                className={`w-full shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300`}
               >
-                Check it
-              </button>
-            </div>
-          ))}
+                <img
+                  className="w-20 mx-auto mt-[-3rem] bg-white"
+                  src={card.image}
+                  alt={card.title}
+                />
+                <h2 className="text-2xl font-bold text-center py-8">
+                  {card.title}
+                </h2>
+                <p className="text-center text-xl font-light">{card.label}</p>
+                <button
+                  className={`bg-[#00df9a] hover:text-[#00df9a] hover:bg-gray-50 duration-150 w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3`}
+                  onClick={() => openModal(card)}
+                >
+                  Check it
+                </button>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-      </div>
+
+      <Modal isOpen={isModalOpen} onClose={closeModal} details={selectedProduct} />
     </section>
   );
 };
