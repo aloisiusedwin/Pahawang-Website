@@ -10,15 +10,18 @@
   },
   "dependencies": {
     "boxicons": "^2.1.4",
-    "next": "14.0.3",
-    "react": "^18",
-    "react-dom": "^18",
+    "dependencies": "^0.0.1",
+    "framer-motion": "^11.15.0",
+    "gsap": "^3.12.5",
+    "next": "^14.2.22",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "swiper": "^11.0.5"
   },
   "devDependencies": {
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
     "autoprefixer": "^10.0.1",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",

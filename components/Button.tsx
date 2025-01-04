@@ -1,5 +1,7 @@
+'use client'
+
 import Image from "next/image";
-import React from "react";
+import { motion } from "framer-motion";
 
 type ButtonProps = {
   type: "button" | "submit";
@@ -11,21 +13,45 @@ type ButtonProps = {
 
 const Button = ({ type, title, icon, variant, width }: ButtonProps) => {
   return (
-    <button
-      className={`duration-150 rounded-md font-medium my-6 mx-auto px-6 py-3 ${variant} w-[${width}px]`}
+    <motion.button
+      className={`flex items-center justify-center rounded-md font-medium 
+      ${variant} ${width} px-6 py-3 transition-all`}
       type={type}
+      whileHover={{ 
+        scale: 1.05,
+        boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.1)"
+      }}
+      whileTap={{ scale: 0.95 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.3,
+        ease: "easeOut"
+      }}
     >
       {icon && (
-        <Image
-          src={icon}
-          alt={title}
-          width={22}
-          height={22}
-          className="inline-flex mr-3"
-        />
+        <motion.div
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.1 }}
+        >
+          <Image
+            src={icon}
+            alt={title}
+            width={22}
+            height={22}
+            className="mr-3"
+          />
+        </motion.div>
       )}
-      {title}
-    </button>
+      <motion.span
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.2 }}
+      >
+        {title}
+      </motion.span>
+    </motion.button>
   );
 };
 

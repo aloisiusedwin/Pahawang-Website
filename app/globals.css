@@ -145,3 +145,35 @@ body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+.btn_light_lime {
+  background: rgb(236, 252, 203);
+  color: rgb(63, 98, 18);
+  transition: all 0.3s ease;
+}
+
+.btn_light_lime:hover {
+  background: rgb(220, 252, 160);
+}
+
+/* Example for custom scroll to top button styles */
+.scroll-to-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #2563eb;
+  color: white;
+  padding: 12px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-size: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-to-top-btn:hover {
+  background-color: #1d4ed8;
+  transform: scale(1.1);
+}
+html {
+  scroll-behavior: smooth;
+}
+
