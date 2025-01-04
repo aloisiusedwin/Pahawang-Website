@@ -116,10 +116,10 @@ const Navbar = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <a href="#pricing">
+          <a href="#Login">
             <Button
               type="button"
-              title="Pricing"
+              title="Admin"
               icon="./bx-log-in-circle.svg"
               variant="btn_light_lime"
               width="160"

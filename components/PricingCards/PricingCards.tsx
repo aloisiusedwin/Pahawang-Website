@@ -80,7 +80,7 @@ const PricingCards = () => {
                   ))}
                 </div>
                 <button
-                  className="bg-[#00df9a] hover:text-[#00df9a] hover:bg-gray-50 duration-150 w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3"
+                  className="bg-[#ecfccb] hover:text-[#3f6212] hover:bg-[#ecfccb] duration-150 w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3"
                   onClick={() => handleCheckItClick(card)} // Trigger modal with card details
                 >
                   Check it

@@ -1,6 +1,7 @@
 /* Swiper container styles */
 .swiper {
   padding-bottom: 50px !important;
+  padding-top: 50px !important;
   border-radius: 12px;
   background: linear-gradient(to bottom, #ffffff, #f7fafd);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
@@ -20,8 +21,8 @@
 
 .swiper-button-prev:hover:after,
 .swiper-button-next:hover:after {
-  background: #1f2937;
-  color: #ffffff;
+  background: #ecfccb;
+  color: #1f2937;
   transform: scale(1.1);
 }
 

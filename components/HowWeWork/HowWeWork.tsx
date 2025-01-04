@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import sandImage from "./../../public/images/sand.jpg";
+import Button from "../Button";
+
 const Modal = ({ isOpen, onClose, details }: { isOpen: boolean, onClose: () => void, details: any }) => {
   if (!isOpen) return null;
 
@@ -49,14 +51,14 @@ const Produk = () => {
 
   const cardData = [
     {
-      image: "https://i.imgur.com/Ql4jRdB.png",
-      title: "Dodol Mangrove",
-      label: "Dodol mangrove adalah oleh-oleh khas Pulau Pahawang dengan rasa manis unik dari buah mangrove.",
+      image: "https://i.imgur.com/Hg0sUJP.png",
+      title: "Asbak Banana",
+      label: "Asbak olahan dari limbah yang diperoleh dari sampah-sampah sekitar Pulau Pahawang.",
     },
     {
-      image: "https://i.imgur.com/pJNFEHR.png",
-      title: "Kerupuk Jengkol",
-      label: "Kerupuk Jengkol adalah oleh-oleh khas Pulau Pahawang dengan rasa yang gurih.",
+      image: "https://i.imgur.com/Hg0sUJP.png",
+      title: "Asbak Banana",
+      label: "Asbak olahan dari limbah yang diperoleh dari sampah-sampah sekitar Pulau Pahawang.",
     },
     {
       image: "https://i.imgur.com/Hg0sUJP.png",
@@ -83,7 +85,7 @@ const Produk = () => {
                 className={`w-full shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300`}
               >
                 <img
-                  className="w-20 mx-auto mt-[-3rem] bg-white"
+                  className="w-100 mt-[-2rem] bg-white"
                   src={card.image}
                   alt={card.title}
                 />
@@ -92,7 +94,7 @@ const Produk = () => {
                 </h2>
                 <p className="text-center text-xl font-light">{card.label}</p>
                 <button
-                  className={`bg-[#00df9a] hover:text-[#00df9a] hover:bg-gray-50 duration-150 w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3`}
+                  className={`bg-[#ecfccb] hover:text-[#3f6212] hover:bg-[#ecfccb] duration-150 w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3`}
                   onClick={() => openModal(card)}
                 >
                   Check it

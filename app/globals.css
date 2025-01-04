@@ -146,13 +146,13 @@ body {
   scrollbar-width: none; /* Firefox */
 }
 .btn_light_lime {
-  background: rgb(236, 252, 203);
-  color: rgb(63, 98, 18);
+  background: #ecfccb;
+  color: #3f6212;
   transition: all 0.3s ease;
 }
 
 .btn_light_lime:hover {
-  background: rgb(220, 252, 160);
+  background: #dcfca0;
 }
 
 /* Example for custom scroll to top button styles */

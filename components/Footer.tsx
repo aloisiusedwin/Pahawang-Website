@@ -37,16 +37,6 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="flex-col mb-4">
-          <h3 className="uppercase text-lg mb-4">Pricing</h3>
-          <ul>
-            <li className="text-center">
-              <a className="text-sm hover:text-[#00df9a]" href="/">
-                Read more
-              </a>
-            </li>
-          </ul>
-        </div>
         <div className="flex-col text-center">
           <h3 className="uppercase text-lg mb-4">Social Media</h3>
           <a href="#">
