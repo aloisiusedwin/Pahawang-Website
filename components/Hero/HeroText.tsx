@@ -8,14 +8,7 @@ export const HeroText = () => {
       <h1 className="regular-20 text-white mb-6 [text-shadow:_0_1px_0_rgb(0_0_0_/_80%)] 2xl:regular-64 xl:regular-40 md:regular-32 sm:regular-24">
         Pulau Pahawang 
       </h1>
-      <Link href="#Tentang">
-        <Button
-          type="button"
-          title="Read more about Us"
-          variant="btn_light_lime"
-          width=""
-        />
-      </Link>
+      <p className="text-sm md:text-base lg:text-lg text-white mb-4 [text-shadow:_0_1px_0_rgb(0_0_0_/_80%)]">Destinasi Wisata Tropis yang Menawarkan Keindahan Alam Bawah Laut, Pantai yang Memikat, dan Pesona Surga Tersembunyi untuk Petualangan Tak Terlupakan.</p>
     </div>
   );
 };

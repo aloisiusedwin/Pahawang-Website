@@ -15,7 +15,7 @@ const Produk = () => {
     },
     {
       image: "https://i.imgur.com/Hg0sUJP.png",
-      title: "Asbak Banana",
+      title: "Asbak Bambu",
       label: "Asbak olahan dari limbah yang diperoleh dari sampah-sampah sekitar pulau pahawang ",
     },
   ];
