@@ -103,7 +103,7 @@ export default () => {
             <motion.img
               src={selectedImage}
               alt="Selected"
-              className="max-w-[90%] max-h-[90%] rounded-xl shadow-lg transition-transform transform hover:scale-110"
+              className="max-w-[100%] max-h-[100%] rounded-xl shadow-lg transition-transform transform hover:scale-110"
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.8 }}
