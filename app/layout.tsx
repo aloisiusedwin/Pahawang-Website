@@ -8,8 +8,8 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Travel Website",
-  description: "Want to find your dreamy holidays? You are in the right place!",
+  title: "Landing Page-Pulau Pahawang",
+  description: "Destinasi wisata tropis di Lampung dengan pantai indah dan spot snorkeling memukau.",
 };
 
 export default function RootLayout({

@@ -1,7 +1,8 @@
 // NAVIGATION
 export const NAV_LINKS = [
-    { href: '#about_us', key: 'about-us', label: 'About Us' },
-    { href: '#how_we_work', key: 'how-we-work', label: 'How We Work?' },
+    { href: '#Tentang', key: 'Tentang', label: 'Tentang' },
+    { href: '#Produk', key: 'Produk', label: 'Produk' },
+    { href: '#Proker', key: 'Proker', label: 'Proker' },
     { href: '#gallery', key: 'gallery', label: 'Gallery' },
-    { href: '#contact', key: 'contact', label: 'Contact' },
+    { href: '#contact', key: 'contact', label: 'Kontak' },  
 ];

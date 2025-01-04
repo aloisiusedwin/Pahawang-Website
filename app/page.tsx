@@ -1,9 +1,9 @@
 'use client';
-import AboutUs from "@/components/AboutUs/AboutUs";
+import Tentang from "@/components/AboutUs/AboutUs";
 import Contact from "@/components/Contact/Contact";
 import Gallery from "@/components/Gallery/Gallery";
 import { Hero } from "@/components/Hero/Hero";
-import HowWeWork from "@/components/HowWeWork/HowWeWork";
+import Produk from "@/components/HowWeWork/HowWeWork";
 import PricingCards from "@/components/PricingCards/PricingCards";
 import React, { useEffect } from "react";
 import ScrollToTopButton from "@/components/ScrollToTop";
@@ -22,8 +22,8 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <AboutUs />
-      <HowWeWork />
+      <Tentang />
+      <Produk />
       <Gallery />
       <PricingCards />
       <Contact />

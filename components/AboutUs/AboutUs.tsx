@@ -2,10 +2,10 @@ import React from "react";
 import MaledviesImg01 from "@/public/images/maledives01.jpg";
 import MaledviesImg02 from "@/public/images/maledives02.jpg";
 
-const AboutUs = () => {
+const Tentang = () => {
   return (
     <section
-      id="about_us"
+      id="Tentang"
       className="relative flex max-container padding-container items-center py-10 mb-10"
     >
       <div className="flex h-[400px]">
@@ -29,7 +29,7 @@ const AboutUs = () => {
         </div>
       </div>
       <div className="p-4 bg-white rounded-3xl m-4 left-1/4 absolute xl:top-[80px] xl:left-2/3">
-        <h1 className="regular-24 xl:regular-40 mb-5">About Us</h1>
+        <h1 className="regular-24 xl:regular-40 mb-5">Pulau Pahawang</h1>
         <p className="regular-14 xl:regular-16">
           Unique opportunities at the best prices! Here you will find specific
           trip suggestions based on promotional prices for flights, hotels and
@@ -40,4 +40,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default Tentang;

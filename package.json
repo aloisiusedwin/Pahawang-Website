@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@nextui-org/card": "^2.2.8",
+    "@nextui-org/system": "^2.4.5",
+    "@nextui-org/theme": "^2.4.4",
     "boxicons": "^2.1.4",
     "dependencies": "^0.0.1",
     "framer-motion": "^11.15.0",

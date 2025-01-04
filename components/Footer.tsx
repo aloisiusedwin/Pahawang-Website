@@ -15,19 +15,19 @@ const Footer = () => {
               height="143"
             ></img>
           </a>
-          <p>© 2024 Travel Website</p>
+          <p>© 2025 Pulau Pahawang</p>
         </div>
         <div className="flex-col mb-4">
           <h3 className="uppercase text-lg mb-4">Navigation</h3>
           <ul>
             <li className="text-center">
-              <a className="text-sm hover:text-[#00df9a]" href="#about_us">
-                About Us
+              <a className="text-sm hover:text-[#00df9a]" href="#Tentang">
+                Tentang
               </a>
             </li>
             <li className="text-center">
-              <a className="text-sm hover:text-[#00df9a]" href="#how_we_work">
-                How We Work?
+              <a className="text-sm hover:text-[#00df9a]" href="#Produk">
+                Produk
               </a>
             </li>
             <li className="text-center">
