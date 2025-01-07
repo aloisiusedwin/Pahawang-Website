@@ -110,14 +110,6 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <motion.div 
-          className="lg:flexCenter hidden"
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-        </motion.div>
-
         <div className="lg:hidden" onClick={toggleMenu}>
           <Image
             src="./bx-menu-alt-right.svg"
