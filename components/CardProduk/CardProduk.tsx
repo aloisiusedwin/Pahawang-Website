@@ -18,11 +18,6 @@ const Produk = () => {
       title: "Asbak Banana",
       type: "Souvenir",
     },
-    {
-      img: "https://i.imgur.com/Hg0sUJP.png",
-      title: "Asbak Banana",
-      type: "Souvenir",
-    },
   ];
 
   return (
@@ -31,10 +26,10 @@ const Produk = () => {
       className="py-2 bg-cover bg-no-repeat bg-center p-8"
     >
       <div className="max-w-7xl mx-auto my-8">
-        <div className="flex text-black mb-4 regular-24 xl:regular-40">
+        <h1 className="regular-24 xl:regular-40 mb-5">
           Produk UMKM
-        </div>
-        <div className="gap-2 grid grid-cols-2 sm:grid-cols-4">
+        </h1>
+        <div className="flexCenter gap-2 grid grid-cols-2 sm:grid-cols-4">
           {list.map((item, index) => (
             /* eslint-disable no-console */
             <Card
