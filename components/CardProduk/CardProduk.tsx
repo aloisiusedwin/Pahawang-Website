@@ -26,13 +26,11 @@ const Produk = () => {
   ];
 
   return (
-    <section
-      id="Produk"
-      className="py-2 bg-cover bg-no-repeat bg-center p-8"
+    <section id="Produk" className="py-2 bg-cover bg-no-repeat bg-center p-8"
     >
-      <div className="max-w-7xl mx-auto my-8">
-        <div className="flex text-black mb-4 regular-24 xl:regular-40">
-          Produk UMKM
+      <div id= "Produk" className="max-w-7xl mx-auto my-8">
+        <div className=" text-black mb-4 regular-24 xl:regular-40 flex">
+          PRODUK UMKM
         </div>
         <div className="gap-2 grid grid-cols-2 sm:grid-cols-4">
           {list.map((item, index) => (

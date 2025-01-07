@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Modal from "../Modal"
+import { div } from "framer-motion/client";
 
 interface Plan {
   image: string;
@@ -49,9 +50,9 @@ const PricingCards = () => {
 
   return (
     <section id="Proker">
-      <div id="pricing">
-        <h1 className="flex flexCenter bg-opacity-50 bg-white p-8 rounded-3xl text-black font-bold mb-4 lg:m-10 regular-24 xl:regular-40">
-          Program Kerja
+      <div id="proker">
+        <h1 className="flex bg-opacity-50 bg-white p-8 rounded-3xl text-black font-bold mb-4 lg:m-10 regular-24 xl:regular-40">
+          PROGRAM KERJA
         </h1>
         <div className="w-full py-[6rem] px-4 bg-white">
           <div className="max-w-[1240px] mx-auto grid md:grid-cols-3 gap-8">

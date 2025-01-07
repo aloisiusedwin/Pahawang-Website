@@ -1,8 +1,8 @@
 // NAVIGATION
 export const NAV_LINKS = [
     { href: '#Tentang', key: 'Tentang', label: 'Tentang' },
+    { href: '#Galeri', key: 'Galeri', label: 'Galeri' },
     { href: '#Produk', key: 'Produk', label: 'Produk' },
-    { href: '#Proker', key: 'Program Kerja', label: 'Program Kerja' },
-    { href: '#gallery', key: 'gallery', label: 'Gallery' },
+    { href: '#Proker', key: 'Proker', label: 'Program Kerja' },
     { href: '#contact', key: 'contact', label: 'Kontak' },  
 ];

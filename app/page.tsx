@@ -21,14 +21,14 @@ export default function Home() {
 
   return (
     <>
+      <SmoothScroll /> 
       <Hero />
       <AboutUs />
-      <CardProduk />
       <Gallery />
+      <CardProduk />
       <PricingCards />
       <Contact />
       <ScrollToTopButton />
-      <SmoothScroll />
     </>
   );
 }
