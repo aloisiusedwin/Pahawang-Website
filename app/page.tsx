@@ -3,7 +3,7 @@ import AboutUs from "@/components/AboutUs/AboutUs";
 import Contact from "@/components/Contact/Contact";
 import Gallery from "@/components/Gallery/Gallery";
 import { Hero } from "@/components/Hero/Hero";
-import HowWeWork from "@/components/HowWeWork/HowWeWork";
+import CardProduk from "@/components/CardProduk/CardProduk";
 import PricingCards from "@/components/PricingCards/PricingCards";
 import React, { useEffect } from "react";
 import ScrollToTopButton from "@/components/ScrollToTop";
@@ -23,7 +23,7 @@ export default function Home() {
     <>
       <Hero />
       <AboutUs />
-      <HowWeWork />
+      <CardProduk />
       <Gallery />
       <PricingCards />
       <Contact />
