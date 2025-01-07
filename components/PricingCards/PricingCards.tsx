@@ -50,9 +50,9 @@ const PricingCards = () => {
 
   return (
     <section id="Proker">
-      <div id="proker">
-        <h1 className="flex bg-opacity-50 bg-white p-8 rounded-3xl text-black font-bold mb-4 lg:m-10 regular-24 xl:regular-40">
-          PROGRAM KERJA
+      <div id = "proker" className="max-w-7xl mx-auto my-8 flex-auto">
+        <h1 className="flex-auto bg-opacity-50 bg-white rounded-3xl text-black font-bold mb-4 lg:m-10 regular-24 xl:regular-40">
+          Program Kerja
         </h1>
         <div className="w-full py-[6rem] px-4 bg-white">
           <div className="max-w-[1240px] mx-auto grid md:grid-cols-3 gap-8">

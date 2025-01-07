@@ -16,7 +16,7 @@ const scrollToTop = () => {
 
 export default function Home() {
   useEffect(() => {
-    scrollToTop(); // Scroll to top on page load
+    scrollToTop();
   }, []);
 
   return (

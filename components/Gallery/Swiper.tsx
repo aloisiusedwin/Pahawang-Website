@@ -5,7 +5,7 @@ import {
 } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -21,8 +21,33 @@ const swiperVariants = {
   animate: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
 };
 
+// Deskripsi Untuk Setiap Gambar
+const imageDescriptions = [
+  { src: img01, title: "Image 01", description: "This is a description for Image 01." },
+  { src: img02, title: "Image 02", description: "This is a description for Image 02." },
+  { src: img03, title: "Image 03", description: "This is a description for Image 03." },
+  { src: img04, title: "Image 04", description: "This is a description for Image 04." },
+];
+
 export default () => {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedImage, setSelectedImage] = useState<number | null>(null);
+
+  // Close modal when Esc is pressed
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setSelectedImage(null);
+      }
+    };
+
+    // Add event listener
+    document.addEventListener("keydown", handleKeyDown);
+
+    // Clean up event listener on component unmount
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
   return (
     <motion.div
@@ -36,12 +61,12 @@ export default () => {
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={30}
         slidesPerView={3}
-        navigation={true} // Navigasi bawaan diaktifkan
+        navigation={true} // Navigation enabled
         pagination={{ clickable: true }}
         loop={true}
         autoplay={{
           delay: 3000,
-          disableOnInteraction: false,
+          disableOnInteraction: true,
         }}
         breakpoints={{
           320: {
@@ -59,13 +84,13 @@ export default () => {
         }}
         className="w-full xl:w-[80%]"
       >
-        {[img01, img02, img03, img04].map((img, index) => (
+        {imageDescriptions.map((img, index) => (
           <SwiperSlide key={index}>
             <motion.img
-              src={img.src}
-              alt={`img-${index}`}
+              src={img.src.src}
+              alt={img.title}
               className="select-none rounded-xl cursor-pointer transform transition-transform hover:scale-105"
-              onClick={() => setSelectedImage(img.src)}
+              onClick={() => setSelectedImage(index)}
             />
           </SwiperSlide>
         ))}
@@ -73,7 +98,7 @@ export default () => {
 
       {/* Image Modal */}
       <AnimatePresence>
-        {selectedImage && (
+        {selectedImage !== null && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -81,14 +106,34 @@ export default () => {
             className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
             onClick={() => setSelectedImage(null)}
           >
-            <motion.img
-              src={selectedImage}
-              alt="Selected"
-              className="max-w-[90%] max-h-[90%] rounded-xl shadow-lg"
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.8 }}
-            />
+            <div className="flex flex-row max-w-[90%] max-h-[90%] bg-white rounded-xl shadow-lg overflow-hidden">
+              {/* Image Section */}
+              <div className="w-1/2 flex items-center justify-center bg-gray-900">
+                <motion.img
+                  src={imageDescriptions[selectedImage].src.src}
+                  alt={imageDescriptions[selectedImage].title}
+                  className="max-w-full max-h-full rounded-xl"
+                  initial={{ scale: 0.8 }}
+                  animate={{ scale: 1 }}
+                  exit={{ scale: 0.8 }}
+                />
+              </div>
+              {/* Text Section */}
+              <div className="w-1/2 p-6 flex flex-col">
+                <h2 className="text-2xl font-bold mb-4">
+                  {imageDescriptions[selectedImage].title}
+                </h2>
+                <p className="text-gray-600">
+                  {imageDescriptions[selectedImage].description}
+                </p>
+                <button
+                  onClick={() => setSelectedImage(null)}
+                  className="mt-auto px-4 py-2 bg-lime-400 text-white rounded hover:bg-lime-700"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
