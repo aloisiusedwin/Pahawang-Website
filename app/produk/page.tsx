@@ -24,17 +24,37 @@ const data = [
     title: "Asbak Bambu",
     label:
       "Asbak olahan dari limbah yang diperoleh dari sampah-sampah sekitar Pulau Pahawang.",
+    description:
+      "Asbak bambu unik yang dibuat dari limbah bambu, menghadirkan keindahan dan kesederhanaan dari Pulau Pahawang.Asbak bambu unik yang dibuat dari limbah bambu, menghadirkan keindahan dan kesederhanaan dari Pulau Pahawang.Asbak bambu unik yang dibuat dari limbah bambu, menghadirkan keindahan dan kesederhanaan dari Pulau Pahawang.",
+    specifications: ["Material: Bambu", "Dimensi: 10x10 cm", "Berat: 200 gram"],
+    phoneNumber: "628123456789",
   },
   {
     image: "./images/produk/pembohong.png",
     title: "Dodol Mangrove",
     label: "Dodol mangrove khas pahawang cik. enak loh langsung diborong der.",
+    description:
+      "Dodol mangrove khas Pahawang, dibuat dengan bahan alami dari hutan mangrove setempat.",
+    specifications: [
+      "Rasa: Original, Pandan",
+      "Berat: 500 gram",
+      "Bahan: Tepung ketan, mangrove",
+    ],
+    phoneNumber: "628987654321",
   },
   {
     image: "./images/produk/pajamass.jpg",
     title: "Ikan Asin Tawar",
     label:
-      "Asbak olahan dari limbah yang diperoleh dari sampah-sampah sekitar Pulau Pahawang.",
+      "Ikan asin tawar dari Pulau Pahawang yang diolah secara higienis untuk rasa terbaik.",
+    description:
+      "Ikan asin tawar khas Pulau Pahawang, cocok sebagai lauk atau bahan masakan.",
+    specifications: [
+      "Berat: 1 kg",
+      "Jenis: Ikan tawar",
+      "Proses: Pengeringan alami",
+    ],
+    phoneNumber: "628111223344",
   },
 ];
 
@@ -61,7 +81,7 @@ export default function Home() {
             description="Oleh-Oleh dengan Sentuhan Cinta dan Tradisi, Sempurnakan Perjalanan Anda"
             containerStyle="max-w-[90%] mx-auto text-center lg:text-left overflow-hidden"
             titleStyle="text-white font-bold text-[clamp(1.2rem, 4vw, 2rem)] leading-tight"
-            descriptionStyle="text-gray-200 text-[clamp(0.8rem, 3vw, 1rem)]  leading-relaxed"
+            descriptionStyle="text-gray-200 text-[clamp(0.8rem, 3vw, 1rem)] leading-relaxed"
           />
         </div>
       </div>
@@ -73,7 +93,7 @@ export default function Home() {
           <h2 className="text-2xl sm:text-4xl lg:text-6xl font-bold text-green-900 mb-4 text-center lg:text-left">
             Pilihan Produk Terbaik
           </h2>
-          <p className="text-sm sm:text-base lg:text-lg text-gray-700 leading-loose text-center lg:text-left">
+          <p className="text-sm sm:text-base lg:text-lg text-gray-700 leading-loose text-center lg:text-justify">
             Temukan keindahan Pulau Pahawang dalam setiap produk UMKM yang
             dihasilkan dengan penuh cinta dan dedikasi. Mulai dari kerajinan
             tangan unik, makanan khas yang menggugah selera, hingga produk alami
@@ -89,7 +109,12 @@ export default function Home() {
 
         {/* Produk */}
         <ProdukTemplate
-          cards={data}
+          cards={data.map((card) => ({
+            ...card,
+            onClick: () => {
+              console.log(`Klik pada produk: ${card.title}`);
+            },
+          }))}
           backgroundImage="https://i.imgur.com/yourBackgroundImage.jpg"
         />
       </div>

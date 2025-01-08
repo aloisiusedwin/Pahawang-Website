@@ -1,10 +1,10 @@
 'use client';
-import AboutUs from "@/components/AboutUs/AboutUs";
+import AboutUs from "@/components/Tentang/Tentang";
 import Contact from "@/components/Contact/Contact";
 import Gallery from "@/components/Gallery/Gallery";
 import { Hero } from "@/components/Hero/Hero";
 import CardProduk from "@/components/CardProduk/CardProduk";
-import PricingCards from "@/components/PricingCards/PricingCards";
+import PricingCards from "@/components/Proker/Proker";
 import React, { useEffect } from "react";
 import ScrollToTopButton from "@/components/ScrollToTop";
 import SmoothScroll from "@/components/SmoothScrolling";
@@ -35,7 +35,6 @@ export default function Home() {
       <Gallery />
       <CardProduk />
       <PricingCards />
-      <Contact />
       <ScrollToTopButton />
     </>
   );

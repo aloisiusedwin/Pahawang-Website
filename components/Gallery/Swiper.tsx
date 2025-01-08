@@ -3,6 +3,7 @@ import {
   Pagination,
   Autoplay,
 } from "swiper/modules";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
@@ -77,14 +78,14 @@ export default () => {
           },
           800: {
             slidesPerView: 2,
-            spaceBetween: 30,
+            spaceBetween: 70,
           },
           1200: {
             slidesPerView: 3,
-            spaceBetween: 40,
+            spaceBetween: 70,
           },
         }}
-        className="w-full xl:w-[80%]"
+        className="w-full xl:w-[100%]"
       >
         {imageDescriptions.map((img, index) => (
           <SwiperSlide key={index}>
@@ -128,12 +129,6 @@ export default () => {
                 <p className="text-gray-600 text-justify">
                   {imageDescriptions[selectedImage].description}
                 </p>
-                <button
-                  onClick={() => setSelectedImage(null)}
-                  className="mt-auto px-4 py-2 bg-lime-400 hover:text-white text-[#3f6212] rounded hover:bg-lime-700"
-                >
-                  Close
-                </button>
               </div>
             </div>
           </motion.div>

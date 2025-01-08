@@ -29,7 +29,7 @@ const Tentang = () => {
         </div>
       </div>
       <div className="p-4 bg-white rounded-3xl m-4 left-1/4 absolute xl:top-[80px] xl:left-2/3">
-        <h1 className="regular-24 xl:regular-40 mb-5">Pulau Pahawang</h1>
+        <h1 className="regular-24 xl:regular-40 mb-5 text-green-900">Pulau Pahawang</h1>
         <p className="regular-14 xl:regular-16 text-justify">
         Surga Tersembunyi Nusantara yang Memikat dengan Keindahan Alam Bawah Laut, 
         Pantai Berpasir Putih, dan Kehangatan Penduduk Lokal, Serta Kekayaan Kuliner 
