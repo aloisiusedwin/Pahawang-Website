@@ -12,6 +12,7 @@ const Gallery = () => {
         Galeri
       </h1>
       <Swiper />
+      <hr className="border-t-2 border-gray-300 mb-4 lg:mb-1 mt-10" />
     </section>
   );
 };
