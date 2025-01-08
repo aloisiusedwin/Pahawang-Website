@@ -1,6 +1,5 @@
 import React from "react";
 import { Card, CardHeader, CardFooter, Image, Button } from "@nextui-org/react";
-import sandImage from "./../../public/images/sand.jpg";
 
 const PricingCards = () => {
   const cardData = [

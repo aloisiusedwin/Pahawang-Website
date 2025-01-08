@@ -12,12 +12,11 @@ import SmoothScroll from "@/components/SmoothScrolling";
 import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({
-  subsets: ["latin"], // Pilih subset yang dibutuhkan
-  weight: ["400", "700"], // Pilih berat font (400 = normal, 700 = bold)
+  subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 
-// Smooth scrolling on page load
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 };

@@ -13,25 +13,25 @@ const montserrat = Montserrat({
 
 const programKerjaData = [
   {
-    video: "./videos/program kerja.mp4",
+    video: "./videos/paving.mp4",
     name: "Pengolahan Sampah",
     description:
       "Pengelolaan sampah anorganik menjadi paving block ramah lingkungan melalui edukasi dan pelatihan masyarakat.",
   },
   {
-    video: "./videos/bech.mp4",
+    video: "./videos/website.mp4",
     name: "Pembuatan Website",
     description:
       "Pembuatan platform digital berisi informasi, edukasi, dan promosi pelestarian lingkungan Desa Pahawang.",
   },
   {
-    video: "./videos/jaw.mp4",
+    video: "./videos/kampanye.mp4",
     name: "Kampanye Kebersihan",
     description:
       "Edukasi kebersihan dan penyediaan fasilitas untuk meningkatkan kesadaran lingkungan masyarakat dan wisatawan.",
   },
   {
-    video: "./videos/palm_trees.mp4",
+    video: "./videos/maggot.mp4",
     name: "Pemberdayaan Maggot",
     description:
       "Pengolahan sampah organik menggunakan maggot untuk menghasilkan pakan ternak ramah lingkungan.",
@@ -40,10 +40,10 @@ const programKerjaData = [
     video: "./videos/asbak.mp4",
     name: "Asbak Portable",
     description:
-      "Produksi asbak portable untuk mengurangi pencemaran puntung rokok di lingkungan wisata.",
+      "Produksi asbak portable berbahan dasar bambu untuk mengurangi pencemaran puntung rokok di lingkungan wisata.",
   },
   {
-    video: "./videos/palm_trees.mp4",
+    video: "./videos/umkm.mp4",
     name: "Peningkatan UMKM",
     description:
       "Meningkatkan kualitas dan pemasaran produk UMKM lokal, seperti dodol mangrove, untuk memperluas pasar.",
@@ -83,7 +83,7 @@ const ProgramKerjaSection = () => {
                 muted
                 loop={false}
               ></video>
-              <div className="absolute bottom-0 w-full bg-white bg-opacity-60 p-4 text-center">
+              <div className="absolute bottom-0 w-full bg-white bg-opacity-65 p-4 text-center">
                 <h3 className="text-lg font-bold text-green-900">
                   {program.name}
                 </h3>

@@ -71,7 +71,7 @@ export default function Home() {
           loop
           autoPlay
           muted
-          src={"./videos/jaw.mp4"}
+          src={"./videos/produk.mp4"}
           className="object-cover w-full h-[40vh] md:h-[60vh] lg:h-[85vh]" // Tinggi video responsif
         />
 

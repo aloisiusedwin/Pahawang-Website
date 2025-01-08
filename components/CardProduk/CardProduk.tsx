@@ -4,19 +4,19 @@ import { Card, CardHeader, CardFooter, Image, Button } from "@nextui-org/react";
 const Produk = () => {
   const list = [
     {
-      img: "https://i.imgur.com/Hg0sUJP.png",
-      title: "Asbak Banana",
-      type: "Souvenir",
+      img: "./images/produk/umkm1.jpg",
+      title: "Peyek Kacang",
+      type: "Konsumsi",
     },
     {
-      img: "https://i.imgur.com/Hg0sUJP.png",
-      title: "Asbak Banana",
-      type: "Souvenir",
+      img: "./images/produk/umkm2.jpeg",
+      title: "Dodol Mangrove",
+      type: "Konsumsi",
     },
     {
-      img: "https://i.imgur.com/Hg0sUJP.png",
-      title: "Asbak Banana",
-      type: "Souvenir",
+      img: "./images/produk/umkm3.jpeg",
+      title: "Keripik Pisang",
+      type: "Konsumsi",
     },
   ];
 
@@ -30,10 +30,10 @@ const Produk = () => {
           {list.map((item, index) => (
             <Card key={index} className="w-full h-[300px]">
               <CardHeader className="absolute z-10 top-1 flex-col items-start">
-                <h4 className="text-black font-medium text-large">
+                <h4 className="text-yellow-300 font-medium text-large">
                   {item.title}
                 </h4>
-                <p className="text-tiny text-black uppercase font-bold">
+                <p className="text-tiny text-yellow-200 uppercase font-bold">
                   {item.type}
                 </p>
               </CardHeader>
@@ -44,7 +44,11 @@ const Produk = () => {
                 src={item.img}
               />
               <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
-                <Button className="text-tiny bg-[#ecfccb] hover:text-[#3f6212] hover:bg-[#ecfccb]" radius="full" size="sm">
+                <Button
+                  className="text-tiny bg-[#ecfccb] hover:text-[#3f6212] hover:bg-[#ecfccb]"
+                  radius="full"
+                  size="sm"
+                >
                   Check it
                 </Button>
               </CardFooter>
