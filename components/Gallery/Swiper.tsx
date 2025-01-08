@@ -16,7 +16,6 @@ import img01 from "@/public/images/swiper/swiper-image01.jpg";
 import img02 from "@/public/images/swiper/swiper-image02.jpg";
 import img03 from "@/public/images/swiper/swiper-image03.jpg";
 import img04 from "@/public/images/swiper/swiper-image04.jpg";
-import img05 from "@/public/images/produk/pembohong.png"
 
 const swiperVariants = {
   initial: { opacity: 0, scale: 0.95 },
@@ -29,7 +28,6 @@ const imageDescriptions = [
   { src: img02, title: "Image 02", description: "This is a description for Image 02." },
   { src: img03, title: "Image 03", description: "This is a description for Image 03." },
   { src: img04, title: "Image 04", description: "This is a description for Image 04." },
-  { src: img05, title: "Pembohong Publik", description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at bibendum tellus. Donec sit amet libero eget sapien lacinia rutrum id in orci. Quisque et tincidunt neque, non mollis orci. Morbi interdum, metus tincidunt ultrices interdum, diam sapien tristique magna, et dictum enim magna eget nulla. In et molestie nulla. Nunc mollis orci quis lacinia egestas. Aenean ante leo, rutrum gravida consequat eget, vulputate quis lectus. Curabitur lobortis egestas dui, sed pellentesque erat tincidunt in. Curabitur vel semper ex."},
 ];
 
 export default () => {
