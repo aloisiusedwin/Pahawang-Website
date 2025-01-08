@@ -35,7 +35,6 @@ export default function Home() {
       <Gallery />
       <CardProduk />
       <PricingCards />
-      <Contact />
       <ScrollToTopButton />
     </>
   );

@@ -93,7 +93,7 @@ export default function Home() {
           <h2 className="text-2xl sm:text-4xl lg:text-6xl font-bold text-green-900 mb-4 text-center lg:text-left">
             Pilihan Produk Terbaik
           </h2>
-          <p className="text-sm sm:text-base lg:text-lg text-gray-700 leading-loose text-center lg:text-left">
+          <p className="text-sm sm:text-base lg:text-lg text-gray-700 leading-loose text-center lg:text-justify">
             Temukan keindahan Pulau Pahawang dalam setiap produk UMKM yang
             dihasilkan dengan penuh cinta dan dedikasi. Mulai dari kerajinan
             tangan unik, makanan khas yang menggugah selera, hingga produk alami

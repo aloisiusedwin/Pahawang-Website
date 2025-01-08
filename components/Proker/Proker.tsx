@@ -1,98 +1,69 @@
-import React, { useState } from "react";
-import Modal from "../Modal"
-
-interface Plan {
-  image: string;
-  video: string
-  title: string;
-  price: string;
-  features: string[];
-}
+import React from "react";
+import { Card, CardHeader, CardFooter, Image, Button } from "@nextui-org/react";
+import sandImage from "./../../public/images/sand.jpg";
 
 const PricingCards = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedPlan, setSelectedPlan] = useState<Plan | null>(null); // State for the selected plan details
-
-  const cardData: Plan[] = [
+  const cardData = [
     {
       image: "https://i.imgur.com/Ql4jRdB.png",
-      title: "Silver",
-      price: "$149",
-      features: ["1 person", "1 trip", "Europe"],
-      video:"https://www.youtube.com/embed/dQw4w9WgXcQ",
+      title: "Program Kerja Sampah",
+      Desc: "Pemilahan sampah",
     },
     {
-      image: "https://i.imgur.com/pJNFEHR.png",
-      title: "Gold",
-      price: "$249",
-      features: ["2 persons", "1 trip", "Europe"],
-      video: ""
+      image: "https://i.imgur.com/Ql4jRdB.png",
+      title: "Program Kerja Sampah",
+      Desc: "Pemilahan sampah",
     },
     {
-      image: "https://i.imgur.com/Hg0sUJP.png",
-      title: "Platinum",
-      price: "$449",
-      features: ["3 & more persons", "Unlimited trips", "The whole World"],
-      video: ""
+      image: "https://i.imgur.com/Ql4jRdB.png",
+      title: "Program Kerja Sampah",
+      Desc: "Pemilahan sampah",
+    },
+    {
+      image: "https://i.imgur.com/Ql4jRdB.png",
+      title: "Program Kerja Sampah",
+      Desc: "Pemilahan sampah",
+    },
+    {
+      image: "https://i.imgur.com/Ql4jRdB.png",
+      title: "Program Kerja Sampah",
+      Desc: "Pemilahan sampah",
+    },
+    {
+      image: "https://i.imgur.com/Ql4jRdB.png",
+      title: "Program Kerja Sampah",
+      Desc: "Pemilahan sampah",
     },
   ];
 
-  const handleCheckItClick = (plan: Plan) => {
-    setSelectedPlan(plan);
-    setIsModalOpen(true); // Open the modal with the selected plan details
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false); // Close the modal
-    setSelectedPlan(null); // Reset the selected plan
-  };
-
   return (
-    <section id="Proker">
-      <div id="pricing">
-        <h1 className="flex flexCenter bg-opacity-50 bg-white p-8 rounded-3xl text-black font-bold mb-4 lg:m-10 regular-24 xl:regular-40">
+    <section id="Proker" className="py-2 bg-cover bg-no-repeat bg-center p-8">
+      <div className="max-w-7xl mx-auto my-8">
+        <h1 className="regular-24 xl:regular-40 mb-14 text-green-900">
           Program Kerja
         </h1>
-        <div className="w-full py-[6rem] px-4 bg-white">
-          <div className="max-w-[1240px] mx-auto grid md:grid-cols-3 gap-8">
-            {cardData.map((card, index) => (
-              <div
-                key={index}
-                className={`w-full shadow-xl flex flex-col p-4 my-4 rounded-lg hover:scale-105 duration-300`}
-              >
-                <img
-                  className="w-20 mx-auto mt-[-3rem] bg-white"
-                  src={card.image}
-                  alt={card.title}
-                />
-                <h2 className="text-2xl font-bold text-center py-8">
-                  {card.title}
-                </h2>
-                <p className="text-center text-4xl font-bold">{card.price}</p>
-                <div className="text-center font-medium">
-                  {card.features.map((feature, index) => (
-                    <p
-                      key={index}
-                      className={`py-2 border-b mx-8 ${index === 0 ? "mt-8" : ""}`}
-                    >
-                      {feature}
-                    </p>
-                  ))}
-                </div>
-                <button
-                  className="bg-[#ecfccb] hover:text-[#3f6212] hover:bg-[#ecfccb] duration-150 w-[200px] rounded-md font-medium my-6 mx-auto px-6 py-3"
-                  onClick={() => handleCheckItClick(card)} // Trigger modal with card details
-                >
+        <div className="mx-auto grid md:grid-cols-3 gap-8">
+          {cardData.map((card, index) => (
+            <Card key={index} className="w-full h-[300px]">
+              <CardHeader className="absolute z-10 top-1 flex-col items-start">
+                <h4 className="text-black font-medium text-large">{card.title}</h4>
+                <p className="text-tiny text-black uppercase font-bold">{card.Desc}</p>
+              </CardHeader>
+              <Image
+                removeWrapper
+                alt={`${card.title} plan image`}
+                className="z-0 w-full h-full object-cover"
+                src={card.image}
+              />
+              <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
+                <Button className="text-tiny bg-[#ecfccb] hover:text-[#3f6212] hover:bg-[#ecfccb]" radius="full" size="sm">
                   Check it
-                </button>
-              </div>
-            ))}
-          </div>
+                </Button>
+              </CardFooter>
+            </Card>
+          ))}
         </div>
       </div>
-
-      {/* Modal component */}
-      <Modal isOpen={isModalOpen} onClose={handleCloseModal} details={selectedPlan} />
     </section>
   );
 };

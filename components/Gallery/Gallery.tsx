@@ -9,7 +9,7 @@ const Gallery = () => {
       className="py-2 bg-cover bg-no-repeat bg-center p-8"
     >
       <div className="max-w-7xl mx-auto my-8">
-        <h1 className="regular-24 xl:regular-40 mb-1">
+        <h1 className="regular-24 xl:regular-40 mb-1 text-green-900">
           Galeri
         </h1>
         <Swiper />

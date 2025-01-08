@@ -122,23 +122,23 @@ export default function Profil() {
       {/* Content Section */}
       <section className="py-12 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-green-900 mb-8">
+          <h2 className="text-2xl sm:text-4xl lg:text-6xl font-bold text-green-900 mb-4 text-center lg:text-left">
             Tentang Pulau Pahawang
           </h2>
-          <p className="text-gray-700 leading-relaxed mb-6">
+          <p className="text-gray-700 leading-relaxed mb-6 text-justify">
             Pulau Pahawang adalah sebuah pulau kecil yang terletak di Kabupaten
             Pesawaran, Provinsi Lampung. Pulau ini terkenal dengan keindahan
             alam bawah lautnya, pantai berpasir putih, dan suasana yang tenang.
             Dengan luas sekitar 1.084 hektar, Pulau Pahawang menjadi destinasi
             wisata favorit bagi pencinta alam dan wisata bahari.
           </p>
-          <p className="text-gray-700 leading-relaxed mb-6">
+          <p className="text-gray-700 leading-relaxed mb-6 text-justify">
             Desa Pulau Pahawang terbagi menjadi enam dusun, yaitu Suak Buah,
             Penggetahan, Jeralangan, Kalangan, Pahawang, dan Cukuh Nyai. Setiap
             dusun memiliki keunikan tersendiri yang menambah daya tarik Pulau
             Pahawang sebagai destinasi wisata.
           </p>
-          <p className="text-gray-700 leading-relaxed">
+          <p className="text-gray-700 leading-relaxed text-justify">
             Selain keindahan alamnya, Pulau Pahawang juga dikenal dengan
             keberagaman hayati, tradisi lokal yang kaya, serta keramahan
             penduduknya. Dengan berbagai kegiatan seperti snorkeling, diving,

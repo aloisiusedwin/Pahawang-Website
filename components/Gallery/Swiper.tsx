@@ -3,6 +3,7 @@ import {
   Pagination,
   Autoplay,
 } from "swiper/modules";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
@@ -126,12 +127,6 @@ export default () => {
                 <p className="text-gray-600">
                   {imageDescriptions[selectedImage].description}
                 </p>
-                <button
-                  onClick={() => setSelectedImage(null)}
-                  className="mt-auto px-4 py-2 bg-lime-400 text-white rounded hover:bg-lime-700"
-                >
-                  Close
-                </button>
               </div>
             </div>
           </motion.div>
