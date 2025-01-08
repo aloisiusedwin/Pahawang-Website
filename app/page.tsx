@@ -9,6 +9,14 @@ import React, { useEffect } from "react";
 import ScrollToTopButton from "@/components/ScrollToTop";
 import SmoothScroll from "@/components/SmoothScrolling";
 
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+  subsets: ["latin"], // Pilih subset yang dibutuhkan
+  weight: ["400", "700"], // Pilih berat font (400 = normal, 700 = bold)
+});
+
+
 // Smooth scrolling on page load
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -16,19 +24,19 @@ const scrollToTop = () => {
 
 export default function Home() {
   useEffect(() => {
-    scrollToTop(); // Scroll to top on page load
+    scrollToTop();
   }, []);
 
   return (
     <>
+      <SmoothScroll /> 
       <Hero />
       <AboutUs />
-      <CardProduk />
       <Gallery />
+      <CardProduk />
       <PricingCards />
       <Contact />
       <ScrollToTopButton />
-      <SmoothScroll />
     </>
   );
 }

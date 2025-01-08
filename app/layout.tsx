@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Landing Page-Pulau Pahawang",
+  title: "Pulau Pahawang",
   description: "Destinasi wisata tropis di Lampung dengan pantai indah dan spot snorkeling memukau.",
 };
 

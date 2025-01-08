@@ -23,7 +23,7 @@ const Contact = () => {
             alt="WhatsApp Logo"
             className="w-6 h-6 mr-2" // Adjust the size of the logo
           />
-          Contact on WhatsApp
+          Hubungi via WhatsApp
         </button>
       </div>
     </section>

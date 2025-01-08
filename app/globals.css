@@ -5,6 +5,7 @@
 @tailwind components;
 @tailwind utilities;
 
+ 
 * {
   margin: 0;
   padding: 0;
@@ -199,3 +200,64 @@ html {
   width: 100%;
 }
 
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #ecfccb; /* Track color */
+  border-radius: 10px; /* Optional: Round the edges */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00df9a; /* Thumb color */
+  border-radius: 10px; /* Optional: Round the edges */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f6212; /* Darker shade on hover */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin; /* Makes the scrollbar thinner */
+  scrollbar-color: #00df9a #ecfccb; /* Thumb and track colors */
+}
+/* Default: Hide scrollbar */
+.hide-scrollbar {
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+/* Base style: Minimalist scrollbar (hidden by default) */
+.scrollable-content {
+  scrollbar-width: thin; /* Firefox: Thin scrollbar */
+  scrollbar-color: transparent transparent; /* Transparent by default */
+  overflow-y: auto; /* Ensure scrolling works */
+}
+
+.scrollable-content::-webkit-scrollbar {
+  width: 8px; /* Thin scrollbar */
+}
+
+.scrollable-content::-webkit-scrollbar-track {
+  background: transparent; /* Hidden track */
+}
+
+.scrollable-content::-webkit-scrollbar-thumb {
+  background: transparent; /* Hidden thumb */
+  border-radius: 4px; /* Rounded edges */
+  transition: background 0.3s ease; /* Smooth transition */
+}
+
+/* On hover: Minimalist scrollbar appears */
+.scrollable-content:hover {
+  scrollbar-color: #00df9a #ecfccb; /* Thumb and track for Firefox */
+}
+
+.scrollable-content:hover::-webkit-scrollbar-thumb {
+  background: #00df9a; /* Thumb color on hover */
+}
+
+.scrollable-content:hover::-webkit-scrollbar-track {
+  background: #ecfccb; /* Track color on hover */
+}

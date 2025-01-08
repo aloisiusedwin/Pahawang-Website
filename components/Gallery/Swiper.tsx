@@ -1,67 +1,72 @@
 import { 
   Navigation,
   Pagination,
-  Scrollbar,
-  A11y,
-  EffectCoverflow,
   Autoplay,
 } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/scrollbar";
 
 import img01 from "@/public/images/swiper/swiper-image01.jpg";
 import img02 from "@/public/images/swiper/swiper-image02.jpg";
 import img03 from "@/public/images/swiper/swiper-image03.jpg";
 import img04 from "@/public/images/swiper/swiper-image04.jpg";
-import img05 from "@/public/images/swiper/swiper-image05.jpg";
-import img06 from "@/public/images/swiper/swiper-image06.jpg";
-import img07 from "@/public/images/swiper/swiper-image07.jpg";
-import img08 from "@/public/images/swiper/swiper-image08.jpg";
 
 const swiperVariants = {
   initial: { opacity: 0, scale: 0.95 },
   animate: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
 };
 
-const slideVariants = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
+// Deskripsi Untuk Setiap Gambar
+const imageDescriptions = [
+  { src: img01, title: "Image 01", description: "This is a description for Image 01." },
+  { src: img02, title: "Image 02", description: "This is a description for Image 02." },
+  { src: img03, title: "Image 03", description: "This is a description for Image 03." },
+  { src: img04, title: "Image 04", description: "This is a description for Image 04." },
+];
 
 export default () => {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedImage, setSelectedImage] = useState<number | null>(null);
+
+  // Close modal when Esc is pressed
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setSelectedImage(null);
+      }
+    };
+
+    // Add event listener
+    document.addEventListener("keydown", handleKeyDown);
+
+    // Clean up event listener on component unmount
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
   return (
     <motion.div
       initial="initial"
       animate="animate"
       variants={swiperVariants}
+      className="relative flex flex-col items-center justify-center"
     >
+      {/* Swiper Slider */}
       <Swiper
-        className="xl:!pl-16"
-        modules={[Navigation, Pagination, Scrollbar, A11y, EffectCoverflow, Autoplay]}
+        modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={30}
         slidesPerView={3}
-        navigation
+        navigation={true} // Navigation enabled
         pagination={{ clickable: true }}
-        effect="coverflow"
         loop={true}
         autoplay={{
           delay: 3000,
-          disableOnInteraction: false,
-        }}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: false,
+          disableOnInteraction: true,
         }}
         breakpoints={{
           320: {
@@ -77,22 +82,23 @@ export default () => {
             spaceBetween: 40,
           },
         }}
+        className="w-full xl:w-[80%]"
       >
-        {[img01, img02, img03, img04, img05, img06, img07, img08].map((img, index) => (
+        {imageDescriptions.map((img, index) => (
           <SwiperSlide key={index}>
             <motion.img
-              src={img.src}
-              alt={`img-${index}`}
+              src={img.src.src}
+              alt={img.title}
               className="select-none rounded-xl cursor-pointer transform transition-transform hover:scale-105"
-              variants={slideVariants}
-              onClick={() => setSelectedImage(img.src)}
+              onClick={() => setSelectedImage(index)}
             />
           </SwiperSlide>
         ))}
       </Swiper>
 
+      {/* Image Modal */}
       <AnimatePresence>
-        {selectedImage && (
+        {selectedImage !== null && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -100,14 +106,34 @@ export default () => {
             className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
             onClick={() => setSelectedImage(null)}
           >
-            <motion.img
-              src={selectedImage}
-              alt="Selected"
-              className="max-w-[100%] max-h-[100%] rounded-xl shadow-lg transition-transform transform hover:scale-110"
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.8 }}
-            />
+            <div className="flex flex-row max-w-[90%] max-h-[90%] bg-white rounded-xl shadow-lg overflow-hidden">
+              {/* Image Section */}
+              <div className="w-1/2 flex items-center justify-center bg-gray-900">
+                <motion.img
+                  src={imageDescriptions[selectedImage].src.src}
+                  alt={imageDescriptions[selectedImage].title}
+                  className="max-w-full max-h-full rounded-xl"
+                  initial={{ scale: 0.8 }}
+                  animate={{ scale: 1 }}
+                  exit={{ scale: 0.8 }}
+                />
+              </div>
+              {/* Text Section */}
+              <div className="w-1/2 p-6 flex flex-col">
+                <h2 className="text-2xl font-bold mb-4">
+                  {imageDescriptions[selectedImage].title}
+                </h2>
+                <p className="text-gray-600">
+                  {imageDescriptions[selectedImage].description}
+                </p>
+                <button
+                  onClick={() => setSelectedImage(null)}
+                  className="mt-auto px-4 py-2 bg-lime-400 text-white rounded hover:bg-lime-700"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
