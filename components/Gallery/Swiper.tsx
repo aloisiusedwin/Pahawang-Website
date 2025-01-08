@@ -75,14 +75,14 @@ export default () => {
           },
           800: {
             slidesPerView: 2,
-            spaceBetween: 30,
+            spaceBetween: 70,
           },
           1200: {
             slidesPerView: 3,
-            spaceBetween: 40,
+            spaceBetween: 70,
           },
         }}
-        className="w-full xl:w-[80%]"
+        className="w-full xl:w-[100%]"
       >
         {imageDescriptions.map((img, index) => (
           <SwiperSlide key={index}>

@@ -6,13 +6,17 @@ const Gallery = () => {
   return (
     <section
       id="Galeri"
-      className="max-container padding-container overflow-x-hidden pb-20"
+      className="py-2 bg-cover bg-no-repeat bg-center p-8"
     >
-      <h1 className="flex bg-opacity-50 bg-white p-8 rounded-3xl text-black font-bold mb-4 lg:m-10 regular-24 xl:regular-40">
-        Galeri
-      </h1>
-      <Swiper />
+      <div className="max-w-7xl mx-auto my-8">
+        <h1 className="regular-24 xl:regular-40 mb-1">
+          Galeri
+        </h1>
+        <Swiper />
+        <hr className="border-t-2 border-gray-300 mb-4 lg:mb-1 mt-10" />
+      </div>
     </section>
+
   );
 };
 

@@ -24,10 +24,10 @@ const Produk = () => {
     <section id="Produk" className="py-2 bg-cover bg-no-repeat bg-center p-8"
     >
       <div className="max-w-7xl mx-auto my-8">
-        <h1 className="regular-24 xl:regular-40 mb-5">
+        <h1 className="regular-24 xl:regular-40 mb-14">
           Produk UMKM
         </h1>
-        <div className="flexCenter gap-2 grid grid-cols-2 sm:grid-cols-4">
+        <div className="mx-auto grid md:grid-cols-3 gap-8">
           {list.map((item, index) => (
             /* eslint-disable no-console */
             <Card
@@ -53,7 +53,7 @@ const Produk = () => {
             </Card>
           ))}
         </div>
-        <hr className="border-t-2 border-gray-300 mb-4 lg:mb-1 mt-10" />
+        <hr className="border-t-2 border-gray-300 mb-4 lg:mb-1 mt-20" />
       </div>
     </section>
     
