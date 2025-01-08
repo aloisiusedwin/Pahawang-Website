@@ -8,18 +8,21 @@ importers:
 
   .:
     dependencies:
-      dependencies:
-        specifier: ^0.0.1
-        version: 0.0.1
       '@nextui-org/card':
         specifier: ^2.2.9
         version: 2.2.9(@nextui-org/system@2.4.6(@nextui-org/theme@2.4.5(tailwindcss@3.4.17))(framer-motion@11.16.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@nextui-org/theme@2.4.5(tailwindcss@3.4.17))(framer-motion@11.16.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@nextui-org/react':
         specifier: ^2.6.11
         version: 2.6.11(@types/react@18.3.18)(framer-motion@11.16.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.17)
+      '@nextui-org/theme':
+        specifier: ^2.4.5
+        version: 2.4.5(tailwindcss@3.4.17)
       boxicons:
         specifier: ^2.1.4
         version: 2.1.4
+      dependencies:
+        specifier: ^0.0.1
+        version: 0.0.1
       framer-motion:
         specifier: ^11.16.0
         version: 11.16.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
