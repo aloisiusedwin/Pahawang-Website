@@ -20,7 +20,7 @@ const scrollToTop = () => {
 
 const data = [
   {
-    image: "./images/produk/bald eagle.jpeg",
+    image: "./images/produk/umkm1.jpg",
     title: "Asbak Bambu",
     label:
       "Asbak olahan dari limbah yang diperoleh dari sampah-sampah sekitar Pulau Pahawang.",
@@ -30,7 +30,7 @@ const data = [
     phoneNumber: "628123456789",
   },
   {
-    image: "./images/produk/pembohong.png",
+    image: "./images/produk/umkm2.jpeg",
     title: "Dodol Mangrove",
     label: "Dodol mangrove khas pahawang cik. enak loh langsung diborong der.",
     description:
@@ -43,7 +43,7 @@ const data = [
     phoneNumber: "628987654321",
   },
   {
-    image: "./images/produk/pajamass.jpg",
+    image: "./images/produk/umkm3.jpeg",
     title: "Ikan Asin Tawar",
     label:
       "Ikan asin tawar dari Pulau Pahawang yang diolah secara higienis untuk rasa terbaik.",
