@@ -7,8 +7,7 @@ import CardProduk from "@/components/CardProduk/CardProduk";
 import PricingCards from "@/components/Proker/Proker";
 import React, { useEffect } from "react";
 import ScrollToTopButton from "@/components/ScrollToTop";
-import SmoothScroll from "@/components/SmoothScrolling";
-
+import SmoothScroll from "@/components/SmoothScrolling"; 
 import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({
