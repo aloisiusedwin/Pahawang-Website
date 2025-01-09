@@ -13,6 +13,7 @@ import img2 from "../../public/images/galeri/day2.jpg";
 import img3 from "../../public/images/galeri/day3.png"
 import img4 from "../../public/images/galeri/day4.png"
 import img5 from "../../public/images/galeri/day5.png"
+import img6 from "../../public/images/galeri/day6.jpg"
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -53,7 +54,7 @@ const EventPage = () => {
       date: "5 Januari 2025",
       imageUrl: img2,
       description: "Rekap Dokumentasi Hari ke-2",
-      location: "Desa Pahawang",
+      location: "Dusun Jeralangan",
       driveLink:
         "https://drive.google.com/drive/folders/1-8sVULmCaC0vDwk3JzZmYIhATLcQjxPx?usp=drive_link",
     },
@@ -63,7 +64,7 @@ const EventPage = () => {
       date: "6 Januari 2025",
       imageUrl: img3,
       description: "Rekap Dokumentasi Hari ke-3",
-      location: "Desa Pahawang",
+      location: "Dusun Jeralangan",
       driveLink:
         "https://drive.google.com/drive/folders/1-Aiih0H40-3aBp85ruakzsa8BafdxeKK?usp=drive_link",
     },
@@ -73,7 +74,7 @@ const EventPage = () => {
       date: "7 Januari 2025",
       imageUrl: img4,
       description: "Rekap Dokumentasi Hari ke-4",
-      location: "Desa Pahawang",
+      location: "Dusun Kalangan",
       driveLink:
         "https://drive.google.com/drive/folders/1-DOB3P2JjqAd7p6iJsmJ5fOjnZxiOwAb?usp=drive_link",
     },
@@ -83,9 +84,19 @@ const EventPage = () => {
       date: "8 Januari 2025",
       imageUrl: img5,
       description: "Rekap Dokumentasi Hari ke-5",
-      location: "Desa Pahawang",
+      location: "Dusun Jeralangan",
       driveLink:
         "https://drive.google.com/drive/folders/1-_hmgZkUhPf2RQBaI1vWzNHVb6JEcBmn?usp=drive_link",
+    },
+    {
+      id: 6,
+      title: "DAY 6",
+      date: "9 Januari 2025",
+      imageUrl: img6,
+      description: "Rekap Dokumentasi Hari ke-6",
+      location: "Dusun Kalangan",
+      driveLink:
+        "https://drive.google.com/drive/folders/1-gA-U9NTNAfBiYfcDlru3iQpFmd0cxgb?usp=drive_link",
     },
   ]);
 
