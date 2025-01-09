@@ -10,6 +10,9 @@ import { StaticImageData } from "next/image";
 import Image from "next/image";
 import img1 from "../../public/images/galeri/day1.jpg";
 import img2 from "../../public/images/galeri/day2.jpg";
+import img3 from "../../public/images/galeri/day3.png"
+import img4 from "../../public/images/galeri/day4.png"
+import img5 from "../../public/images/galeri/day5.png"
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -53,6 +56,36 @@ const EventPage = () => {
       location: "Desa Pahawang",
       driveLink:
         "https://drive.google.com/drive/folders/1-8sVULmCaC0vDwk3JzZmYIhATLcQjxPx?usp=drive_link",
+    },
+    {
+      id: 3,
+      title: "DAY 3",
+      date: "6 Januari 2025",
+      imageUrl: img3,
+      description: "Rekap Dokumentasi Hari ke-3",
+      location: "Desa Pahawang",
+      driveLink:
+        "https://drive.google.com/drive/folders/1-Aiih0H40-3aBp85ruakzsa8BafdxeKK?usp=drive_link",
+    },
+    {
+      id: 4,
+      title: "DAY 4",
+      date: "7 Januari 2025",
+      imageUrl: img4,
+      description: "Rekap Dokumentasi Hari ke-4",
+      location: "Desa Pahawang",
+      driveLink:
+        "https://drive.google.com/drive/folders/1-DOB3P2JjqAd7p6iJsmJ5fOjnZxiOwAb?usp=drive_link",
+    },
+    {
+      id: 5,
+      title: "DAY 5",
+      date: "8 Januari 2025",
+      imageUrl: img5,
+      description: "Rekap Dokumentasi Hari ke-5",
+      location: "Desa Pahawang",
+      driveLink:
+        "https://drive.google.com/drive/folders/1-_hmgZkUhPf2RQBaI1vWzNHVb6JEcBmn?usp=drive_link",
     },
   ]);
 
