@@ -6,7 +6,7 @@ const Video = () => {
       loop
       autoPlay
       muted
-      src={"./videos/palm_trees.mp4"}
+      src={"./videos/landing-page.mp4"}
       className="object-cover w-full h-[60vh] lg:h-[80vh]"
     />
   );

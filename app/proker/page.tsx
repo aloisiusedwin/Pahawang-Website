@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 import ScrollToTopButton from "@/components/ScrollToTop";
 import SmoothScroll from "@/components/SmoothScrolling";
 import Video from "@/components/Header/HeaderVideo";
@@ -14,43 +15,51 @@ const montserrat = Montserrat({
 const programKerjaData = [
   {
     video: "./videos/paving.mp4",
-    name: "Pengolahan Sampah",
+    name: "Pemilahan dan Pengolahan Sampah Anorganik",
+    slug: "pemilahan-dan-pengolahan-sampah-anorganik",
     description:
       "Pengelolaan sampah anorganik menjadi paving block ramah lingkungan melalui edukasi dan pelatihan masyarakat.",
   },
   {
     video: "./videos/website.mp4",
     name: "Pembuatan Website",
+    slug: "pembuatan-website",
     description:
       "Pembuatan platform digital berisi informasi, edukasi, dan promosi pelestarian lingkungan Desa Pahawang.",
   },
   {
     video: "./videos/kampanye.mp4",
     name: "Kampanye Kebersihan",
+    slug: "kampanye-kebersihan",
     description:
       "Edukasi kebersihan dan penyediaan fasilitas untuk meningkatkan kesadaran lingkungan masyarakat dan wisatawan.",
   },
   {
     video: "./videos/maggot.mp4",
     name: "Pemberdayaan Maggot",
+    slug: "pemberdayaan-maggot",
     description:
       "Pengolahan sampah organik menggunakan maggot untuk menghasilkan pakan ternak ramah lingkungan.",
   },
   {
     video: "./videos/asbak.mp4",
     name: "Asbak Portable",
+    slug: "asbak-portable",
     description:
       "Produksi asbak portable berbahan dasar bambu untuk mengurangi pencemaran puntung rokok di lingkungan wisata.",
   },
   {
     video: "./videos/umkm.mp4",
     name: "Peningkatan UMKM",
+    slug: "peningkatan-umkm",
     description:
       "Meningkatkan kualitas dan pemasaran produk UMKM lokal, seperti dodol mangrove, untuk memperluas pasar.",
   },
 ];
 
 const ProgramKerjaSection = () => {
+  const router = useRouter(); // Hook router untuk navigasi
+
   return (
     <section className="bg-gray-100 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
@@ -66,7 +75,10 @@ const ProgramKerjaSection = () => {
           {programKerjaData.map((program, index) => (
             <div
               key={index}
-              className="relative bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300"
+              className="relative bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300 cursor-pointer"
+              onClick={() =>
+                router.push(`/detail-proker?slug=${program.slug}`)
+              } // Navigasi ke halaman detail
             >
               <video
                 ref={(ref) => {
@@ -131,7 +143,7 @@ export default function Profil() {
       {/* Content Section */}
       <section className="py-12 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-green-900 mb-8">
+          <h2 className="text-2xl sm:text-4xl lg:text-6xl font-bold text-green-900 mb-4 text-center lg:text-left">
             Tentang KKN Tematik ITERA
           </h2>
           <p className="text-gray-700 leading-relaxed mb-6">
