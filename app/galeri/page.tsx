@@ -6,6 +6,10 @@ import { HeaderHeroText } from "@/components/Header/HeaderHero";
 import { Montserrat } from "next/font/google";
 import SmoothScroll from "@/components/SmoothScrolling";
 import ScrollToTopButton from "@/components/ScrollToTop";
+import { StaticImageData } from "next/image";
+import Image from "next/image";
+import img1 from "../../public/images/galeri/day1.jpg";
+import img2 from "../../public/images/galeri/day2.jpg";
 
 // Impor font Montserrat
 const montserrat = Montserrat({
@@ -22,10 +26,9 @@ interface Event {
   id: number;
   title: string;
   date: string;
-  imageUrl: string;
+  imageUrl: string | StaticImageData; // Dukung kedua tipe
   description: string;
   location: string;
-  time: string;
   driveLink: string;
 }
 
@@ -34,27 +37,26 @@ const EventPage = () => {
   const [events] = useState<Event[]>([
     {
       id: 1,
-      title: "NATAL KMK 2024",
-      date: "18 Maret 2024",
-      imageUrl: "/path-to-image.jpg",
+      title: "DAY 1",
+      date: "4 Januari 2025",
+      imageUrl: img1, // Gunakan gambar impor
       description:
-        "Perayaan Natal KMK 2024 akan dilaksanakan dengan penuh sukacita. Acara ini akan diisi dengan berbagai kegiatan menarik termasuk ibadah bersama, pertunjukan musik, dan sharing session.",
-      location: "Aula Utama Kampus",
-      time: "19:00 - 22:00 WIB",
-      driveLink: "https://drive.google.com/folder1", // Link Google Drive
+        "Foto bersama dengan warga dusun Jeralangan setelah acara pembukaan KKN Tematik ITERA di Pahawang. Acara dihadiri oleh kepala desa dan tokoh masyarakat setempat.",
+      location: "Dusun Jeralangan, Pahawang",
+      driveLink: "https://drive.google.com/drive/folders/1-8ahp20UoqQrBApdnSsNQsdoiIoa0_x2?usp=drive_link",
     },
     {
       id: 2,
-      title: "Seminar Kewirausahaan",
-      date: "20 Maret 2024",
-      imageUrl: "/path-to-image.jpg",
+      title: "DAY 2",
+      date: "5 Januari 2025",
+      imageUrl: img2,
       description:
-        "Seminar kewirausahaan akan membahas berbagai topik menarik seputar dunia bisnis dan kewirausahaan. Acara ini akan diisi oleh narasumber-narasumber terkemuka di bidangnya.",
-      location: "Gedung Serba Guna Kampus",
-      time: "08:00 - 15:00 WIB",
-      driveLink: "https://drive.google.com/folder2", // Link Google Drive
+        "Rekap Dokumentasi Hari ke-2",
+      location: "Desa Pahawang",
+      driveLink: "https://drive.google.com/drive/folders/1-8sVULmCaC0vDwk3JzZmYIhATLcQjxPx?usp=drive_link",
     },
   ]);
+  
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -124,42 +126,46 @@ const EventPage = () => {
         <div className="grid grid-cols-4 gap-6">
           {events.map((event) => (
             <motion.div
-              key={event.id}
-              whileHover={{ scale: 1.02 }}
-              onClick={() => setSelectedEvent(event)}
-              className="cursor-pointer group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
-            >
-              <div
-                className="aspect-[16/9] w-full bg-cover bg-center"
-                style={{ backgroundImage: `url(${event.imageUrl})` }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent group-hover:from-black/90 transition-all duration-300">
-                  <div className="absolute bottom-0 p-4 w-full">
-                    <h2 className="text-white font-semibold text-xl mb-2 group-hover:text-blue-300 transition-colors">
-                      {event.title}
-                    </h2>
-                    <div className="flex items-center text-sm text-gray-200">
-                      <span className="flex items-center gap-2">
-                        <svg
-                          className="w-4 h-4"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                          />
-                        </svg>
-                        {event.date}
-                      </span>
-                    </div>
-                  </div>
+            key={event.id}
+            whileHover={{ scale: 1.02 }}
+            onClick={() => setSelectedEvent(event)}
+            className="cursor-pointer group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300"
+          >
+            <div className="relative w-full pt-[100%]"> {/* Parent container with aspect ratio 1:1 */}
+              <Image
+                src={event.imageUrl} // Properti imageUrl bisa berupa string atau StaticImageData
+                alt={event.title}
+                layout="fill" // Ensures it fills the container
+                objectFit="cover" // Maintains the cover style
+                className="rounded-lg"
+              />
+            </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent group-hover:from-black/90 transition-all duration-300">
+              <div className="absolute bottom-0 p-4 w-full">
+                <h2 className="text-white font-semibold text-xl mb-2 group-hover:text-blue-300 transition-colors">
+                  {event.title}
+                </h2>
+                <div className="flex items-center text-sm text-gray-200">
+                  <span className="flex items-center gap-2">
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                      />
+                    </svg>
+                    {event.date}
+                  </span>
                 </div>
               </div>
-            </motion.div>
+            </div>
+          </motion.div>
           ))}
         </div>
 
@@ -180,12 +186,16 @@ const EventPage = () => {
                 onClick={(e) => e.stopPropagation()}
                 className="bg-white rounded-xl shadow-lg overflow-hidden max-w-2xl w-full"
               >
-                <div className="relative h-64">
-                  <motion.img
-                    src={selectedEvent.imageUrl}
-                    alt={selectedEvent.title}
-                    className="w-full h-full object-cover"
-                  />
+                <div className="relative w-full pt-[100%]"> {/* Aspect ratio 1:1 */}
+                    <motion.img
+                      src={
+                        typeof selectedEvent.imageUrl === "string"
+                          ? selectedEvent.imageUrl
+                          : selectedEvent.imageUrl.src
+                      }
+                      alt={selectedEvent.title}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
                   <button
                     onClick={() => setSelectedEvent(null)}
                     className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 p-2 rounded-full text-white transition-colors"
@@ -226,7 +236,7 @@ const EventPage = () => {
                         />
                       </svg>
                       <span>
-                        {selectedEvent.date} • {selectedEvent.time}
+                        {selectedEvent.date}
                       </span>
                     </div>
 
