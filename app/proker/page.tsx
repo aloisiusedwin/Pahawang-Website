@@ -143,9 +143,12 @@ export default function Profil() {
       {/* Content Section */}
       <section className="py-12 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl sm:text-4xl lg:text-6xl font-bold text-green-900 mb-4 text-center lg:text-left">
-            Tentang KKN Tematik ITERA
-          </h2>
+          <div className="flex flex-col items-center lg:items-start mb-4">
+            <h2 className="text-2xl sm:text-4xl lg:text-6xl font-bold text-green-900 mb-4 text-center lg:text-left">
+              Tentang KKN Tematik ITERA
+            </h2>
+          </div>
+
           <p className="text-gray-700 leading-relaxed mb-6">
             KKN Tematik ITERA adalah program pengabdian masyarakat yang berfokus
             pada pemberdayaan dan pembangunan desa dengan pendekatan tematik.
