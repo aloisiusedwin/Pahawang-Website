@@ -1,6 +1,6 @@
 "use client";
 import AboutUs from "@/components/Tentang/Tentang";
-import Contact from "@/components/Contact/Contact";
+import CardWisata from "@/components/CardWisata/CardWisata";
 import Gallery from "@/components/Gallery/Gallery";
 import { Hero } from "@/components/Hero/Hero";
 import CardProduk from "@/components/CardProduk/CardProduk";
@@ -49,6 +49,7 @@ export default function Home() {
       </div>
 
       <Gallery />
+      <CardWisata/>
       <CardProduk />
       <PricingCards />
       <ScrollToTopButton />
