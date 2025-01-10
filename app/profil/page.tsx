@@ -62,6 +62,7 @@ const DusunSection = () => {
           dijelajahi. Dari pantai berpasir putih hingga hutan mangrove yang
           asri, temukan pesona masing-masing dusun!
         </p>
+        
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {dusunData.map((dusun, index) => (
             <div
@@ -109,9 +110,7 @@ export default function Profil() {
 
         <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-8 text-center overflow-hidden">
           <div className="text-white px-4">
-            <h1 className="text-4xl sm:text-6xl font-bold mb-4">
-              Pahawang
-            </h1>
+            <h1 className="text-4xl sm:text-6xl font-bold mb-4">Pahawang</h1>
             <p className="text-lg sm:text-xl">
               Surga Tersembunyi di Selatan Lampung
             </p>
@@ -145,6 +144,7 @@ export default function Profil() {
             dan eksplorasi budaya, Pulau Pahawang menawarkan pengalaman tak
             terlupakan bagi setiap pengunjung.
           </p>
+          <hr className="border-t-2 border-gray-300 mb-4 lg:mb-1 mt-5" />
         </div>
       </section>
 

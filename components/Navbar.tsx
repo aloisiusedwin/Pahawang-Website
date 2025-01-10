@@ -5,7 +5,6 @@ import React, { useState } from "react";
 import Button from "./Button";
 import Image from "next/image";
 import logo from "./../public/images/logo/logo.png";
-import logo2 from "./../public/images/logo/Logo_ITERA.png";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
@@ -87,13 +86,6 @@ const Navbar = () => {
                 className="lg:w-[120px] h-auto w-[60px]"
                 src={logo.src}
                 alt="logo"
-                width="80"
-                height="80"
-              />
-              <img
-                className="lg:w-[120px] h-auto w-[60px]"
-                src={logo2.src}
-                alt="logo_ITERA"
                 width="80"
                 height="80"
               />

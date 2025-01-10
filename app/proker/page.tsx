@@ -148,7 +148,6 @@ export default function Profil() {
               Tentang KKN Tematik ITERA
             </h2>
           </div>
-
           <p className="text-gray-700 leading-relaxed mb-6">
             KKN Tematik ITERA adalah program pengabdian masyarakat yang berfokus
             pada pemberdayaan dan pembangunan desa dengan pendekatan tematik.
@@ -166,6 +165,7 @@ export default function Profil() {
             dampak positif yang signifikan bagi masyarakat desa dan sekaligus
             memperkaya pengalaman belajar mereka di dunia nyata.
           </p>
+          <hr className="border-t-2 border-gray-300 mb-4 lg:mb-1 mt-5" />
         </div>
       </section>
 

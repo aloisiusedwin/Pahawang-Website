@@ -4,8 +4,12 @@ import "./globals.css";
 import "./../components/Gallery/gallery.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Montserrat } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
 
 export const metadata: Metadata = {
   title: "Pulau Pahawang",
