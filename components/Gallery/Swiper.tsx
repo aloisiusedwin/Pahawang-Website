@@ -1,8 +1,4 @@
-import { 
-  Navigation,
-  Pagination,
-  Autoplay,
-} from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -22,18 +18,32 @@ const swiperVariants = {
   animate: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
 };
 
-// Deskripsi Untuk Setiap Gambar
 const imageDescriptions = [
-  { src: img01, title: "Image 01", description: "This is a description for Image 01." },
-  { src: img02, title: "Image 02", description: "This is a description for Image 02." },
-  { src: img03, title: "Image 03", description: "This is a description for Image 03." },
-  { src: img04, title: "Image 04", description: "This is a description for Image 04." },
+  {
+    src: img01,
+    title: "Image 01",
+    description: "This is a description for Image 01.",
+  },
+  {
+    src: img02,
+    title: "Image 02",
+    description: "This is a description for Image 02.",
+  },
+  {
+    src: img03,
+    title: "Image 03",
+    description: "This is a description for Image 03.",
+  },
+  {
+    src: img04,
+    title: "Image 04",
+    description: "This is a description for Image 04.",
+  },
 ];
 
 export default () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
-  // Close modal when Esc is pressed
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -41,10 +51,8 @@ export default () => {
       }
     };
 
-    // Add event listener
     document.addEventListener("keydown", handleKeyDown);
 
-    // Clean up event listener on component unmount
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
@@ -57,12 +65,11 @@ export default () => {
       variants={swiperVariants}
       className="relative flex flex-col items-center justify-center"
     >
-      {/* Swiper Slider */}
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={30}
         slidesPerView={3}
-        navigation={true} // Navigation enabled
+        navigation={true}
         pagination={{ clickable: true }}
         loop={true}
         autoplay={{
@@ -76,14 +83,14 @@ export default () => {
           },
           800: {
             slidesPerView: 2,
-            spaceBetween: 70,
+            spaceBetween: 30,
           },
           1200: {
             slidesPerView: 3,
-            spaceBetween: 70,
+            spaceBetween: 50,
           },
         }}
-        className="w-full xl:w-[100%]"
+        className="w-full"
       >
         {imageDescriptions.map((img, index) => (
           <SwiperSlide key={index}>
@@ -97,7 +104,6 @@ export default () => {
         ))}
       </Swiper>
 
-      {/* Image Modal */}
       <AnimatePresence>
         {selectedImage !== null && (
           <motion.div
@@ -107,9 +113,11 @@ export default () => {
             className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
             onClick={() => setSelectedImage(null)}
           >
-            <div className="flex flex-row max-w-[90%] max-h-[90%] bg-white rounded-xl shadow-lg overflow-hidden">
-              {/* Image Section */}
-              <div className="w-1/2 flex items-center justify-center bg-gray-900">
+            <div
+              className="relative max-w-[90%] max-h-[90%] bg-white rounded-xl shadow-lg overflow-hidden flex items-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="w-1/2 flex items-center justify-center bg-gray-900 p-4">
                 <motion.img
                   src={imageDescriptions[selectedImage].src.src}
                   alt={imageDescriptions[selectedImage].title}
@@ -119,15 +127,20 @@ export default () => {
                   exit={{ scale: 0.8 }}
                 />
               </div>
-              {/* Text Section */}
-              <div className="w-1/2 p-6 flex flex-col">
-                <h2 className="text-4xl font-bold mb-4 text-center">
+              <div className="w-1/2 p-6 flex flex-col justify-start items-center text-center">
+                <h2 className="text-2xl md:text-4xl font-bold mb-4">
                   {imageDescriptions[selectedImage].title}
                 </h2>
-                <p className="text-gray-600 text-justify">
+                <p className="text-gray-600 text-sm md:text-base">
                   {imageDescriptions[selectedImage].description}
                 </p>
               </div>
+              <button
+                className="absolute top-4 right-4 text-white bg-gray-800 rounded-full w-10 h-10 flex items-center justify-center hover:bg-gray-700 focus:outline-none"
+                onClick={() => setSelectedImage(null)}
+              >
+                &#x2715;
+              </button>
             </div>
           </motion.div>
         )}

@@ -23,9 +23,13 @@ const Produk = () => {
   return (
     <section id="Produk" className="py-2 bg-cover bg-no-repeat bg-center p-8">
       <div className="max-w-7xl mx-auto my-8">
-        <h1 className="regular-24 xl:regular-40 mb-14 text-green-900">
+        <h1 className="text-center regular-24 xl:regular-40 mb-1 text-green-900">
           Produk UMKM
         </h1>
+        <p className="text-center regular-16 xl:regular-20 mb-14 text-green-900">
+          Oleh-Oleh dengan Sentuhan Cinta dan Tradisi, Sempurnakan Perjalanan
+          Anda
+        </p>
         <div className="mx-auto grid md:grid-cols-3 gap-8">
           {list.map((item, index) => (
             <Card key={index} className="w-full h-[300px]">

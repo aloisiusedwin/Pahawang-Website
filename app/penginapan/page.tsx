@@ -7,13 +7,11 @@ import ScrollToTopButton from "@/components/ScrollToTop";
 import SmoothScroll from "@/components/SmoothScrolling";
 import { Montserrat } from "next/font/google";
 
-// Impor font Montserrat
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["400", "700"],
 });
 
-// Smooth scrolling on page load
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
@@ -31,7 +29,7 @@ const data = [
   },
   {
     image: "./images/produk/pembohong.png",
-    title: "Snorekeling",
+    title: "Snorkeling",
     label: "Dodol mangrove khas pahawang cik. enak loh langsung diborong der.",
     description:
       "Dodol mangrove khas Pahawang, dibuat dengan bahan alami dari hutan mangrove setempat.",
@@ -60,12 +58,11 @@ const data = [
 
 export default function Home() {
   useEffect(() => {
-    scrollToTop(); // Scroll to top on page load
+    scrollToTop(); 
   }, []);
 
   return (
     <div className={montserrat.className}>
-      {/* Video Section */}
       <div className="relative h-full">
         <Video
           loop
@@ -86,9 +83,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Kontainer Title, Deskripsi, dan Produk */}
       <div className="max-w-7xl mx-auto my-12 px-4 sm:px-8">
-        {/* Title dan Deskripsi */}
         <div className="mb-8">
           <h2 className="text-2xl sm:text-4xl lg:text-6xl font-bold text-green-900 mb-4 text-center lg:text-left">
             Wisata Pulau Pahawang
@@ -104,7 +99,6 @@ export default function Home() {
           <hr className="border-t-2 border-gray-300 mb-4 lg:mb-1 mt-5" />
         </div>
 
-        {/* Produk */}
         <ProdukTemplate
           cards={data.map((card) => ({
             ...card,

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -9,25 +9,34 @@ type ButtonProps = {
   icon?: string;
   variant: "btn_light_lime";
   width: string;
+  onClick: () => void; // Add onClick here
 };
 
-const Button = ({ type, title, icon, variant, width }: ButtonProps) => {
+const Button = ({
+  type,
+  title,
+  icon,
+  variant,
+  width,
+  onClick,
+}: ButtonProps) => {
   return (
     <motion.button
       className={`flex items-center justify-center rounded-md font-medium 
       ${variant} ${width} px-6 py-3 transition-all`}
       type={type}
-      whileHover={{ 
+      whileHover={{
         scale: 1.05,
-        boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.1)"
+        boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.1)",
       }}
       whileTap={{ scale: 0.95 }}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
         duration: 0.3,
-        ease: "easeOut"
+        ease: "easeOut",
       }}
+      onClick={onClick} // Use onClick here
     >
       {icon && (
         <motion.div

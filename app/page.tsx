@@ -1,10 +1,10 @@
 "use client";
 import AboutUs from "@/components/Tentang/Tentang";
-import CardWisata from "@/components/CardWisata/CardWisata";
-import Gallery from "@/components/Gallery/Gallery";
+import Galeri from "@/components/Gallery/Gallery";
 import { Hero } from "@/components/Hero/Hero";
 import CardProduk from "@/components/CardProduk/CardProduk";
-import PricingCards from "@/components/Proker/Proker";
+import Penginapan from "@/components/Penginapan/Penginapan";
+import Contact from "@/components/Contact/Contact"
 import React, { useEffect } from "react";
 import ScrollToTopButton from "@/components/ScrollToTop";
 import SmoothScroll from "@/components/SmoothScrolling";
@@ -31,8 +31,8 @@ export default function Home() {
       <AboutUs />
 
       {/* Section untuk video */}
-      <div className="py-16 bg-gray-100 border-t border-b border-gray-300">
-        <h2 className="text-2xl font-bold text-gray-800 text-center mb-6">
+      <div className="py-7 bg-gray-100 border-t border-b border-gray-300">
+        <h2 className="text-center regular-24 xl:regular-40 mb-7 text-green-900">
           Dokumenter Terbaru
         </h2>
         <div className="max-w-4xl mx-auto rounded-lg overflow-hidden shadow-lg">
@@ -48,10 +48,10 @@ export default function Home() {
         </div>
       </div>
 
-      <Gallery />
-      <CardWisata/>
       <CardProduk />
-      <PricingCards />
+      <Galeri />
+      <Penginapan />
+      <Contact />
       <ScrollToTopButton />
     </>
   );
