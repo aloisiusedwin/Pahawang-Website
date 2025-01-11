@@ -1,6 +1,13 @@
 import React from "react";
 import Button from "../Button";
 import Link from "next/link";
+import { Montserrat } from "next/font/google";
+
+// Impor font Montserrat
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
 
 export const HeroText = () => {
   return (
