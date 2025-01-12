@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useEffect } from "react";
 import Video from "@/components/Header/HeaderVideo";
 import { HeaderHeroText } from "@/components/Header/HeaderHero";
@@ -6,8 +7,9 @@ import ProdukTemplate from "@/components/Card/card";
 import ScrollToTopButton from "@/components/ScrollToTop";
 import SmoothScroll from "@/components/SmoothScrolling";
 import { Montserrat } from "next/font/google";
+import { useTheme } from "next-themes"; // Import useTheme for theme detection
 
-// Impor font Montserrat
+// Import font Montserrat
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["400", "700"],
@@ -25,7 +27,7 @@ const data = [
     label:
       "Asbak olahan dari limbah yang diperoleh dari sampah-sampah sekitar Pulau Pahawang.",
     description:
-      "Asbak bambu unik yang dibuat dari limbah bambu, menghadirkan keindahan dan kesederhanaan dari Pulau Pahawang.Asbak bambu unik yang dibuat dari limbah bambu, menghadirkan keindahan dan kesederhanaan dari Pulau Pahawang.Asbak bambu unik yang dibuat dari limbah bambu, menghadirkan keindahan dan kesederhanaan dari Pulau Pahawang.",
+      "Asbak bambu unik yang dibuat dari limbah bambu, menghadirkan keindahan dan kesederhanaan dari Pulau Pahawang.",
     specifications: ["Material: Bambu", "Dimensi: 10x10 cm", "Berat: 200 gram"],
     phoneNumber: "628123456789",
   },
@@ -59,12 +61,18 @@ const data = [
 ];
 
 export default function Home() {
+  const { theme } = useTheme(); // Get the current theme (light or dark)
+
   useEffect(() => {
     scrollToTop(); // Scroll to top on page load
   }, []);
 
   return (
-    <div className={montserrat.className}>
+    <div
+      className={`${montserrat.className} ${
+        theme === "dark" ? "bg-gray-900 text-white" : "bg-white text-black"
+      }`}
+    >
       {/* Video Section */}
       <div className="relative h-full">
         <Video
@@ -72,7 +80,7 @@ export default function Home() {
           autoPlay
           muted
           src={"./videos/produk.mp4"}
-          className="object-cover w-full h-[40vh] md:h-[60vh] lg:h-[85vh]" // Tinggi video responsif
+          className="object-cover w-full h-[40vh] md:h-[60vh] lg:h-[85vh]"
         />
 
         <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-8 text-center overflow-hidden">
@@ -86,14 +94,22 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Kontainer Title, Deskripsi, dan Produk */}
-      <div className="max-w-7xl mx-auto my-12 px-4 sm:px-8">
-        {/* Title dan Deskripsi */}
+      {/* Container for Title, Description, and Products */}
+      <div className="max-w-7xl mx-auto mt-12 px-4 sm:px-8">
+        {/* Title and Description */}
         <div className="mb-8">
-          <h2 className="text-2xl sm:text-4xl lg:text-6xl font-bold text-green-900 mb-4 text-center lg:text-left">
+          <h2
+            className={`text-2xl sm:text-4xl lg:text-6xl font-bold ${
+              theme === "dark" ? "text-green-200" : "text-green-900"
+            } mb-4 text-center lg:text-left`}
+          >
             Pilihan Produk Terbaik
           </h2>
-          <p className="text-sm sm:text-jus lg:text-lg text-gray-700 leading-loose text-justify lg:text-justify">
+          <p
+            className={`text-sm sm:text-base lg:text-lg leading-loose text-justify lg:text-justify ${
+              theme === "dark" ? "text-gray-300" : "text-gray-700"
+            }`}
+          >
             Temukan keindahan Pulau Pahawang dalam setiap produk UMKM yang
             dihasilkan dengan penuh cinta dan dedikasi. Mulai dari kerajinan
             tangan unik, makanan khas yang menggugah selera, hingga produk alami
@@ -104,10 +120,14 @@ export default function Home() {
             bawa pulang kehangatan budaya Pahawang melalui produk-produk
             istimewa ini!
           </p>
-          <hr className="border-t-2 border-gray-300 mb-4 lg:mb-1 mt-5" />
+          <hr
+            className={`border-t-2 ${
+              theme === "dark" ? "border-gray-700" : "border-gray-300"
+            } mb-4 lg:mb-1 mt-5`}
+          />
         </div>
 
-        {/* Produk */}
+        {/* Products */}
         <ProdukTemplate
           cards={data.map((card) => ({
             ...card,
@@ -115,7 +135,11 @@ export default function Home() {
               console.log(`Klik pada produk: ${card.title}`);
             },
           }))}
-          backgroundImage="https://i.imgur.com/yourBackgroundImage.jpg"
+          backgroundImage={`${
+            theme === "dark"
+              ? "https://i.imgur.com/darkBackground.jpg"
+              : "https://i.imgur.com/lightBackground.jpg"
+          }`}
         />
       </div>
 

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTheme } from "next-themes"; // Import useTheme for theme detection
 
 const Modal = ({
   isOpen,
@@ -9,6 +10,8 @@ const Modal = ({
   onClose: () => void;
   details: any;
 }) => {
+  const { theme } = useTheme(); // Get the current theme (light or dark)
+
   if (!isOpen) return null;
 
   const handleWhatsAppClick = () => {
@@ -21,10 +24,18 @@ const Modal = ({
 
   return (
     <div className="fixed inset-0 bg-gray-700 bg-opacity-50 flex justify-center items-center z-50">
-      <div className="bg-white p-8 rounded-lg shadow-xl w-11/12 h-5/6 flex flex-col md:flex-row gap-4 overflow-hidden relative">
+      <div
+        className={`${
+          theme === "dark" ? "bg-gray-800 text-white" : "bg-white text-black"
+        } p-8 rounded-lg shadow-xl w-11/12 h-5/6 flex flex-col md:flex-row gap-4 overflow-hidden relative`}
+      >
         {/* Button Close */}
         <button
-          className="absolute top-4 right-4 bg-red-500 text-white rounded-md px-4 py-2 text-sm"
+          className={`absolute top-4 right-4 ${
+            theme === "dark"
+              ? "bg-red-700 text-gray-200"
+              : "bg-red-500 text-white"
+          } rounded-md px-4 py-2 text-sm`}
           onClick={onClose}
         >
           Close
@@ -50,14 +61,28 @@ const Modal = ({
             <p className="text-xl font-light mb-4 text-center">
               {details.label}
             </p>
-            <hr className="border-gray-300 my-4" />
+            <hr
+              className={`my-4 ${
+                theme === "dark" ? "border-gray-600" : "border-gray-300"
+              }`}
+            />
 
             <div className="text-left">
               <h2 className="text-xl font-semibold mb-2">Deskripsi Produk</h2>
-              <p className="text-gray-700 mb-4">{details.description}</p>
+              <p
+                className={`mb-4 ${
+                  theme === "dark" ? "text-gray-300" : "text-gray-700"
+                }`}
+              >
+                {details.description}
+              </p>
 
               <h2 className="text-xl font-semibold mb-2">Spesifikasi Produk</h2>
-              <ul className="list-disc list-inside text-gray-700 mb-4">
+              <ul
+                className={`list-disc list-inside mb-4 ${
+                  theme === "dark" ? "text-gray-300" : "text-gray-700"
+                }`}
+              >
                 {details.specifications.map((spec: string, index: number) => (
                   <li key={index}>{spec}</li>
                 ))}
@@ -90,8 +115,14 @@ type CardProps = {
 };
 
 const Card = ({ image, title, label, onClick }: CardProps) => {
+  const { theme } = useTheme(); // Get the current theme
+
   return (
-    <div className="w-full shadow-xl flex flex-col p-4 rounded-lg hover:scale-105 duration-300 relative bg-white">
+    <div
+      className={`w-full shadow-xl flex flex-col p-4 rounded-lg hover:scale-105 duration-300 relative ${
+        theme === "dark" ? "bg-gray-800 text-white" : "bg-white text-black"
+      }`}
+    >
       <div className="w-full h-48 rounded-lg overflow-hidden">
         <img className="w-full h-full object-cover" src={image} alt={title} />
       </div>
