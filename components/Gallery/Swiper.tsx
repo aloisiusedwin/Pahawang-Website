@@ -1,5 +1,6 @@
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
+// File: components/CustomSwiper/CustomSwiper.js
 
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
@@ -21,27 +22,32 @@ const swiperVariants = {
 const imageDescriptions = [
   {
     src: img01,
-    title: "Image 01",
-    description: "This is a description for Image 01.",
+    title: "Protect Coral Reefs",
+    description:
+      "Coral reefs are vital ecosystems that support marine life and protect coastlines from erosion.",
   },
   {
     src: img02,
-    title: "Image 02",
-    description: "This is a description for Image 02.",
+    title: "Restoration Efforts",
+    description:
+      "Conservation projects focus on regrowing coral reefs to restore marine biodiversity.",
   },
   {
     src: img03,
-    title: "Image 03",
-    description: "This is a description for Image 03.",
+    title: "Marine Ecosystems",
+    description:
+      "Healthy coral reefs provide habitat and shelter for many species of fish and other organisms.",
   },
   {
     src: img04,
-    title: "Image 04",
-    description: "This is a description for Image 04.",
+    title: "Community Involvement",
+    description:
+      "Local communities play a crucial role in coral reef conservation and sustainable fishing practices.",
   },
 ];
 
 export default () => {
+  const [activeSlide, setActiveSlide] = useState(0);
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   useEffect(() => {
@@ -67,39 +73,28 @@ export default () => {
     >
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
-        spaceBetween={30}
-        slidesPerView={3}
+        spaceBetween={0}
+        slidesPerView={1}
+        centeredSlides={true}
         navigation={true}
         pagination={{ clickable: true }}
         loop={true}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: true,
-        }}
-        breakpoints={{
-          320: {
-            slidesPerView: 1,
-            spaceBetween: 20,
-          },
-          800: {
-            slidesPerView: 2,
-            spaceBetween: 30,
-          },
-          1200: {
-            slidesPerView: 3,
-            spaceBetween: 50,
-          },
-        }}
+        autoplay={false}
         className="w-full"
+        onSlideChange={(swiper) => {
+          setActiveSlide(swiper.activeIndex % imageDescriptions.length);
+        }}
       >
         {imageDescriptions.map((img, index) => (
           <SwiperSlide key={index}>
-            <motion.img
-              src={img.src.src}
-              alt={img.title}
-              className="select-none rounded-xl cursor-pointer transform transition-transform hover:scale-105"
-              onClick={() => setSelectedImage(index)}
-            />
+            <div className="relative w-full h-auto">
+              <motion.img
+                src={img.src.src}
+                alt={img.title}
+                className="select-none w-full h-auto rounded-xl cursor-pointer transform transition-transform"
+                onClick={() => setSelectedImage(index)}
+              />
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
@@ -114,20 +109,18 @@ export default () => {
             onClick={() => setSelectedImage(null)}
           >
             <div
-              className="relative max-w-[90%] max-h-[90%] bg-white rounded-xl shadow-lg overflow-hidden flex items-center"
+              className="relative flex flex-col md:flex-row max-w-[90%] max-h-[90%] bg-white rounded-xl shadow-lg overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="w-1/2 flex items-center justify-center bg-gray-900 p-4">
-                <motion.img
-                  src={imageDescriptions[selectedImage].src.src}
-                  alt={imageDescriptions[selectedImage].title}
-                  className="max-w-full max-h-full rounded-xl"
-                  initial={{ scale: 0.8 }}
-                  animate={{ scale: 1 }}
-                  exit={{ scale: 0.8 }}
-                />
-              </div>
-              <div className="w-1/2 p-6 flex flex-col justify-start items-center text-center">
+              <motion.img
+                src={imageDescriptions[selectedImage].src.src}
+                alt={imageDescriptions[selectedImage].title}
+                className="md:w-1/2 w-full h-auto object-contain rounded-xl"
+                initial={{ scale: 0.8 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0.8 }}
+              />
+              <div className="p-6 md:w-1/2 flex flex-col justify-center items-start text-left">
                 <h2 className="text-2xl md:text-4xl font-bold mb-4">
                   {imageDescriptions[selectedImage].title}
                 </h2>
