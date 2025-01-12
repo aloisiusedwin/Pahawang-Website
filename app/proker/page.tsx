@@ -144,7 +144,7 @@ const MediaSection = () => {
         <div className="text-center mt-8">
           <button
             className={`px-6 py-3 rounded-lg ${
-              theme === "dark" ? "bg-[#ecfccb] hover:text-[#3f6212] hover:bg-[#ecfccb]" : "bg-[#ecfccb] hover:text-[#3f6212] hover:bg-[#ecfccb]"
+              theme === "dark" ? "bg-[#ecfccb] text-[#3f6212] hover:text-[#ecfccb]  hover:bg-[#3f6212]" : "bg-[#ecfccb] hover:text-[#3f6212] hover:bg-[#ecfccb]"
             }`}
             onClick={() => router.push("/galeri")}
           >

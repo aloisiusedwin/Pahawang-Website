@@ -69,7 +69,7 @@ const Modal = ({
             />
 
             <div className="text-left">
-              <h2 className="text-xl font-semibold mb-2">Deskripsi Produk</h2>
+              <h2 className="text-xl font-semibold mb-2">Deskripsi</h2>
               <p
                 className={`mb-4 ${
                   theme === "dark" ? "text-gray-300" : "text-gray-700"
@@ -78,7 +78,7 @@ const Modal = ({
                 {details.description}
               </p>
 
-              <h2 className="text-xl font-semibold mb-2">Spesifikasi Produk</h2>
+              <h2 className="text-xl font-semibold mb-2">Spesifikasi</h2>
               <ul
                 className={`list-disc list-inside mb-4 ${
                   theme === "dark" ? "text-gray-300" : "text-gray-700"
@@ -131,7 +131,9 @@ const Card = ({ image, title, label, onClick }: CardProps) => {
       <p className="text-center text-l font-light py-2 mb-16">{label}</p>
       <div className="absolute bottom-4 left-0 right-0 flex justify-center">
         <button
-          className="bg-[#ecfccb] hover:text-[#3f6212] hover:bg-[#ecfccb] duration-100 w-[200px] rounded-md font-medium px-6 py-3"
+          className={`duration-100 w-[200px] rounded-md font-medium px-6 py-3 ${
+            theme === "dark" ? "bg-[#ecfccb] text-[#3f6212] hover:text-[#ecfccb]  hover:bg-[#3f6212]" : "bg-[#ecfccb] hover:text-[#3f6212] hover:bg-[#ecfccb]"
+          }`}
           onClick={onClick}
         >
           Lihat Produk
