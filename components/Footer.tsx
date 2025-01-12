@@ -56,7 +56,7 @@ const Footer = () => {
               <i className="bx bxl-instagram text-lg hover:text-[#00df9a]"></i>
             </a>
             <a href="#" className="mx-1">
-              <i className="bx bxl-whatsapp-square text-lg hover:text-[#00df9a]"></i>
+              <i className="bx bxl-tiktok text-lg hover:text-[#00df9a]"></i>
             </a>
           </div>
         </div>
