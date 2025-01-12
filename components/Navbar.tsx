@@ -1,14 +1,17 @@
 "use client";
+
 import { NAV_LINKS } from "@/constants";
 import Link from "next/link";
 import React, { useState } from "react";
-import Button from "./Button";
 import Image from "next/image";
 import logo from "./../public/images/logo/logo.png";
 import { motion, AnimatePresence } from "framer-motion";
+import { ModeToggle } from "@/components/ModeToggle"; // Import the ModeToggle component
+import { useTheme } from "next-themes"; // Import useTheme for theme detection
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const { theme } = useTheme(); // Get the current theme (light or dark)
 
   const toggleMenu = () => {
     setOpen(!open);
@@ -38,7 +41,7 @@ const Navbar = () => {
       transition: {
         delay: i * 0.1,
         duration: 0.3,
-      },
+      }
     }),
   };
 
@@ -110,6 +113,8 @@ const Navbar = () => {
           ))}
         </ul>
 
+        <ModeToggle />
+
         <div className="lg:hidden" onClick={toggleMenu}>
           <Image
             src="./bx-menu-alt-right.svg"
@@ -125,7 +130,9 @@ const Navbar = () => {
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                className="absolute top-20 left-0 flex flex-col gap-5 p-3 w-full bg-white"
+                className={`absolute top-20 left-0 flex flex-col gap-5 p-3 w-full ${
+                  theme === "dark" ? "bg-black text-white" : "bg-white text-black"
+                }`}
               >
                 {NAV_LINKS.map((link, index) => (
                   <motion.li
@@ -135,7 +142,7 @@ const Navbar = () => {
                   >
                     <Link
                       href={link.href}
-                      className="regular-16 text-gray-50 flexCenter cursor-pointer transition-all hover:font-bold"
+                      className="regular-16 flexCenter cursor-pointer transition-all hover:font-bold"
                     >
                       {link.label}
                     </Link>

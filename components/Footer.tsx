@@ -2,7 +2,6 @@
 
 import React from "react";
 import logo from "./../public/images/logo/logo.png";
-import { ModeToggle } from "@/components/ModeToggle"; // Import the ModeToggle component
 import { useTheme } from "next-themes"; // Import useTheme for theme detection
 
 const Footer = () => {
@@ -87,9 +86,6 @@ const Footer = () => {
               ></i>
             </a>
           </div>
-        </div>
-        <div className="flex-col text-center mt-4 lg:mt-0">
-          <ModeToggle />
         </div>
       </div>
     </footer>
