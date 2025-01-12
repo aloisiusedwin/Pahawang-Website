@@ -2,7 +2,8 @@
 import { NAV_LINKS } from "@/constants";
 import Link from "next/link";
 import React, { useState } from "react";
-import Button from "./Button"; // Import Button component
+import Button from "./Button";
+import Image from "next/image";
 import logo from "./../public/images/logo/logo.png";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -80,15 +81,13 @@ const Navbar = () => {
           transition={{ duration: 0.5 }}
         >
           <Link href="/">
-            <div className="flex justify-center lg:justify-start mb-4 space-x-4">
-              <img
-                className="lg:w-[120px] h-auto w-[60px]"
-                src={logo.src}
-                alt="logo"
-                width="80"
-                height="80"
-              />
-            </div>
+            <img
+              className="lg:w-[120px] h-auto w-[60px]"
+              src={logo.src}
+              alt="logo"
+              width="150"
+              height="143"
+            />
           </Link>
         </motion.div>
 
@@ -111,15 +110,13 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div className="lg:hidden">
-          {/* Use Button with the icon as a string */}
-          <Button
-            type="button"
-            title="Menu"
-            icon="./bx-menu-alt-right.svg" // Pass the path of the icon image as string
-            variant="btn_light_lime"
-            width="w-auto"
-            onClick={toggleMenu} // Now onClick is correctly passed
+        <div className="lg:hidden" onClick={toggleMenu}>
+          <Image
+            src="./bx-menu-alt-right.svg"
+            alt="menu"
+            width="32"
+            height="32"
+            className="inline-flex cursor-pointer invert lg:hidden"
           />
           <AnimatePresence>
             {open && (
