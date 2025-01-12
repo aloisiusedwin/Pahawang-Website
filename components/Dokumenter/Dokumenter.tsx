@@ -1,20 +1,37 @@
+"use client";
 import React from "react";
+import { useTheme } from "next-themes"; // Import useTheme for theme detection
 
 const DocumentarySection = () => {
+  const { theme } = useTheme(); // Get the current theme (light or dark)
+
   return (
-    <div className="py-10">
+    <div
+      className={`py-10 ${
+        theme === "dark" ? "bg-[#1F3D3B]" : "bg-[#E6F9F4]"
+      }`}
+    >
       <div
-        className="min-h-screen w-full flex flex-col md:flex-row items-center gap-12 px-8"
+        className={`min-h-screen w-full flex flex-col md:flex-row items-center gap-12 px-8 ${
+          theme === "dark" ? "text-white" : "text-black"
+        }`}
         style={{
-          backgroundColor: "#1F3D3B",
           padding: "40px",
         }}
       >
         <div className="flex-1 text-center md:text-left">
-          <h2 className="text-white text-3xl md:text-4xl font-bold mb-6">
+          <h2
+            className={`text-3xl md:text-4xl font-bold mb-6 ${
+              theme === "dark" ? "text-white" : "text-[#1F3D3B]"
+            }`}
+          >
             Menyelamatkan Surga Bawah Laut: Konservasi Terumbu Karang Pahawang
           </h2>
-          <p className="text-[#A3FFCC] text-lg md:text-xl">
+          <p
+            className={`text-lg md:text-xl text-justify ${
+              theme === "dark" ? "text-[#A3FFCC]" : "text-[#1F3D3B]"
+            }`}
+          >
             Dokumenter ini mengeksplorasi upaya konservasi terumbu karang di
             Pulau Pahawang, salah satu destinasi laut terindah di Indonesia.
             Ikuti perjalanan para pejuang lingkungan dan masyarakat lokal dalam
