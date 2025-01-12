@@ -83,8 +83,8 @@ export default function Home() {
 
         <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-8 text-center overflow-hidden">
           <HeaderHeroText
-            title="Penginapan"
-            description="Penginapan nyaman di Pulau Pahawang dengan fasilitas lengkap, pemandangan indah, dan lokasi dekat spot snorkeling terbaik"
+            title="PENGINAPAN"
+            description="Penginapan Nyaman dan Terbaik di Pulau Pahawang"
             containerStyle="max-w-[90%] mx-auto text-center lg:text-left overflow-hidden"
             titleStyle="text-white font-bold text-[clamp(1.2rem, 4vw, 2rem)] leading-tight"
             descriptionStyle="text-gray-200 text-[clamp(0.8rem, 3vw, 1rem)] leading-relaxed"

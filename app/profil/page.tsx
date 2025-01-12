@@ -56,7 +56,7 @@ const DusunSection = () => {
   const { theme } = useTheme();
 
   return (
-    <section className={`${theme === "dark" ? "bg-gray-800" : "bg-gray-100"} py-12`}>
+    <section className={`${theme === "dark" ? "bg-gray-900" : "bg-gray-100"} py-12`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         <h2 className={`text-3xl font-bold text-center mb-8 ${theme === "dark" ? "text-green-300" : "text-green-900"}`}>
           Dusun di Pulau Pahawang

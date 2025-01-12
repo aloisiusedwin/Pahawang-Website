@@ -30,16 +30,17 @@ const Modal = ({
         } p-8 rounded-lg shadow-xl w-11/12 h-5/6 flex flex-col md:flex-row gap-4 overflow-hidden relative`}
       >
         {/* Button Close */}
-        <button
-          className={`absolute top-4 right-4 ${
-            theme === "dark"
-              ? "bg-red-700 text-gray-200"
-              : "bg-red-500 text-white"
-          } rounded-md px-4 py-2 text-sm`}
-          onClick={onClose}
-        >
-          Close
-        </button>
+{/* Close Button */}
+<button
+  className={`absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full ${
+    theme === "dark" ? "bg-gray-700 text-white" : "bg-gray-300 text-black"
+  } hover:bg-red-500 hover:text-white duration-200`}
+  onClick={onClose}
+  aria-label="Close"
+>
+  ✕
+</button>
+
 
         {/* Gambar Produk */}
         {details.image && (
