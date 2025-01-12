@@ -1,9 +1,20 @@
+"use client";
+
 import React, { useState } from "react";
+import { useTheme } from "next-themes"; // Import useTheme for theme detection
 import { Alert } from "@nextui-org/react";
-import { FaWhatsapp, FaEnvelope, FaPhoneAlt, FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
+import {
+  FaWhatsapp,
+  FaEnvelope,
+  FaPhoneAlt,
+  FaFacebookF,
+  FaInstagram,
+  FaTiktok,
+} from "react-icons/fa";
 
 const Contact = () => {
   const [popupVisible, setPopupVisible] = useState(false);
+  const { theme } = useTheme(); // Get the current theme (light or dark)
 
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent("Halo, saya ingin menghubungi Anda!");
@@ -36,14 +47,30 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="flex justify-center items-center min-h-screen bg-gray-100 p-4"
+      className={`flex justify-center items-center min-h-screen p-4 ${
+        theme === "dark" ? "bg-gray-800 text-white" : "bg-[#E6F9F4] text-black"
+      }`}
     >
-      <div className="text-center bg-white shadow-md p-6 rounded-lg max-w-lg w-full">
-        <h1 className="text-2xl font-bold text-gray-800 mb-6">Hubungi Kami</h1>
+      <div
+        className={`text-center shadow-md p-6 rounded-lg max-w-lg w-full ${
+          theme === "dark" ? "bg-gray-900" : "bg-white"
+        }`}
+      >
+        <h1
+          className={`text-2xl font-bold mb-6 ${
+            theme === "dark" ? "text-white" : "text-gray-800"
+          }`}
+        >
+          Hubungi Kami
+        </h1>
         <div className="space-y-4">
           <button
             onClick={handleWhatsAppClick}
-            className="flex items-center justify-center px-6 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-700 transition duration-300 w-full"
+            className={`flex items-center justify-center px-6 py-3 font-semibold rounded-lg transition duration-300 w-full ${
+              theme === "dark"
+                ? "bg-green-500 text-white hover:bg-green-700"
+                : "bg-green-500 text-white hover:bg-green-700"
+            }`}
           >
             <FaWhatsapp className="w-6 h-6 mr-2" />
             Hubungi via WhatsApp
@@ -51,7 +78,11 @@ const Contact = () => {
 
           <button
             onClick={handleGmailClick}
-            className="flex items-center justify-center px-6 py-3 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-700 transition duration-300 w-full"
+            className={`flex items-center justify-center px-6 py-3 font-semibold rounded-lg transition duration-300 w-full ${
+              theme === "dark"
+                ? "bg-red-500 text-white hover:bg-red-700"
+                : "bg-red-500 text-white hover:bg-red-700"
+            }`}
           >
             <FaEnvelope className="w-6 h-6 mr-2" />
             Kirim via Gmail
@@ -59,7 +90,11 @@ const Contact = () => {
 
           <button
             onClick={handlePhoneClick}
-            className="flex items-center justify-center px-6 py-3 bg-purple-500 text-white font-semibold rounded-lg hover:bg-purple-700 transition duration-300 w-full"
+            className={`flex items-center justify-center px-6 py-3 font-semibold rounded-lg transition duration-300 w-full ${
+              theme === "dark"
+                ? "bg-purple-500 text-white hover:bg-purple-700"
+                : "bg-purple-500 text-white hover:bg-purple-700"
+            }`}
           >
             <FaPhoneAlt className="w-6 h-6 mr-2" />
             Telepon kami di +62 123456789
@@ -68,19 +103,25 @@ const Contact = () => {
           <div className="flex justify-center space-x-4 mt-6">
             <button
               onClick={() => handleSocialMediaClick("https://facebook.com")}
-              className="text-blue-600 hover:text-blue-800 transition"
+              className={`text-blue-600 hover:text-blue-800 transition ${
+                theme === "dark" ? "text-white" : "text-blue-600"
+              }`}
             >
               <FaFacebookF className="w-8 h-8" />
             </button>
             <button
               onClick={() => handleSocialMediaClick("https://instagram.com")}
-              className="text-pink-500 hover:text-pink-700 transition"
+              className={`text-pink-500 hover:text-pink-700 transition ${
+                theme === "dark" ? "text-white" : "text-pink-500"
+              }`}
             >
               <FaInstagram className="w-8 h-8" />
             </button>
             <button
               onClick={() => handleSocialMediaClick("https://tiktok.com")}
-              className="text-black hover:text-gray-700 transition"
+              className={`text-black hover:text-gray-700 transition ${
+                theme === "dark" ? "text-white" : "text-black"
+              }`}
             >
               <FaTiktok className="w-8 h-8" />
             </button>
