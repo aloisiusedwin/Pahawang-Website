@@ -130,26 +130,27 @@ export default function Profil() {
       {/* Content Section */}
       <section className="py-12 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-green-900 mb-8">
-            Tentang Konservasi Terumbu Karang
+          <h2 className="text-2xl sm:text-4xl lg:text-6xl font-bold text-green-900 mb-4 text-center lg:text-left">
+            Konservasi Terumbu Karang
           </h2>
-          <p className="text-gray-700 leading-relaxed mb-6">
+          <p className="text-gray-700 leading-relaxed mb-6 text-justify">
             Konservasi terumbu karang adalah upaya untuk melindungi dan
             memulihkan ekosistem laut yang vital bagi kehidupan bawah laut dan
             masyarakat pesisir. Terumbu karang menyediakan habitat bagi berbagai
             jenis biota laut, mendukung ekonomi lokal, dan melindungi garis
             pantai dari abrasi.
           </p>
-          <p className="text-gray-700 leading-relaxed mb-6">
+          <p className="text-gray-700 leading-relaxed mb-6 text-justify">
             Dengan kolaborasi bersama masyarakat dan pemangku kepentingan
             terkait, kami berkomitmen untuk menjaga keanekaragaman hayati laut
             serta mendorong pembangunan berkelanjutan di kawasan pesisir.
           </p>
-          <p className="text-gray-700 leading-relaxed">
+          <p className="text-gray-700 leading-relaxed text-justify">
             Program-program konservasi ini dirancang untuk meningkatkan
             kesadaran, melibatkan masyarakat, dan memberikan dampak positif bagi
             lingkungan serta generasi mendatang.
           </p>
+          <hr className="border-t-2 border-gray-300 mb-4 lg:mb-1 mt-5" />
         </div>
       </section>
 

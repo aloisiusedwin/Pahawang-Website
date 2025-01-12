@@ -19,7 +19,7 @@ const scrollToTop = () => {
 const data = [
   {
     image: "./images/produk/bald eagle.jpeg",
-    title: "Wisata Bahari",
+    title: "Villa Kembar",
     label:
       "Asbak olahan dari limbah yang diperoleh dari sampah-sampah sekitar Pulau Pahawang.",
     description:
@@ -29,7 +29,7 @@ const data = [
   },
   {
     image: "./images/produk/pembohong.png",
-    title: "Snorkeling",
+    title: "Villa Cakrawala",
     label: "Dodol mangrove khas pahawang cik. enak loh langsung diborong der.",
     description:
       "Dodol mangrove khas Pahawang, dibuat dengan bahan alami dari hutan mangrove setempat.",
@@ -42,7 +42,7 @@ const data = [
   },
   {
     image: "./images/produk/pajamass.jpg",
-    title: "Ikan Asin Tawar",
+    title: "Villa Penggetahan",
     label:
       "Ikan asin tawar dari Pulau Pahawang yang diolah secara higienis untuk rasa terbaik.",
     description:
@@ -74,8 +74,8 @@ export default function Home() {
 
         <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-8 text-center overflow-hidden">
           <HeaderHeroText
-            title="Wisata Pahawang"
-            description="Surga tersembunyi di Lampung, menawarkan keindahan pantai berpasir putih, air laut jernih, serta pesona bawah laut yang memikat untuk snorkeling dan diving."
+            title="Penginapan"
+            description="Penginapan nyaman di Pulau Pahawang dengan fasilitas lengkap, pemandangan indah, dan lokasi dekat spot snorkeling terbaik"
             containerStyle="max-w-[90%] mx-auto text-center lg:text-left overflow-hidden"
             titleStyle="text-white font-bold text-[clamp(1.2rem, 4vw, 2rem)] leading-tight"
             descriptionStyle="text-gray-200 text-[clamp(0.8rem, 3vw, 1rem)] leading-relaxed"
@@ -86,15 +86,18 @@ export default function Home() {
       <div className="max-w-7xl mx-auto my-12 px-4 sm:px-8">
         <div className="mb-8">
           <h2 className="text-2xl sm:text-4xl lg:text-6xl font-bold text-green-900 mb-4 text-center lg:text-left">
-            Wisata Pulau Pahawang
+            Penginapan Pulau Pahawang
           </h2>
           <p className="text-sm sm:text-base lg:text-lg text-gray-700 leading-loose text-center lg:text-justify">
-          Pulau Pahawang adalah destinasi wisata yang memadukan keindahan alam dengan pengalaman seru yang tak terlupakan. 
-          Dari pantai berpasir putih dan air laut yang jernih hingga pesona bawah laut yang memukau untuk snorkeling dan diving, 
-          Pahawang menawarkan keajaiban alam yang memanjakan mata. Anda juga dapat menjelajahi hutan mangrove, 
-          menikmati matahari terbenam yang menawan, serta berinteraksi dengan kehidupan masyarakat lokal yang ramah. 
-          Setiap sudut Pulau Pahawang menyimpan cerita indah yang membuat kunjungan Anda semakin berkesan. 
-          Temukan keajaiban tersembunyi di surga tropis ini dan jadikan momen liburan Anda tak terlupakan!
+            Penginapan di Pulau Pahawang menawarkan kenyamanan dan keindahan
+            alam tropis yang memukau. Dengan fasilitas lengkap dan suasana yang
+            asri, penginapan ini menjadi tempat sempurna untuk beristirahat
+            setelah menikmati aktivitas seru seperti snorkeling, diving, atau
+            menjelajahi keindahan alam sekitar. Lokasinya strategis, dekat
+            dengan pantai berpasir putih dan spot wisata utama, serta dilengkapi
+            layanan ramah untuk membuat liburan Anda semakin berkesan. Nikmati
+            momen istimewa di surga tropis ini dan rasakan pengalaman menginap
+            yang tak terlupakan!
           </p>
           <hr className="border-t-2 border-gray-300 mb-4 lg:mb-1 mt-5" />
         </div>
