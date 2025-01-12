@@ -102,7 +102,7 @@ const Card = ({ image, title, label, onClick }: CardProps) => {
           className="bg-[#ecfccb] hover:text-[#3f6212] hover:bg-[#ecfccb] duration-100 w-[200px] rounded-md font-medium px-6 py-3"
           onClick={onClick}
         >
-          Lihat Produk
+          Cek Selengkapnya
         </button>
       </div>
     </div>

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import ScrollToTopButton from "@/components/ScrollToTop";
 import SmoothScroll from "@/components/SmoothScrolling";
 import Video from "@/components/Header/HeaderVideo";
@@ -10,85 +10,73 @@ const montserrat = Montserrat({
   weight: ["400", "700"],
 });
 
-const programKerjaData = [
+const dokumentasiFoto = [
   {
-    video: "./videos/asbak.mp4",
-    name: "Rehabilitasi Terumbu Karang",
+    image: "./images/konservasi/terumbu1.jpg",
+    title: "Rehabilitasi Terumbu Karang",
     description:
-      "Mengadakan kegiatan transplantasi terumbu karang untuk mendukung pemulihan ekosistem laut yang rusak.",
+      "Kegiatan transplantasi terumbu karang yang berhasil memulihkan keanekaragaman hayati laut di wilayah ini.",
   },
   {
-    video: "./videos/kampanye.mp4",
-    name: "Edukasi Masyarakat",
+    image: "/images/konservasi/terumbu2.jpg",
+    title: "Edukasi Masyarakat",
     description:
-      "Memberikan pelatihan dan edukasi kepada masyarakat pesisir tentang pentingnya menjaga ekosistem laut.",
+      "Pelatihan dan edukasi yang melibatkan masyarakat pesisir untuk menjaga ekosistem laut.",
   },
   {
-    video: "./videos/maggot.mp4",
-    name: "Penelitian Ekosistem Laut",
+    image: "/images/konservasi/terumbu3.jpg",
+    title: "Penelitian Ekosistem Laut",
     description:
-      "Melakukan penelitian ilmiah terkait kondisi ekosistem laut untuk mendukung pengambilan kebijakan.",
+      "Hasil penelitian yang memberikan pemahaman lebih dalam tentang kondisi ekosistem terumbu karang.",
   },
   {
-    video: "./videos/paving.mp4",
-    name: "Aksi Bersih Pantai",
+    image: "/images/konservasi/terumbu4.jpg",
+    title: "Aksi Bersih Pantai",
     description:
-      "Mengadakan kampanye bersih pantai untuk mengurangi sampah yang mengancam kelangsungan terumbu karang.",
+      "Kampanye bersih pantai yang melibatkan ratusan relawan untuk menciptakan lingkungan yang bebas sampah.",
   },
   {
-    video: "./videos/umkm.mp4",
-    name: "Wisata Edukasi Laut",
+    image: "/images/konservasi/terumbu5.jpg",
+    title: "Wisata Edukasi Laut",
     description:
-      "Mengembangkan wisata edukasi berbasis kelautan untuk meningkatkan kesadaran lingkungan.",
+      "Pengembangan wisata edukasi berbasis kelautan untuk meningkatkan kesadaran lingkungan.",
   },
   {
-    video: "./videos/website.mp4",
-    name: "Kemitraan dengan Nelayan",
+    image: "/images/konservasi/terumbu6.jpg",
+    title: "Kemitraan dengan Nelayan",
     description:
-      "Bermitra dengan nelayan lokal untuk menjaga kelestarian laut melalui praktik perikanan yang ramah lingkungan.",
+      "Kolaborasi dengan nelayan lokal dalam menjaga kelestarian laut melalui praktik perikanan berkelanjutan.",
   },
 ];
 
-const ProgramKerjaSection = () => {
+const DokumentasiSection = () => {
   return (
-    <section className="bg-gray-100 py-12">
+    <section className="bg-gray-100 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        <h2 className="text-3xl font-bold text-center text-green-900 mb-8">
+        <h2 className="text-4xl font-bold text-center text-green-900 mb-8">
           Dokumentasi Konservasi Terumbu Karang
         </h2>
-        <p className="text-gray-700 text-center mb-12">
-          Bergabunglah dengan kami dalam berbagai program kerja untuk
-          melestarikan ekosistem terumbu karang dan mendukung keberlanjutan
-          ekosistem laut.
+        <p className="text-gray-700 text-center mb-12 max-w-3xl mx-auto">
+          Mari jelajahi pameran foto yang menampilkan usaha kami dalam
+          melestarikan ekosistem laut. Setiap gambar adalah bukti nyata dedikasi
+          kami untuk menjaga terumbu karang demi masa depan yang lebih baik.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {programKerjaData.map((program, index) => (
+          {dokumentasiFoto.map((item, index) => (
             <div
               key={index}
-              className="relative bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300"
+              className="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300"
             >
-              <video
-                ref={(ref) => {
-                  if (ref) {
-                    ref.addEventListener("mouseover", () => ref.play());
-                    ref.addEventListener("mouseout", () => {
-                      ref.pause();
-                      ref.currentTime = 0;
-                    });
-                  }
-                }}
-                src={program.video}
+              <img
+                src={item.image}
+                alt={item.title}
                 className="w-full h-64 object-cover"
-                muted
-                loop={false}
-              ></video>
-              <div className="absolute bottom-0 w-full bg-white bg-opacity-65 p-4 text-center">
+              />
+              <div className="p-4">
                 <h3 className="text-lg font-bold text-green-900">
-                  {program.name}
+                  {item.title}
                 </h3>
-                <p className="text-gray-600 text-sm mt-1">
-                  {program.description}
-                </p>
+                <p className="text-gray-600 text-sm mt-2">{item.description}</p>
               </div>
             </div>
           ))}
@@ -111,7 +99,7 @@ export default function Profil() {
           loop
           autoPlay
           muted
-          src={"/videos/program kerja.mp4"}
+          src={"/videos/konservasi.mp4"}
           className="object-cover w-full h-[40vh] md:h-[60vh] lg:h-[85vh]"
         />
 
@@ -154,8 +142,8 @@ export default function Profil() {
         </div>
       </section>
 
-      {/* Program Kerja Section */}
-      <ProgramKerjaSection />
+      {/* Dokumentasi Section */}
+      <DokumentasiSection />
 
       {/* Scroll To Top Button */}
       <ScrollToTopButton />

@@ -18,8 +18,8 @@ const scrollToTop = () => {
 
 const data = [
   {
-    image: "./images/produk/bald eagle.jpeg",
-    title: "Villa Kembar",
+    image: "./images/penginapan/andreas.jpeg",
+    title: "Andreas Resort",
     label:
       "Asbak olahan dari limbah yang diperoleh dari sampah-sampah sekitar Pulau Pahawang.",
     description:
