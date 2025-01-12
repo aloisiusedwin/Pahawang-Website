@@ -1,17 +1,31 @@
 "use client";
 import { NAV_LINKS } from "@/constants";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "./Button"; // Import Button component
+import Image from "next/image";
 import logo from "./../public/images/logo/logo.png";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
+  // Toggle menu function
   const toggleMenu = () => {
     setOpen(!open);
   };
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (!(event.target as HTMLElement).closest(".menu-container") && open) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener("click", handleOutsideClick);
+    return () => document.removeEventListener("click", handleOutsideClick);
+  }, [open]);
 
   // Animation variants
   const navVariants = {
@@ -81,13 +95,7 @@ const Navbar = () => {
         >
           <Link href="/">
             <div className="flex justify-center lg:justify-start mb-4 space-x-4">
-              <img
-                className="lg:w-[120px] h-auto w-[60px]"
-                src={logo.src}
-                alt="logo"
-                width="80"
-                height="80"
-              />
+              <Image src={logo} alt="logo" width={120} height={80} priority />
             </div>
           </Link>
         </motion.div>
@@ -111,15 +119,16 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div className="lg:hidden">
-          {/* Use Button with the icon as a string */}
+        <div className="lg:hidden menu-container">
           <Button
             type="button"
             title="Menu"
-            icon="./bx-menu-alt-right.svg" // Pass the path of the icon image as string
+            icon="./bx-menu-alt-right.svg"
             variant="btn_light_lime"
             width="w-auto"
-            onClick={toggleMenu} // Now onClick is correctly passed
+            onClick={toggleMenu}
+            aria-expanded={open}
+            aria-label="Toggle navigation menu"
           />
           <AnimatePresence>
             {open && (
@@ -135,10 +144,11 @@ const Navbar = () => {
                     key={link.key}
                     variants={menuItemVariants}
                     custom={index}
+                    onClick={() => setOpen(false)}
                   >
                     <Link
                       href={link.href}
-                      className="regular-16 text-gray-50 flexCenter cursor-pointer transition-all hover:font-bold"
+                      className="regular-16 text-gray-800 flexCenter cursor-pointer transition-all hover:font-bold"
                     >
                       {link.label}
                     </Link>

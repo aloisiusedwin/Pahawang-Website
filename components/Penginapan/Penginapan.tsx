@@ -18,21 +18,6 @@ const Penginapan = () => {
       title: "Program Kerja Sampah",
       Desc: "Pemilahan sampah",
     },
-    {
-      image: "https://i.imgur.com/Ql4jRdB.png",
-      title: "Program Kerja Sampah",
-      Desc: "Pemilahan sampah",
-    },
-    {
-      image: "https://i.imgur.com/Ql4jRdB.png",
-      title: "Program Kerja Sampah",
-      Desc: "Pemilahan sampah",
-    },
-    {
-      image: "https://i.imgur.com/Ql4jRdB.png",
-      title: "Program Kerja Sampah",
-      Desc: "Pemilahan sampah",
-    },
   ];
 
   return (
