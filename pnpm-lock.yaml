@@ -11,9 +11,18 @@ importers:
       '@nextui-org/card':
         specifier: ^2.2.9
         version: 2.2.9(@nextui-org/system@2.4.6(@nextui-org/theme@2.4.5(tailwindcss@3.4.17))(framer-motion@11.16.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@nextui-org/theme@2.4.5(tailwindcss@3.4.17))(framer-motion@11.16.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@nextui-org/image':
+        specifier: ^2.2.5
+        version: 2.2.5(@nextui-org/system@2.4.6(@nextui-org/theme@2.4.5(tailwindcss@3.4.17))(framer-motion@11.16.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@nextui-org/theme@2.4.5(tailwindcss@3.4.17))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@nextui-org/progress':
+        specifier: ^2.2.6
+        version: 2.2.6(@nextui-org/system@2.4.6(@nextui-org/theme@2.4.5(tailwindcss@3.4.17))(framer-motion@11.16.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@nextui-org/theme@2.4.5(tailwindcss@3.4.17))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@nextui-org/react':
         specifier: ^2.6.11
         version: 2.6.11(@types/react@18.3.18)(framer-motion@11.16.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.17)
+      '@nextui-org/system':
+        specifier: ^2.4.6
+        version: 2.4.6(@nextui-org/theme@2.4.5(tailwindcss@3.4.17))(framer-motion@11.16.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@nextui-org/theme':
         specifier: ^2.4.5
         version: 2.4.5(tailwindcss@3.4.17)
@@ -32,6 +41,9 @@ importers:
       dependencies:
         specifier: ^0.0.1
         version: 0.0.1
+      embla-carousel-autoplay:
+        specifier: ^8.5.2
+        version: 8.5.2(embla-carousel@8.5.2)
       framer-motion:
         specifier: ^11.16.0
         version: 11.16.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1559,6 +1571,14 @@ packages:
 
   electron-to-chromium@1.5.76:
     resolution: {integrity: sha512-CjVQyG7n7Sr+eBXE86HIulnL5N8xZY1sgmOPGuq/F0Rr0FJq63lg0kEtOIDfZBk44FnDLf6FUJ+dsJcuiUDdDQ==}
+
+  embla-carousel-autoplay@8.5.2:
+    resolution: {integrity: sha512-27emJ0px3q/c0kCHCjwRrEbYcyYUPfGO3g5IBWF1i7714TTzE6L9P81V6PHLoSMAKJ1aHoT2e7YFOsuFKCbyag==}
+    peerDependencies:
+      embla-carousel: 8.5.2
+
+  embla-carousel@8.5.2:
+    resolution: {integrity: sha512-xQ9oVLrun/eCG/7ru3R+I5bJ7shsD8fFwLEY7yPe27/+fDHCNj0OT5EoG5ZbFyOxOcG6yTwW8oTz/dWyFnyGpg==}
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -4505,6 +4525,12 @@ snapshots:
       safer-buffer: 2.1.2
 
   electron-to-chromium@1.5.76: {}
+
+  embla-carousel-autoplay@8.5.2(embla-carousel@8.5.2):
+    dependencies:
+      embla-carousel: 8.5.2
+
+  embla-carousel@8.5.2: {}
 
   emoji-regex@8.0.0: {}
 
