@@ -13,7 +13,7 @@ const montserrat = Montserrat({
 
 const dokumentasiFoto = [
   {
-    image: "./images/konservasi/terumbu1.jpg",
+    image: "/images/konservasi/terumbu1.jpg",
     title: "Rehabilitasi Terumbu Karang",
     description:
       "Kegiatan transplantasi terumbu karang yang berhasil memulihkan keanekaragaman hayati laut di wilayah ini.",
@@ -55,9 +55,7 @@ const ProgramKerjaSection = () => {
 
   return (
     <section
-      className={`py-12 ${
-        theme === "dark" ? "bg-gray-900" : "bg-gray-100"
-      }`}
+      className={`py-12 ${theme === "dark" ? "bg-gray-900" : "bg-gray-100"}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         <h2
@@ -88,9 +86,7 @@ const ProgramKerjaSection = () => {
                 src={item.image}
                 alt={item.title}
                 className="w-full h-64 object-cover"
-                muted
-                loop={false}
-              ></video>
+              />
               <div
                 className={`absolute bottom-0 w-full p-4 text-center ${
                   theme === "dark"
@@ -103,14 +99,14 @@ const ProgramKerjaSection = () => {
                     theme === "dark" ? "text-green-200" : "text-green-900"
                   }`}
                 >
-                  {program.name}
+                  {item.title}
                 </h3>
                 <p
                   className={`text-sm mt-1 ${
                     theme === "dark" ? "text-gray-400" : "text-gray-600"
                   }`}
                 >
-                  {program.description}
+                  {item.description}
                 </p>
               </div>
             </div>
@@ -185,7 +181,7 @@ export default function Profil() {
       </section>
 
       {/* Dokumentasi Section */}
-      <DokumentasiSection />
+      <ProgramKerjaSection />
 
       {/* Scroll To Top Button */}
       <ScrollToTopButton />
