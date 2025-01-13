@@ -30,15 +30,17 @@ const Modal = ({
         } p-8 rounded-lg shadow-xl w-11/12 h-5/6 flex flex-col md:flex-row gap-4 overflow-hidden relative`}
       >
         {/* Button Close */}
+        {/* Close Button */}
         <button
-          className={`absolute top-4 right-4 ${
+          className={`absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full ${
             theme === "dark"
-              ? "bg-red-700 text-gray-200"
-              : "bg-red-500 text-white"
-          } rounded-md px-4 py-2 text-sm`}
+              ? "bg-gray-700 text-white"
+              : "bg-gray-300 text-black"
+          } hover:bg-red-500 hover:text-white duration-200`}
           onClick={onClose}
+          aria-label="Close"
         >
-          Close
+          ✕
         </button>
 
         {/* Gambar Produk */}
@@ -68,7 +70,7 @@ const Modal = ({
             />
 
             <div className="text-left">
-              <h2 className="text-xl font-semibold mb-2">Deskripsi Produk</h2>
+              <h2 className="text-xl font-semibold mb-2">Deskripsi</h2>
               <p
                 className={`mb-4 ${
                   theme === "dark" ? "text-gray-300" : "text-gray-700"
@@ -77,7 +79,7 @@ const Modal = ({
                 {details.description}
               </p>
 
-              <h2 className="text-xl font-semibold mb-2">Spesifikasi Produk</h2>
+              <h2 className="text-xl font-semibold mb-2">Spesifikasi</h2>
               <ul
                 className={`list-disc list-inside mb-4 ${
                   theme === "dark" ? "text-gray-300" : "text-gray-700"
@@ -130,10 +132,14 @@ const Card = ({ image, title, label, onClick }: CardProps) => {
       <p className="text-center text-l font-light py-2 mb-16">{label}</p>
       <div className="absolute bottom-4 left-0 right-0 flex justify-center">
         <button
-          className="bg-[#ecfccb] hover:text-[#3f6212] hover:bg-[#ecfccb] duration-100 w-[200px] rounded-md font-medium px-6 py-3"
+          className={`duration-100 w-[200px] rounded-md font-medium px-6 py-3 ${
+            theme === "dark"
+              ? "bg-[#ecfccb] text-[#3f6212] hover:text-[#ecfccb]  hover:bg-[#3f6212]"
+              : "bg-[#ecfccb] hover:text-[#3f6212] hover:bg-[#ecfccb]"
+          }`}
           onClick={onClick}
         >
-          Cek Selengkapnya
+          Lihat
         </button>
       </div>
     </div>
