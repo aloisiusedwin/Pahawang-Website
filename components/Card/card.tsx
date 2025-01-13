@@ -136,7 +136,7 @@ const Card = ({ image, title, label, onClick }: CardProps) => {
           }`}
           onClick={onClick}
         >
-          Lihat Produk
+          Lihat
         </button>
       </div>
     </div>
