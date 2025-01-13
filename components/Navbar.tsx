@@ -89,7 +89,7 @@ const Navbar = () => {
               src={logo.src}
               alt="logo"
               width="150"
-              height="143"
+              height="150"
             />
           </Link>
         </motion.div>
