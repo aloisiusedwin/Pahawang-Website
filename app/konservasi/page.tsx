@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import ScrollToTopButton from "@/components/ScrollToTop";
 import SmoothScroll from "@/components/SmoothScrolling";
 import Video from "@/components/Header/HeaderVideo";
@@ -14,39 +14,21 @@ const montserrat = Montserrat({
 const dokumentasiFoto = [
   {
     image: "/images/konservasi/terumbu1.jpg",
-    title: "Rehabilitasi Terumbu Karang",
-    description:
-      "Kegiatan transplantasi terumbu karang yang berhasil memulihkan keanekaragaman hayati laut di wilayah ini.",
   },
   {
     image: "/images/konservasi/terumbu2.jpg",
-    title: "Edukasi Masyarakat",
-    description:
-      "Pelatihan dan edukasi yang melibatkan masyarakat pesisir untuk menjaga ekosistem laut.",
   },
   {
     image: "/images/konservasi/terumbu3.jpg",
-    title: "Penelitian Ekosistem Laut",
-    description:
-      "Hasil penelitian yang memberikan pemahaman lebih dalam tentang kondisi ekosistem terumbu karang.",
   },
   {
     image: "/images/konservasi/terumbu4.jpg",
-    title: "Aksi Bersih Pantai",
-    description:
-      "Kampanye bersih pantai yang melibatkan ratusan relawan untuk menciptakan lingkungan yang bebas sampah.",
   },
   {
     image: "/images/konservasi/terumbu5.jpg",
-    title: "Wisata Edukasi Laut",
-    description:
-      "Pengembangan wisata edukasi berbasis kelautan untuk meningkatkan kesadaran lingkungan.",
   },
   {
     image: "/images/konservasi/terumbu6.jpg",
-    title: "Kemitraan dengan Nelayan",
-    description:
-      "Kolaborasi dengan nelayan lokal dalam menjaga kelestarian laut melalui praktik perikanan berkelanjutan.",
   },
 ];
 
@@ -55,60 +37,39 @@ const ProgramKerjaSection = () => {
 
   return (
     <section
-      className={`py-12 ${theme === "dark" ? "bg-gray-900" : "bg-gray-100"}`}
+      className={`py-16 px-4 sm:px-8 ${
+        theme === "dark" ? "bg-gray-900" : "bg-gray-100"
+      }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-8">
+      <div className="max-w-7xl mx-auto">
         <h2
-          className={`text-3xl font-bold text-center ${
+          className={`text-4xl font-extrabold text-center ${
             theme === "dark" ? "text-green-200" : "text-green-900"
-          } mb-8`}
+          } mb-10`}
         >
           Dokumentasi Konservasi Terumbu Karang
         </h2>
         <p
-          className={`text-center mb-12 ${
+          className={`text-center text-lg sm:text-xl mb-8 ${
             theme === "dark" ? "text-gray-400" : "text-gray-700"
           }`}
         >
-          Bergabunglah dengan kami dalam berbagai program kerja untuk
-          melestarikan ekosistem terumbu karang dan mendukung keberlanjutan
-          ekosistem laut.
+          Geser ke kiri atau kanan untuk menjelajahi momen penting dalam program
+          konservasi kami.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+        {/* Scrollable Container */}
+        <div className="flex gap-6 overflow-x-auto py-4 scrollbar-hide">
           {dokumentasiFoto.map((item, index) => (
             <div
               key={index}
-              className={`relative shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300 ${
-                theme === "dark" ? "bg-gray-800" : "bg-white"
-              }`}
+              className="flex-shrink-0 w-72 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300"
             >
               <img
                 src={item.image}
-                alt={item.title}
-                className="w-full h-64 object-cover"
+                alt={`Dokumentasi ${index + 1}`}
+                className="w-full h-48 rounded-lg object-cover"
               />
-              <div
-                className={`absolute bottom-0 w-full p-4 text-center ${
-                  theme === "dark"
-                    ? "bg-gray-800 bg-opacity-80"
-                    : "bg-white bg-opacity-65"
-                }`}
-              >
-                <h3
-                  className={`text-lg font-bold ${
-                    theme === "dark" ? "text-green-200" : "text-green-900"
-                  }`}
-                >
-                  {item.title}
-                </h3>
-                <p
-                  className={`text-sm mt-1 ${
-                    theme === "dark" ? "text-gray-400" : "text-gray-600"
-                  }`}
-                >
-                  {item.description}
-                </p>
-              </div>
             </div>
           ))}
         </div>

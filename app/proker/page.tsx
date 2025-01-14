@@ -169,7 +169,6 @@ export default function Profil() {
         theme === "dark" ? "bg-gray-900 text-white" : "bg-white text-black"
       }`}
     >
-      {/* Video Section */}
       <div className="relative h-full">
         <Video
           loop
@@ -180,7 +179,6 @@ export default function Profil() {
         />
         <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-8 text-center overflow-hidden">
           <div className="px-4">
-            {/* Excluded text */}
             <h1
               className="text-4xl sm:text-6xl font-bold mb-4 text-white"
               style={{ color: "white" }}
