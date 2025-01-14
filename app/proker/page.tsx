@@ -6,8 +6,7 @@ import ScrollToTopButton from "@/components/ScrollToTop";
 import SmoothScroll from "@/components/SmoothScrolling";
 import Video from "@/components/Header/HeaderVideo";
 import { Montserrat } from "next/font/google";
-import { useTheme } from "next-themes"; // Import useTheme for theme handling
-
+import { useTheme } from "next-themes";
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["400", "700"],
@@ -169,7 +168,6 @@ export default function Profil() {
         theme === "dark" ? "bg-gray-900 text-white" : "bg-white text-black"
       }`}
     >
-      {/* Video Section */}
       <div className="relative h-full">
         <Video
           loop
@@ -180,7 +178,6 @@ export default function Profil() {
         />
         <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-8 text-center overflow-hidden">
           <div className="px-4">
-            {/* Excluded text */}
             <h1
               className="text-4xl sm:text-6xl font-bold mb-4 text-white"
               style={{ color: "white" }}

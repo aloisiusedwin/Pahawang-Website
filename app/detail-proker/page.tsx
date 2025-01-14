@@ -67,7 +67,6 @@ const DetailProgramKerja = () => {
         "Dharma Rizki Geraldo",
       ],
     },
-    // Add other program details here following the same structure
   ];
 
   if (!slug) {
