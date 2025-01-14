@@ -23,12 +23,12 @@ const dusunData = [
     ],
     name: "Dusun I Suak Buah",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu arcu commodo, eleifend mauris in, vulputate lorem. Pellentesque eu erat accumsan, ullamcorper erat et, blandit ligula. Integer ullamcorper fringilla mauris. Aliquam et quam sodales, euismod metus gravida, convallis tortor. Sed tempor et enim sed laoreet. Aliquam laoreet, metus sed tincidunt auctor, felis ex dignissim erat, nec mattis mi lorem porta enim. Aenean ut iaculis lacus. Etiam rutrum diam nulla, sed feugiat leo gravida non. Phasellus at bibendum leo. Aliquam vel leo libero. Cras aliquet metus ut aliquet ultricies. Donec vel erat convallis, sollicitudin quam a, convallis quam. Integer ullamcorper, orci id iaculis blandit, lectus elit malesuada arcu, eu porttitor lorem neque eu libero. Sed tortor lacus, lacinia quis interdum a, consequat vitae quam. Integer eget libero turpis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin sit amet venenatis ante. Mauris metus lectus, fermentum eu purus quis, mattis convallis velit. Nunc tristique lectus ac nisl convallis, ultricies efficitur augue faucibus. Phasellus vel ante sed dolor ornare aliquam at quis enim. Etiam scelerisque purus eget sapien varius mollis. Aliquam dignissim vehicula tempor. Sed gravida mauris mauris, eget congue nisl vestibulum a. Suspendisse vitae libero quis elit accumsan mollis vel sed urna. Sed elementum metus nec lectus posuere, et pretium ante mattis. Proin consectetur pellentesque leo, eu vulputate nulla pulvinar ac. Curabitur pharetra tristique est, id tincidunt arcu malesuada ullamcorper. Aliquam auctor rutrum sapien, ut placerat risus luctus ut. Nullam ullamcorper felis lorem, et placerat libero efficitur a. Nullam vel nulla pharetra, vehicula massa non, dictum augue. Donec enim turpis, ornare sed sem eget, eleifend consectetur metus. Duis purus elit, dignissim vitae ipsum non, maximus tempor enim. Sed molestie maximus eros, ac egestas ex tincidunt sed. Integer rhoncus tortor id ipsum scelerisque, vitae finibus orci molestie.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu arcu commodo, eleifend mauris in, vulputate lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu arcu commodo, eleifend mauris in, vulputate lorem.",
     location: "Pulau Pahawang, Lampung",
     contactInfo: "+62 812 3456 7890",
   },
   {
-    images: ["./images/maledives01.jpg","./images/maledives01.jpg"],
+    images: ["./images/maledives01.jpg", "./images/maledives01.jpg"],
     name: "Dusun II Penggetahan",
     description:
       "Surga bawah laut dengan terumbu karang yang masih alami, cocok untuk snorkeling.",
