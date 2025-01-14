@@ -1,5 +1,6 @@
 "use client";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import AboutUs from "@/components/Tentang/Tentang";
 import Galeri from "@/components/Gallery/Gallery";
 import { Hero } from "@/components/Hero/Hero";
@@ -29,6 +30,7 @@ export default function Home() {
   return (
     <>
       <Analytics />
+      <SpeedInsights />
       <SmoothScroll />
       <Hero />
       <AboutUs />
