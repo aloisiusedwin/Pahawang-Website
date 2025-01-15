@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import ScrollToTopButton from "@/components/ScrollToTop";
 import SmoothScroll from "@/components/SmoothScrolling";
 import Video from "@/components/Header/HeaderVideo";
@@ -12,28 +12,76 @@ const montserrat = Montserrat({
 });
 
 const dokumentasiFoto = [
-  {
-    image: "/images/konservasi/terumbu1.jpg",
-  },
-  {
-    image: "/images/konservasi/terumbu2.jpg",
-  },
-  {
-    image: "/images/konservasi/terumbu3.jpg",
-  },
-  {
-    image: "/images/konservasi/terumbu4.jpg",
-  },
-  {
-    image: "/images/konservasi/terumbu5.jpg",
-  },
-  {
-    image: "/images/konservasi/terumbu6.jpg",
-  },
+  { image: "/images/konservasi/terumbu1.jpg" },
+  { image: "/images/konservasi/terumbu2.jpg" },
+  { image: "/images/konservasi/terumbu3.jpg" },
+  { image: "/images/konservasi/terumbu4.jpg" },
+  { image: "/images/konservasi/terumbu5.jpg" },
+  { image: "/images/konservasi/terumbu6.jpg" },
 ];
 
 const ProgramKerjaSection = () => {
   const { theme } = useTheme();
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+
+  // Handle drag scroll
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    setIsDragging(true);
+    if (containerRef.current) {
+      const container = containerRef.current;
+      setStartX(e.pageX - container.offsetLeft);
+      setScrollLeft(container.scrollLeft);
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    if (containerRef.current) {
+      const container = containerRef.current;
+      const x = e.pageX - container.offsetLeft;
+      const walk = (x - startX) * 2; // Scroll speed multiplier
+      container.scrollLeft = scrollLeft - walk;
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  // Infinite scroll effect
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    let scrollTimeout: NodeJS.Timeout;
+
+    const handleScroll = () => {
+      if (container.scrollLeft <= 0) {
+        // If the scroll reaches the left edge, scroll to the end
+        container.scrollLeft = container.scrollWidth - container.clientWidth;
+      } else if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
+        // If the scroll reaches the right edge, scroll to the start
+        container.scrollLeft = 0;
+      }
+    };
+
+    container.addEventListener("scroll", () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(handleScroll, 50); // Debounce the scroll handler
+    });
+
+    return () => {
+      clearTimeout(scrollTimeout);
+      container.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  // Duplicate data for infinite scrolling
+  const infiniteData = [...dokumentasiFoto, ...dokumentasiFoto,...dokumentasiFoto];
 
   return (
     <section
@@ -59,8 +107,15 @@ const ProgramKerjaSection = () => {
         </p>
 
         {/* Scrollable Container */}
-        <div className="flex gap-6 overflow-x-auto py-4 scrollbar-hide">
-          {dokumentasiFoto.map((item, index) => (
+        <div
+          ref={containerRef}
+          className="flex gap-6 overflow-x-auto py-4 scrollbar-hide"
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+        >
+          {infiniteData.map((item, index) => (
             <div
               key={index}
               className="flex-shrink-0 w-72 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300"
