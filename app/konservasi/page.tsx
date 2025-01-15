@@ -182,7 +182,7 @@ export default function Profil() {
               theme === "dark" ? "text-gray-400" : "text-gray-700"
             }`}
           >
-            Konservasi terumbu karang adalah upaya untuk melindungi dan
+            Konservasi terumbu karang merupakan upaya untuk melindungi dan
             memulihkan ekosistem laut yang vital bagi kehidupan bawah laut dan
             masyarakat pesisir. Terumbu karang menyediakan habitat bagi berbagai
             jenis biota laut, mendukung ekonomi lokal, dan melindungi garis
