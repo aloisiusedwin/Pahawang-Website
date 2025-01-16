@@ -89,7 +89,7 @@ const DetailProgramKerja = () => {
         "Ilmiyatul Hasanah",
         "Denny Ramadhani",
         "Mirzan Yusuf Rabbani",
-        "Amalinda Sherley Vivia",
+        "Lailatul Rakhmadhona",
       ],
     },
     {
@@ -112,6 +112,7 @@ const DetailProgramKerja = () => {
         "Yohana Tresna Oktavia Sigiro",
         "Alvian Putra Hanafi",
         "Rioqi Novandep",
+        "Diana Syafithri",
       ],
     },
     {
@@ -153,6 +154,7 @@ const DetailProgramKerja = () => {
         "Anjas Jevi Surya",
         "Tegar Agung Jaya",
         "Muhammad Faqih Divanaufal",
+        "Hafidzah Yuki Ramadani",
       ],
     },
   ];
