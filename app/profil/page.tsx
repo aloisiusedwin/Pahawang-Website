@@ -1,14 +1,15 @@
 "use client";
 
 import React, { useEffect } from "react";
+import Video from "@/components/Header/HeaderVideo";
+import { HeaderHeroText } from "@/components/Header/HeaderHero";
+import CardDusun from "@/components/Dusun/CardDusun";
 import ScrollToTopButton from "@/components/ScrollToTop";
 import SmoothScroll from "@/components/SmoothScrolling";
-import Video from "@/components/Header/HeaderVideo";
 import { Montserrat } from "next/font/google";
 import { useTheme } from "next-themes";
-import CardDusun from "@/components/Dusun/CardDusun";
 
-// Impor font Montserrat
+// Import font Montserrat
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["400", "700"],
@@ -21,7 +22,7 @@ const dusunData = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu arcu commodo, eleifend mauris in, vulputate lorem.",
     location: "Pulau Pahawang, Lampung",
-    contactInfo: "+62 812 3456 7890",
+    contactInfo: "+62 831-3137-4581",
   },
   {
     images: ["./images/maledives01.jpg"],
@@ -65,48 +66,6 @@ const dusunData = [
   },
 ];
 
-const DusunSection = () => {
-  const { theme } = useTheme();
-
-  return (
-    <section
-      className={`${theme === "dark" ? "bg-gray-800" : "bg-gray-100"} py-12`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        <h2
-          className={`text-3xl font-bold text-center mb-8 ${
-            theme === "dark" ? "text-green-300" : "text-green-900"
-          }`}
-        >
-          Dusun di Pulau Pahawang
-        </h2>
-        <p
-          className={`${
-            theme === "dark" ? "text-gray-300" : "text-gray-700"
-          } text-center mb-12`}
-        >
-          Setiap dusun di Pulau Pahawang memiliki daya tarik unik yang siap
-          dijelajahi. Dari pantai berpasir putih hingga hutan mangrove yang
-          asri, temukan pesona masing-masing dusun!
-        </p>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {dusunData.map((dusun, index) => (
-            <CardDusun
-              key={index}
-              images={dusun.images}
-              name={dusun.name}
-              description={dusun.description}
-              location={dusun.location}
-              contactInfo={dusun.contactInfo}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
 export default function Profil() {
   const { theme } = useTheme();
 
@@ -140,33 +99,45 @@ export default function Profil() {
         </div>
       </div>
 
-      <section className="py-12 px-4 sm:px-8">
-        <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto mt-12 px-4 sm:px-8">
+        <div className="mb-8">
           <h2
-            className={`text-2xl sm:text-4xl lg:text-6xl font-bold mb-4 text-center lg:text-left ${
-              theme === "dark" ? "text-green-300" : "text-green-900"
-            }`}
+            className={`text-2xl sm:text-4xl lg:text-6xl font-bold ${
+              theme === "dark" ? "text-green-200" : "text-green-900"
+            } mb-4 text-center lg:text-left`}
           >
-            Tentang Pulau Pahawang
+            Dusun di Pulau Pahawang
           </h2>
           <p
-            className={`${
+            className={`text-sm sm:text-base lg:text-lg leading-loose text-justify lg:text-justify ${
               theme === "dark" ? "text-gray-300" : "text-gray-700"
-            } leading-relaxed mb-6 text-justify`}
+            }`}
           >
-            Pulau Pahawang adalah sebuah pulau kecil yang terletak di Kabupaten
-            Pesawaran, Provinsi Lampung. Pulau ini terkenal dengan keindahan
-            alam bawah lautnya, pantai berpasir putih, dan suasana yang tenang.
+            Setiap dusun di Pulau Pahawang memiliki daya tarik unik yang siap
+            dijelajahi. Dari pantai berpasir putih hingga hutan mangrove yang
+            asri, temukan pesona masing-masing dusun!
           </p>
           <hr
-            className={`border-t-2 mb-4 lg:mb-1 mt-5 ${
+            className={`border-t-2 ${
               theme === "dark" ? "border-gray-700" : "border-gray-300"
-            }`}
+            } mb-4 lg:mb-1 mt-5`}
           />
         </div>
-      </section>
 
-      <DusunSection />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          {dusunData.map((dusun, index) => (
+            <CardDusun
+              key={index}
+              images={dusun.images}
+              name={dusun.name}
+              description={dusun.description}
+              location={dusun.location}
+              contactInfo={dusun.contactInfo}
+            />
+          ))}
+        </div>
+      </div>
+
       <ScrollToTopButton />
       <SmoothScroll />
     </div>

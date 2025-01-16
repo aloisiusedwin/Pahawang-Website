@@ -26,8 +26,8 @@ const ProgramKerjaSection = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
+  const animationFrameId = useRef<number | null>(null);
 
-  // Handle drag scroll
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     setIsDragging(true);
     if (containerRef.current) {
@@ -43,50 +43,56 @@ const ProgramKerjaSection = () => {
     if (containerRef.current) {
       const container = containerRef.current;
       const x = e.pageX - container.offsetLeft;
-      const walk = (x - startX) * 2; // Scroll speed multiplier
-      container.scrollLeft = scrollLeft - walk;
+      const walk = (x - startX) * 2;
+
+      if (animationFrameId.current !== null) {
+        cancelAnimationFrame(animationFrameId.current);
+      }
+      animationFrameId.current = requestAnimationFrame(() => {
+        container.scrollLeft = scrollLeft - walk;
+      });
     }
   };
 
   const handleMouseUp = () => {
     setIsDragging(false);
+    if (animationFrameId.current !== null) {
+      cancelAnimationFrame(animationFrameId.current);
+    }
   };
 
-  // Infinite scroll effect
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
-    let scrollTimeout: NodeJS.Timeout;
-
     const handleScroll = () => {
       if (container.scrollLeft <= 0) {
-        // If the scroll reaches the left edge, scroll to the end
         container.scrollLeft = container.scrollWidth - container.clientWidth;
-      } else if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
-        // If the scroll reaches the right edge, scroll to the start
+      } else if (
+        container.scrollLeft >=
+        container.scrollWidth - container.clientWidth
+      ) {
         container.scrollLeft = 0;
       }
     };
 
-    container.addEventListener("scroll", () => {
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(handleScroll, 50); // Debounce the scroll handler
-    });
+    container.addEventListener("scroll", handleScroll);
 
     return () => {
-      clearTimeout(scrollTimeout);
       container.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
-  // Duplicate data for infinite scrolling
-  const infiniteData = [...dokumentasiFoto, ...dokumentasiFoto,...dokumentasiFoto];
+  const infiniteData = [
+    ...dokumentasiFoto,
+    ...dokumentasiFoto,
+    ...dokumentasiFoto,
+  ];
 
   return (
     <section
       className={`py-16 px-4 sm:px-8 ${
-        theme === "dark" ? "bg-gray-900" : "bg-gray-100"
+        theme === "dark" ? "bg-gray-900" : "bg-white"
       }`}
     >
       <div className="max-w-7xl mx-auto">
@@ -133,6 +139,7 @@ const ProgramKerjaSection = () => {
   );
 };
 
+
 export default function Profil() {
   const { theme } = useTheme();
 
@@ -167,8 +174,7 @@ export default function Profil() {
         </div>
       </div>
 
-      {/* Content Section */}
-      <section className="py-12 px-4 sm:px-8">
+      <section className="max-w-7xl mx-auto mt-12 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto">
           <h2
             className={`text-2xl sm:text-4xl lg:text-6xl font-bold mb-4 text-center lg:text-left ${
@@ -178,7 +184,7 @@ export default function Profil() {
             Konservasi Terumbu Karang
           </h2>
           <p
-            className={`leading-relaxed mb-6 text-justify ${
+            className={`text-sm sm:text-base lg:text-lg leading-loose text-justify lg:text-justify ${
               theme === "dark" ? "text-gray-400" : "text-gray-700"
             }`}
           >
@@ -196,7 +202,6 @@ export default function Profil() {
         </div>
       </section>
 
-      {/* Dokumentasi Section */}
       <ProgramKerjaSection />
 
       {/* Scroll To Top Button */}

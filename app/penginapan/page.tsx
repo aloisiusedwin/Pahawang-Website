@@ -80,21 +80,18 @@ export default function Home() {
           src={"./videos/jaw.mp4"}
           className="object-cover w-full h-[40vh] md:h-[60vh] lg:h-[85vh]"
         />
-
         <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-8 text-center overflow-hidden">
-          <HeaderHeroText
-            title="Penginapan"
-            description="Penginapan nyaman di Pulau Pahawang dengan fasilitas lengkap, pemandangan indah, dan lokasi dekat spot snorkeling terbaik"
-            containerStyle="max-w-[90%] mx-auto text-center lg:text-left overflow-hidden"
-            titleStyle="text-white font-bold text-[clamp(1.2rem, 4vw, 2rem)] leading-tight"
-            descriptionStyle="text-gray-200 text-[clamp(0.8rem, 3vw, 1rem)] leading-relaxed"
-          />
+          <div className="text-white px-4">
+            <h1 className="text-4xl sm:text-6xl font-bold mb-4">Penginapan</h1>
+            <p className="text-lg sm:text-xl">
+              Penginapan nyaman di Pulau Pahawang dengan fasilitas lengkap,
+              pemandangan indah, dan dekat spot snorkeling
+            </p>
+          </div>
         </div>
       </div>
 
-      {/* Container for Title, Description, and Products */}
       <div className="max-w-7xl mx-auto mt-12 px-4 sm:px-8">
-        {/* Title and Description */}
         <div className="mb-8">
           <h2
             className={`text-2xl sm:text-4xl lg:text-6xl font-bold ${

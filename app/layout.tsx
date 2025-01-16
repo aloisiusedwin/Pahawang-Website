@@ -2,7 +2,7 @@ import { ThemeProvider } from "@/components/theme-provider"; // Import the Theme
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import "./../components/Gallery/gallery.css";
+import "../components/Konservasi/gallery.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Montserrat } from "next/font/google";

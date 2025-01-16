@@ -2,12 +2,12 @@
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import AboutUs from "@/components/Tentang/Tentang";
-import Galeri from "@/components/Gallery/Gallery";
+import Galeri from "@/components/Konservasi/Gallery";
 import { Hero } from "@/components/Hero/Hero";
-import Dokumenter from "@/components/Dokumenter/Dokumenter"
+import Dokumenter from "@/components/Dokumenter/Dokumenter";
 import CardProduk from "@/components/CardProduk/CardProduk";
 import Penginapan from "@/components/Penginapan/Penginapan";
-import Contact from "@/components/Contact/Contact"
+import Contact from "@/components/Contact/Contact";
 import React, { useEffect } from "react";
 import ScrollToTopButton from "@/components/ScrollToTop";
 import SmoothScroll from "@/components/SmoothScrolling";
