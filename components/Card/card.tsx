@@ -30,17 +30,18 @@ const Modal = ({
         } p-8 rounded-lg shadow-xl w-11/12 h-5/6 flex flex-col md:flex-row gap-4 overflow-hidden relative`}
       >
         {/* Button Close */}
-{/* Close Button */}
-<button
-  className={`absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full ${
-    theme === "dark" ? "bg-gray-700 text-white" : "bg-gray-300 text-black"
-  } hover:bg-red-500 hover:text-white duration-200`}
-  onClick={onClose}
-  aria-label="Close"
->
-  ✕
-</button>
-
+        {/* Close Button */}
+        <button
+          className={`absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full ${
+            theme === "dark"
+              ? "bg-gray-700 text-white"
+              : "bg-gray-300 text-black"
+          } hover:bg-red-500 hover:text-white duration-200`}
+          onClick={onClose}
+          aria-label="Close"
+        >
+          ✕
+        </button>
 
         {/* Gambar Produk */}
         {details.image && (
@@ -132,7 +133,9 @@ const Card = ({ image, title, label, onClick }: CardProps) => {
       <div className="absolute bottom-4 left-0 right-0 flex justify-center">
         <button
           className={`duration-100 w-[200px] rounded-md font-medium px-6 py-3 ${
-            theme === "dark" ? "bg-[#ecfccb] text-[#3f6212] hover:text-[#ecfccb]  hover:bg-[#3f6212]" : "bg-[#ecfccb] hover:text-[#3f6212] hover:bg-[#ecfccb]"
+            theme === "dark"
+              ? "bg-[#ecfccb] text-[#3f6212] hover:text-[#ecfccb]  hover:bg-[#3f6212]"
+              : "bg-[#ecfccb] hover:text-[#3f6212] hover:bg-[#ecfccb]"
           }`}
           onClick={onClick}
         >

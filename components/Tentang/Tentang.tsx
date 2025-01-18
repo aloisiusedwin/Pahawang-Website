@@ -15,7 +15,7 @@ const Tentang = () => {
       }`}
     >
       <div className="flex h-[400px]">
-        <div className="flex absolute left-[-80px] top-[-16px] 2xl:top-[-60px] lg:top-[-20px] md:top-[-80px] md:left-28">
+        <div className="flex absolute left-[-80px] top-[-16px] 2xl:top-[-60px] lg:top-[-20px] md:top-[-80px] md:left-20">
           <img
             className="rounded-3xl border-2 border-white"
             src={maledivesImg01.src}

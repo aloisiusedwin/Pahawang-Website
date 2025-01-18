@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import ScrollToTopButton from "@/components/ScrollToTop";
 import SmoothScroll from "@/components/SmoothScrolling";
 import Video from "@/components/Header/HeaderVideo";
@@ -11,116 +11,126 @@ const montserrat = Montserrat({
   weight: ["400", "700"],
 });
 
-const programKerjaData = [
-  {
-    video: "./videos/asbak.mp4",
-    name: "Rehabilitasi Terumbu Karang",
-    description:
-      "Mengadakan kegiatan transplantasi terumbu karang untuk mendukung pemulihan ekosistem laut yang rusak.",
-  },
-  {
-    video: "./videos/kampanye.mp4",
-    name: "Edukasi Masyarakat",
-    description:
-      "Memberikan pelatihan dan edukasi kepada masyarakat pesisir tentang pentingnya menjaga ekosistem laut.",
-  },
-  {
-    video: "./videos/maggot.mp4",
-    name: "Penelitian Ekosistem Laut",
-    description:
-      "Melakukan penelitian ilmiah terkait kondisi ekosistem laut untuk mendukung pengambilan kebijakan.",
-  },
-  {
-    video: "./videos/paving.mp4",
-    name: "Aksi Bersih Pantai",
-    description:
-      "Mengadakan kampanye bersih pantai untuk mengurangi sampah yang mengancam kelangsungan terumbu karang.",
-  },
-  {
-    video: "./videos/umkm.mp4",
-    name: "Wisata Edukasi Laut",
-    description:
-      "Mengembangkan wisata edukasi berbasis kelautan untuk meningkatkan kesadaran lingkungan.",
-  },
-  {
-    video: "./videos/website.mp4",
-    name: "Kemitraan dengan Nelayan",
-    description:
-      "Bermitra dengan nelayan lokal untuk menjaga kelestarian laut melalui praktik perikanan yang ramah lingkungan.",
-  },
+const dokumentasiFoto = [
+  { image: "/images/konservasi/terumbu1.jpg" },
+  { image: "/images/konservasi/terumbu2.jpg" },
+  { image: "/images/konservasi/terumbu3.jpg" },
+  { image: "/images/konservasi/terumbu4.jpg" },
+  { image: "/images/konservasi/terumbu5.jpg" },
+  { image: "/images/konservasi/terumbu6.jpg" },
 ];
 
 const ProgramKerjaSection = () => {
   const { theme } = useTheme();
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const animationFrameId = useRef<number | null>(null);
+
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    setIsDragging(true);
+    if (containerRef.current) {
+      const container = containerRef.current;
+      setStartX(e.pageX - container.offsetLeft);
+      setScrollLeft(container.scrollLeft);
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    if (containerRef.current) {
+      const container = containerRef.current;
+      const x = e.pageX - container.offsetLeft;
+      const walk = (x - startX) * 2;
+
+      if (animationFrameId.current !== null) {
+        cancelAnimationFrame(animationFrameId.current);
+      }
+      animationFrameId.current = requestAnimationFrame(() => {
+        container.scrollLeft = scrollLeft - walk;
+      });
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+    if (animationFrameId.current !== null) {
+      cancelAnimationFrame(animationFrameId.current);
+    }
+  };
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const handleScroll = () => {
+      if (container.scrollLeft <= 0) {
+        container.scrollLeft = container.scrollWidth - container.clientWidth;
+      } else if (
+        container.scrollLeft >=
+        container.scrollWidth - container.clientWidth
+      ) {
+        container.scrollLeft = 0;
+      }
+    };
+
+    container.addEventListener("scroll", handleScroll);
+
+    return () => {
+      container.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const infiniteData = [
+    ...dokumentasiFoto,
+    ...dokumentasiFoto,
+    ...dokumentasiFoto,
+  ];
 
   return (
     <section
-      className={`py-12 ${
-        theme === "dark" ? "bg-gray-900" : "bg-gray-100"
+      className={`py-16 px-4 sm:px-8 ${
+        theme === "dark" ? "bg-gray-900" : "bg-white"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-8">
+      <div className="max-w-7xl mx-auto">
         <h2
-          className={`text-3xl font-bold text-center ${
+          className={`text-4xl font-extrabold text-center ${
             theme === "dark" ? "text-green-200" : "text-green-900"
-          } mb-8`}
+          } mb-10`}
         >
           Dokumentasi Konservasi Terumbu Karang
         </h2>
         <p
-          className={`text-center mb-12 ${
+          className={`text-center text-lg sm:text-xl mb-8 ${
             theme === "dark" ? "text-gray-400" : "text-gray-700"
           }`}
         >
-          Bergabunglah dengan kami dalam berbagai program kerja untuk
-          melestarikan ekosistem terumbu karang dan mendukung keberlanjutan
-          ekosistem laut.
+          Geser ke kiri atau kanan untuk menjelajahi momen penting dalam program
+          konservasi kami.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {programKerjaData.map((program, index) => (
+
+        {/* Scrollable Container */}
+        <div
+          ref={containerRef}
+          className="flex gap-6 overflow-x-auto py-4 scrollbar-hide"
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+        >
+          {infiniteData.map((item, index) => (
             <div
               key={index}
-              className={`relative shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300 ${
-                theme === "dark" ? "bg-gray-800" : "bg-white"
-              }`}
+              className="flex-shrink-0 w-72 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300"
             >
-              <video
-                ref={(ref) => {
-                  if (ref) {
-                    ref.addEventListener("mouseover", () => ref.play());
-                    ref.addEventListener("mouseout", () => {
-                      ref.pause();
-                      ref.currentTime = 0;
-                    });
-                  }
-                }}
-                src={program.video}
-                className="w-full h-64 object-cover"
-                muted
-                loop={false}
-              ></video>
-              <div
-                className={`absolute bottom-0 w-full p-4 text-center ${
-                  theme === "dark"
-                    ? "bg-gray-800 bg-opacity-80"
-                    : "bg-white bg-opacity-65"
-                }`}
-              >
-                <h3
-                  className={`text-lg font-bold ${
-                    theme === "dark" ? "text-green-200" : "text-green-900"
-                  }`}
-                >
-                  {program.name}
-                </h3>
-                <p
-                  className={`text-sm mt-1 ${
-                    theme === "dark" ? "text-gray-400" : "text-gray-600"
-                  }`}
-                >
-                  {program.description}
-                </p>
-              </div>
+              <img
+                src={item.image}
+                alt={`Dokumentasi ${index + 1}`}
+                className="w-full h-48 rounded-lg object-cover"
+              />
             </div>
           ))}
         </div>
@@ -128,6 +138,7 @@ const ProgramKerjaSection = () => {
     </section>
   );
 };
+
 
 export default function Profil() {
   const { theme } = useTheme();
@@ -148,7 +159,7 @@ export default function Profil() {
           loop
           autoPlay
           muted
-          src={"/videos/program kerja.mp4"}
+          src={"/videos/konservasi.mp4"}
           className="object-cover w-full h-[40vh] md:h-[60vh] lg:h-[85vh]"
         />
         <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-8 text-center overflow-hidden">
@@ -163,8 +174,7 @@ export default function Profil() {
         </div>
       </div>
 
-      {/* Content Section */}
-      <section className="py-12 px-4 sm:px-8">
+      <section className="max-w-7xl mx-auto mt-12 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto">
           <h2
             className={`text-2xl sm:text-4xl lg:text-6xl font-bold mb-4 text-center lg:text-left ${
@@ -174,11 +184,11 @@ export default function Profil() {
             Konservasi Terumbu Karang
           </h2>
           <p
-            className={`leading-relaxed mb-6 text-justify ${
+            className={`text-sm sm:text-base lg:text-lg leading-loose text-justify lg:text-justify ${
               theme === "dark" ? "text-gray-400" : "text-gray-700"
             }`}
           >
-            Konservasi terumbu karang adalah upaya untuk melindungi dan
+            Konservasi terumbu karang merupakan upaya untuk melindungi dan
             memulihkan ekosistem laut yang vital bagi kehidupan bawah laut dan
             masyarakat pesisir. Terumbu karang menyediakan habitat bagi berbagai
             jenis biota laut, mendukung ekonomi lokal, dan melindungi garis
@@ -192,7 +202,6 @@ export default function Profil() {
         </div>
       </section>
 
-      {/* Program Kerja Section */}
       <ProgramKerjaSection />
 
       {/* Scroll To Top Button */}

@@ -67,7 +67,96 @@ const DetailProgramKerja = () => {
         "Dharma Rizki Geraldo",
       ],
     },
-    // Add other program details here following the same structure
+    {
+      name: "Kampanye Kebersihan",
+      background: bg02,
+      videos: ["/videos/kampanye.mp4"],
+      kegiatan: [
+        "Mengidentifikasi area dengan permasalahan sampah terbesar.",
+        "Pengadaan dan pembuatan tempat sampah yang menarik.",
+        "Pembuatan papan kampanye yang dihiasi kerang.",
+        "Penempatan tempat sampah dan papan kampanye di lokasi strategis.",
+        "Sosialisasi dan edukasi kepada masyarakat tentang pemilahan dan penggunaan tempat sampah.",
+        "Monitoring secara berkala untuk memastikan penggunaan tempat sampah dengan benar dan sesuai.",
+      ],
+      tujuan: [
+        "Menyediakan tempat sampah dengan tampilan yang menarik dapat meningkatkan perhatian masyarakat dan wisatawan.",
+        "Memperkuat citra positif destinasi wisata.",
+        "Mengajak masyarakat untuk lebih peduli terhadap kebersihan pantai melalui kampanye kebersihan.",
+        "Memanfaatkan pembuatan tempat sampah dan papan kampanye sebagai sarana mengekspresikan kreativitas.",
+      ],
+      penanggungJawab: [
+        "Ilmiyatul Hasanah",
+        "Denny Ramadhani",
+        "Mirzan Yusuf Rabbani",
+        "Lailatul Rakhmadhona",
+      ],
+    },
+    {
+      name: "Pemberdayaan Maggot",
+      background: bg03,
+      videos: ["/videos/maggot.mp4"],
+      kegiatan: [
+        "Sosialisasi awal dan edukasi masyarakat, terkait penggunaan maggot dalam pengolahan sampah organik.",
+        "Penyediaan sarana dan prasarana untuk budidaya maggot dan melakukan pendampingan untuk memonitoring perkembangan maggot.",
+        "Panen maggot untuk di distribusikan menjadi pakan ternak.",
+        "Dokumentasi seluruh rangkaian kegiatan dari pengolahan, budidaya, hingga pendistribusian untuk pakan ternak.",
+      ],
+      tujuan: [
+        "Mengurangi volume sampah yang berada di TPA.",
+        "Pengelolaan limbah ramah lingkungan.",
+        "Produksi produk bernilai ekonomi berupa kompos yang dapat digunakan sebagai pupuk.",
+      ],
+      penanggungJawab: [
+        "Mochammad Arby Turoby",
+        "Yohana Tresna Oktavia Sigiro",
+        "Alvian Putra Hanafi",
+        "Rioqi Novandep",
+        "Diana Syafithri",
+      ],
+    },
+    {
+      name: "Asbak Portable",
+      background: bg01,
+      videos: ["/videos/asbak.mp4"],
+      kegiatan: [
+        "Melakukan kegiatan sosialisasi tentang pentingnya menjaga kebersihan lingkungan dan edukasi mengenai penggunaan asbak portable.",
+        "Pembuatan asbak dengan bahan baku yang ramah lingkungan.",
+        "Penjualan asbak portable.",
+        "Melakukan kemitraan atau kerjasama dengan UMKM dengan menyediakan asbak portable kepada pelanggan yang merokok..",
+      ],
+      tujuan: [
+        "Memudahkan para turis untuk membuang sisa puntung rokok.",
+        "Meningkatkan kesadaran perokok tentang pentingnya menjaga kebersihan lingkungan dengan membuang puntung rokok.",
+        "Menerapkan gaya hidup dan bentuk tanggung jawab terhadap lingkungan.",
+      ],
+      penanggungJawab: [
+        "Nabila Zakiyah Zahra",
+        "Rafly Prabu Darmawan",
+        "Dylan Azura",
+        "Kathleen Theodora Siallagan",
+      ],
+    },
+    {
+      name: "Peningkatan UMKM",
+      background: bg06,
+      videos: ["/videos/umkm.mp4"],
+      kegiatan: [
+        "Melakukan peningkatan kualitas baik itu dari segi rasa, tekstur, dan kemasan pada dodol olahan mangrove.",
+        "Melakukan branding dan promosi produk dodol olahan mangrove yang lebih baik lewat sosial media.",
+        "Melakukan evaluasi penjualan rutin demi peningkatan penjualan produk dodol olahan mangrove.",
+      ],
+      tujuan: [
+        "Mendukung dan meningkatkan hasil penjualan dari  usaha, mikro, kecil, dan menengah (UMKM) yang sudah ada sebelumnya.",
+      ],
+      penanggungJawab: [
+        "Rafa Aqilla Jungjunan",
+        "Anjas Jevi Surya",
+        "Tegar Agung Jaya",
+        "Muhammad Faqih Divanaufal",
+        "Hafidzah Yuki Ramadani",
+      ],
+    },
   ];
 
   if (!slug) {
@@ -91,9 +180,17 @@ const DetailProgramKerja = () => {
       }}
     >
       <div className="max-w-6xl mx-auto px-6 sm:px-10 bg-white bg-opacity-90 rounded-lg shadow-lg">
-        <h1 className="text-4xl font-bold text-green-900 mb-10 text-center mt-4 pt-7">
-          {program.name}
-        </h1>
+        <div className="relative flex items-center justify-center mt-6 py-5">
+          <button
+            onClick={() => router.back()}
+            className="absolute left-0 bg-gray-300 text-black py-2 px-4 rounded-lg shadow-md hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-green-500"
+          >
+            Kembali
+          </button>
+          <h1 className="text-4xl font-bold text-green-900 text-center">
+            {program.name}
+          </h1>
+        </div>
         <div className="flex flex-col md:flex-row gap-12 mb-10 p-6">
           <div className="md:w-1/2">
             <div className="space-y-4">

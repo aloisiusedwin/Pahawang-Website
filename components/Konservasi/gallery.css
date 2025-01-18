@@ -1,0 +1,51 @@
+/* Swiper container styles */
+.swiper {
+  padding-bottom: 50px !important;
+  padding-top: 50px !important;
+}
+
+/* Swiper navigation buttons */
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  color: #1f2937;
+  background: #f3f4f642;
+  padding: 12px;
+  font-size: 20px !important;
+  border-radius: 50%;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.08);
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.swiper-button-prev:hover:after,
+.swiper-button-next:hover:after {
+  background: #ecfccb;
+  color: #1f2937;
+  transform: scale(1.1);
+}
+
+/* Swiper pagination bullets */
+.swiper-pagination-bullet {
+  background-color: #9ca3af !important;
+  border: 2px solid #ffffff !important;
+  width: 10px !important;
+  height: 10px !important;
+  margin: 0 8px !important;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #2563eb !important;
+  transform: scale(1.4);
+}
+
+/* Swiper horizontal pagination styles */
+.swiper-horizontal > .swiper-pagination-bullets {
+  padding-top: 12px;
+}
+
+/* Transition effects for navigation and pagination */
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-pagination-bullet {
+  transition: all 0.3s ease;
+}

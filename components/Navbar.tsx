@@ -6,18 +6,17 @@ import React, { useState } from "react";
 import Image from "next/image";
 import logo from "./../public/images/logo/logo.png";
 import { motion, AnimatePresence } from "framer-motion";
-import { ModeToggle } from "@/components/ModeToggle"; // Import the ModeToggle component
-import { useTheme } from "next-themes"; // Import useTheme for theme detection
+import { ModeToggle } from "@/components/ModeToggle";
+import { useTheme } from "next-themes";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const { theme } = useTheme(); // Get the current theme (light or dark)
+  const { theme } = useTheme();
 
   const toggleMenu = () => {
     setOpen(!open);
   };
 
-  // Animation variants
   const navVariants = {
     hidden: {
       y: -50,
