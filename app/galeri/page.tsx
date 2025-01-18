@@ -39,7 +39,7 @@ const EventPage = () => {
     {
       id: 1,
       title: "DAY 1",
-      date: "4 Januari 2025",
+      date: "3 Januari 2025",
       imageUrl: img1,
       description:
         "Foto bersama dengan warga dusun Jeralangan setelah acara pembukaan KKN Tematik ITERA di Pahawang. Acara dihadiri oleh kepala desa dan tokoh masyarakat setempat.",
@@ -50,7 +50,7 @@ const EventPage = () => {
     {
       id: 2,
       title: "DAY 2",
-      date: "5 Januari 2025",
+      date: "4 Januari 2025",
       imageUrl: img2,
       description: "Rekap Dokumentasi Hari ke-2",
       location: "Dusun Jeralangan",
@@ -60,7 +60,7 @@ const EventPage = () => {
     {
       id: 3,
       title: "DAY 3",
-      date: "6 Januari 2025",
+      date: "5 Januari 2025",
       imageUrl: img3,
       description: "Rekap Dokumentasi Hari ke-3",
       location: "Dusun Jeralangan",
@@ -70,7 +70,7 @@ const EventPage = () => {
     {
       id: 4,
       title: "DAY 4",
-      date: "7 Januari 2025",
+      date: "6 Januari 2025",
       imageUrl: img4,
       description: "Rekap Dokumentasi Hari ke-4",
       location: "Dusun Kalangan",
@@ -80,7 +80,7 @@ const EventPage = () => {
     {
       id: 5,
       title: "DAY 5",
-      date: "8 Januari 2025",
+      date: "7 Januari 2025",
       imageUrl: img5,
       description: "Rekap Dokumentasi Hari ke-5",
       location: "Dusun Jeralangan",
@@ -90,7 +90,129 @@ const EventPage = () => {
     {
       id: 6,
       title: "DAY 6",
+      date: "8 Januari 2025",
+      imageUrl: img6,
+      description: "Rekap Dokumentasi Hari ke-6",
+      location: "Dusun Kalangan",
+      driveLink:
+        "https://drive.google.com/drive/folders/1-gA-U9NTNAfBiYfcDlru3iQpFmd0cxgb?usp=drive_link",
+    },
+    {
+      id: 7,
+      title: "DAY 7",
       date: "9 Januari 2025",
+      imageUrl: img1,
+      description:
+        "Foto bersama dengan warga dusun Jeralangan setelah acara pembukaan KKN Tematik ITERA di Pahawang. Acara dihadiri oleh kepala desa dan tokoh masyarakat setempat.",
+      location: "Dusun Jeralangan, Pahawang",
+      driveLink:
+        "https://drive.google.com/drive/folders/1-8ahp20UoqQrBApdnSsNQsdoiIoa0_x2?usp=drive_link",
+    },
+    {
+      id: 8,
+      title: "DAY 8",
+      date: "10 Januari 2025",
+      imageUrl: img2,
+      description: "Rekap Dokumentasi Hari ke-2",
+      location: "Dusun Jeralangan",
+      driveLink:
+        "https://drive.google.com/drive/folders/1-8sVULmCaC0vDwk3JzZmYIhATLcQjxPx?usp=drive_link",
+    },
+    {
+      id: 9,
+      title: "DAY 9",
+      date: "11 Januari 2025",
+      imageUrl: img3,
+      description: "Rekap Dokumentasi Hari ke-3",
+      location: "Dusun Jeralangan",
+      driveLink:
+        "https://drive.google.com/drive/folders/1-Aiih0H40-3aBp85ruakzsa8BafdxeKK?usp=drive_link",
+    },
+    {
+      id: 10,
+      title: "DAY 10",
+      date: "12 Januari 2025",
+      imageUrl: img4,
+      description: "Rekap Dokumentasi Hari ke-4",
+      location: "Dusun Kalangan",
+      driveLink:
+        "https://drive.google.com/drive/folders/1-DOB3P2JjqAd7p6iJsmJ5fOjnZxiOwAb?usp=drive_link",
+    },
+    {
+      id: 11,
+      title: "DAY 11",
+      date: "13 Januari 2025",
+      imageUrl: img5,
+      description: "Rekap Dokumentasi Hari ke-5",
+      location: "Dusun Jeralangan",
+      driveLink:
+        "https://drive.google.com/drive/folders/1-_hmgZkUhPf2RQBaI1vWzNHVb6JEcBmn?usp=drive_link",
+    },
+    {
+      id: 12,
+      title: "DAY 12",
+      date: "14 Januari 2025",
+      imageUrl: img6,
+      description: "Rekap Dokumentasi Hari ke-6",
+      location: "Dusun Kalangan",
+      driveLink:
+        "https://drive.google.com/drive/folders/1-gA-U9NTNAfBiYfcDlru3iQpFmd0cxgb?usp=drive_link",
+    },
+    {
+      id: 13,
+      title: "DAY 13",
+      date: "15 Januari 2025",
+      imageUrl: img1,
+      description:
+        "Foto bersama dengan warga dusun Jeralangan setelah acara pembukaan KKN Tematik ITERA di Pahawang. Acara dihadiri oleh kepala desa dan tokoh masyarakat setempat.",
+      location: "Dusun Jeralangan, Pahawang",
+      driveLink:
+        "https://drive.google.com/drive/folders/1-8ahp20UoqQrBApdnSsNQsdoiIoa0_x2?usp=drive_link",
+    },
+    {
+      id: 14,
+      title: "DAY 14",
+      date: "16 Januari 2025",
+      imageUrl: img2,
+      description: "Rekap Dokumentasi Hari ke-2",
+      location: "Dusun Jeralangan",
+      driveLink:
+        "https://drive.google.com/drive/folders/1-8sVULmCaC0vDwk3JzZmYIhATLcQjxPx?usp=drive_link",
+    },
+    {
+      id: 15,
+      title: "DAY 15",
+      date: "17 Januari 2025",
+      imageUrl: img3,
+      description: "Rekap Dokumentasi Hari ke-3",
+      location: "Dusun Jeralangan",
+      driveLink:
+        "https://drive.google.com/drive/folders/1-Aiih0H40-3aBp85ruakzsa8BafdxeKK?usp=drive_link",
+    },
+    {
+      id: 16,
+      title: "DAY 16",
+      date: "18 Januari 2025",
+      imageUrl: img4,
+      description: "Rekap Dokumentasi Hari ke-4",
+      location: "Dusun Kalangan",
+      driveLink:
+        "https://drive.google.com/drive/folders/1-DOB3P2JjqAd7p6iJsmJ5fOjnZxiOwAb?usp=drive_link",
+    },
+    {
+      id: 17,
+      title: "DAY 17",
+      date: "19 Januari 2025",
+      imageUrl: img5,
+      description: "Rekap Dokumentasi Hari ke-5",
+      location: "Dusun Jeralangan",
+      driveLink:
+        "https://drive.google.com/drive/folders/1-_hmgZkUhPf2RQBaI1vWzNHVb6JEcBmn?usp=drive_link",
+    },
+    {
+      id: 18,
+      title: "DAY 18",
+      date: "20 Januari 2025",
       imageUrl: img6,
       description: "Rekap Dokumentasi Hari ke-6",
       location: "Dusun Kalangan",
@@ -280,7 +402,6 @@ const EventPage = () => {
           </motion.div>
         )}
       </AnimatePresence>
-      {/* Video Section */}
       <div className="relative h-full">
         <Video
           loop
@@ -300,7 +421,6 @@ const EventPage = () => {
         </div>
       </div>
 
-      {/* Content Section */}
       <section className="py-12 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto">
           <h2
@@ -329,7 +449,6 @@ const EventPage = () => {
         </div>
       </section>
 
-      {/* Event List Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         <section className="py-12">
           <h1

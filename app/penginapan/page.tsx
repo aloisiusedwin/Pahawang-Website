@@ -59,7 +59,7 @@ const data = [
 ];
 
 export default function Home() {
-  const { theme } = useTheme(); // Get the current theme (light or dark)
+  const { theme } = useTheme();
 
   useEffect(() => {
     scrollToTop(); 
@@ -71,13 +71,12 @@ export default function Home() {
         theme === "dark" ? "bg-gray-900 text-white" : "bg-white text-black"
       }`}
     >
-      {/* Video Section */}
       <div className="relative h-full">
         <Video
           loop
           autoPlay
           muted
-          src={"./videos/jaw.mp4"}
+          src={"./videos/penginapan.mp4"}
           className="object-cover w-full h-[40vh] md:h-[60vh] lg:h-[85vh]"
         />
         <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-8 text-center overflow-hidden">

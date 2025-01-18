@@ -24,7 +24,7 @@ const DetailProgramKerja = () => {
     {
       name: "Pemilahan dan Pengolahan Sampah Anorganik",
       background: bg04,
-      videos: ["/videos/paving.mp4"],
+      videos: ["https://www.youtube.com/embed/zDzuU-7glZ8?si=FgMCb08np1HMbQVK"],
       kegiatan: [
         "Sosialisasi dan edukasi masyarakat tentang jenis sampah anorganik dan alat pengolahannya.",
         "Pelaksanaan praktik pemilahan sampah dan monitoring.",
@@ -48,7 +48,7 @@ const DetailProgramKerja = () => {
     {
       name: "Pembuatan Website",
       background: bg05,
-      videos: ["/videos/website.mp4"],
+      videos: ["https://www.youtube.com/embed/OdmH_Vbzsn4?si=2QeiRUD3geNzgcPy"],
       kegiatan: [
         "Desain menggunakan Figma dan pengembangan dengan Next.js.",
         "Pengembangan platform untuk tutorial pelestarian lingkungan.",
@@ -195,12 +195,14 @@ const DetailProgramKerja = () => {
           <div className="md:w-1/2">
             <div className="space-y-4">
               {program.videos.map((video, index) => (
-                <video
+                <iframe
                   key={index}
                   src={video}
-                  className="w-full h-auto rounded-lg object-cover"
-                  controls
-                ></video>
+                  className="w-full h-64 rounded-lg"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
               ))}
             </div>
           </div>

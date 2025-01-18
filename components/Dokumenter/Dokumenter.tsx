@@ -8,7 +8,7 @@ const DocumentarySection = () => {
   return (
     <div
       className={`py-10 ${
-        theme === "dark" ? "bg-[#1F3D3B]" : "bg-[#E6F9F4]"
+        theme === "dark" ? "bg-[#1F3D3B]" : "bg-[#99e9d4]"
       }`}
     >
       <div

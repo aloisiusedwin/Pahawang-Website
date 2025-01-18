@@ -84,7 +84,7 @@ export default function Profil() {
           loop
           autoPlay
           muted
-          src={"/videos/bech.mp4"}
+          src={"/videos/profil  .mp4"}
           className="object-cover w-full h-[40vh] md:h-[60vh] lg:h-[85vh]"
         />
         <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-8 text-center overflow-hidden">

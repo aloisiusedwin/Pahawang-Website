@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Link from "next/link"; // Import NextLink
+import Link from "next/link"; 
 import { useTheme } from "next-themes";
 import { Card, CardFooter, Image } from "@nextui-org/react";
 
@@ -10,17 +10,17 @@ const Produk = () => {
 
   const list = [
     {
-      img: "./images/produk/umkm1.jpg",
+      img: "./images/produk/rempeyek kacang.jpg",
       title: "Peyek Kacang",
       type: "Konsumsi",
     },
     {
-      img: "./images/produk/umkm2.jpeg",
+      img: "./images/produk/dodol.jpg",
       title: "Dodol Mangrove",
       type: "Konsumsi",
     },
     {
-      img: "./images/produk/umkm3.jpeg",
+      img: "./images/produk/keripik pisang.jpg",
       title: "Keripik Pisang",
       type: "Konsumsi",
     },
@@ -85,6 +85,11 @@ const Produk = () => {
             </Link>
           ))}
         </div>
+        <hr
+          className={`border-t-2 ${
+            theme === "dark" ? "border-gray-700" : "border-gray-300"
+          } mb-4 lg:mb-1 mt-20`}
+        />
       </div>
     </section>
   );

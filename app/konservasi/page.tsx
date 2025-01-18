@@ -20,7 +20,7 @@ const dokumentasiFoto = [
   { image: "/images/konservasi/terumbu6.jpg" },
 ];
 
-const ProgramKerjaSection = () => {
+const KonservasiSecrtion = () => {
   const { theme } = useTheme();
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [isDragging, setIsDragging] = useState(false);
@@ -112,7 +112,6 @@ const ProgramKerjaSection = () => {
           konservasi kami.
         </p>
 
-        {/* Scrollable Container */}
         <div
           ref={containerRef}
           className="flex gap-6 overflow-x-auto py-4 scrollbar-hide"
@@ -202,7 +201,7 @@ export default function Profil() {
         </div>
       </section>
 
-      <ProgramKerjaSection />
+      <KonservasiSecrtion />
 
       {/* Scroll To Top Button */}
       <ScrollToTopButton />

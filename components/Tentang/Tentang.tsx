@@ -1,61 +1,62 @@
 "use client";
 import React from "react";
-import { useTheme } from "next-themes"; // Import useTheme for theme detection
-import maledivesImg01 from "@/public/images/maledives01.jpg";
-import maledivesImg02 from "@/public/images/maledives02.jpg";
+import { useTheme } from "next-themes";
+import tentang1 from "@/public/images/tentang1.jpg";
+import tentang2 from "@/public/images/tentang2.jpg";
 
 const Tentang = () => {
-  const { theme } = useTheme(); 
+  const { theme } = useTheme();
 
   return (
     <section
       id="Tentang"
-      className={`relative flex padding-container items-center py-10 ${
+      className={`relative flex flex-col md:flex-row items-center gap-8 padding-container py-10 ${
         theme === "dark" ? "bg-gray-800 text-white" : "bg-[#E6F9F4] text-black"
       }`}
     >
-      <div className="flex h-[400px]">
-        <div className="flex absolute left-[-80px] top-[-16px] 2xl:top-[-60px] lg:top-[-20px] md:top-[-80px] md:left-20">
+      {/* Image Container */}
+      <div className="flex-1 flex gap-4 justify-center">
+        {/* Image 1 */}
+        <div className="relative w-[45%] md:w-[40%] h-[250px] md:h-[350px] rounded-3xl overflow-hidden">
           <img
-            className="rounded-3xl border-2 border-white"
-            src={maledivesImg01.src}
-            alt="img"
-            width={400}
-            height={1200}
+            className="w-full h-full object-cover"
+            src={tentang1.src}
+            alt="Pulau Pahawang Image 1"
           />
         </div>
-        <div className="flex absolute z-[-1] left-1/3 right-[-40px] top-[80px] h-5/6 2xl:top-[-120px] lg:top-[-60px] lg:h-[120%] lg:z-0">
+        {/* Image 2 */}
+        <div className="relative w-[45%] md:w-[40%] h-[250px] md:h-[350px] rounded-3xl overflow-hidden">
           <img
-            className="rounded-3xl border-2 border-white"
-            src={maledivesImg02.src}
-            alt="img"
-            width={400}
-            height={1200}
+            className="w-full h-full object-cover"
+            src={tentang2.src}
+            alt="Pulau Pahawang Image 2"
           />
         </div>
       </div>
+
+      {/* Text Container */}
       <div
-        className={`p-4 rounded-3xl m-4 left-1/4 absolute xl:top-[80px] xl:left-2/3 ${
+        className={`flex-1 p-6 rounded-3xl ${
           theme === "dark" ? "bg-black/50 text-white" : "bg-white/30 text-black"
         }`}
       >
         <h1
-          className={`regular-24 xl:regular-40 mb-5 ${
+          className={`text-xl md:text-3xl font-bold mb-5 ${
             theme === "dark" ? "text-green-300" : "text-green-900"
           }`}
         >
           Pulau Pahawang
         </h1>
         <p
-          className={`regular-14 xl:regular-16 text-justify ${
+          className={`text-justify text-sm md:text-base leading-relaxed ${
             theme === "dark" ? "text-white" : "text-black"
           }`}
         >
           Surga Tersembunyi Nusantara yang Memikat dengan Keindahan Alam Bawah
-          Laut, Pantai Berpasir Putih, dan Kehangatan Penduduk Lokal, Serta
-          Kekayaan Kuliner Khas Seperti Dodol Mangrove dan Kerupuk Jengkol yang
-          Mendukung UMKM Lokal, Menjadikannya Destinasi Sempurna untuk Menikmati
-          Wisata, Budaya, dan Petualangan yang Tak Terlupakan.
+          Laut, Pantai Berpasir Putih, dan Kehangatan Penduduk Lokal. Kekayaan
+          kuliner khas seperti Dodol Mangrove dan Kerupuk Jengkol mendukung UMKM
+          lokal, menjadikannya destinasi sempurna untuk menikmati wisata,
+          budaya, dan petualangan yang tak terlupakan.
         </p>
       </div>
     </section>

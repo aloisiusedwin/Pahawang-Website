@@ -15,45 +15,45 @@ const montserrat = Montserrat({
 const programKerjaData = [
   {
     video: "./videos/paving.mp4",
-    name: "Pemilahan dan Pengolahan Sampah Anorganik",
+    name: "Pengolahan Sampah Anorganik",
     slug: "pemilahan-dan-pengolahan-sampah-anorganik",
     description:
-      "Pengelolaan sampah anorganik menjadi paving block ramah lingkungan melalui edukasi dan pelatihan masyarakat.",
+      "Pengelolaan sampah anorganik menjadi eco-block ramah lingkungan melalui sosialisasi dan praktik penggunaan alat pencacah plastik.",
   },
   {
     video: "./videos/website.mp4",
     name: "Pembuatan Website",
     slug: "pembuatan-website",
     description:
-      "Pembuatan platform digital berisi informasi, edukasi, dan promosi pelestarian lingkungan Desa Pahawang.",
+      "Pembuatan platform digital berisi informasi dan edukasi pelestarian lingkungan desa serta promosi produk UMKM di Desa Pulau Pahawang.",
   },
   {
     video: "./videos/kampanye.mp4",
     name: "Kampanye Kebersihan",
     slug: "kampanye-kebersihan",
     description:
-      "Edukasi kebersihan dan penyediaan fasilitas untuk meningkatkan kesadaran lingkungan masyarakat dan wisatawan.",
+      "Sosialisasi kepada masyarakat dan wisatawan tentang pemilahan sampah dengan penyediaan tempat sampah dan pembuatan papan kampanye.",
   },
   {
     video: "./videos/maggot.mp4",
     name: "Pemberdayaan Maggot",
     slug: "pemberdayaan-maggot",
     description:
-      "Pengolahan sampah organik menggunakan maggot untuk menghasilkan pakan ternak ramah lingkungan.",
+      "Mengedukasi masyarakat mengenai pemberdayaan maggot untuk mengurai sampah organik dan pemanfaatan maggot sebagai pakan ternak.",
   },
   {
     video: "./videos/asbak.mp4",
     name: "Asbak Portable",
     slug: "asbak-portable",
     description:
-      "Produksi asbak portable berbahan dasar bambu untuk mengurangi pencemaran puntung rokok di lingkungan wisata.",
+      "Pembuatan asbak portable yang mudah dibawa dengan memanfaatkan bahan dasar bambu untuk mengurangi sampah puntung rokok di lingkungan wisata.",
   },
   {
     video: "./videos/umkm.mp4",
     name: "Peningkatan UMKM",
     slug: "peningkatan-umkm",
     description:
-      "Meningkatkan kualitas dan pemasaran produk UMKM lokal, seperti dodol mangrove, untuk memperluas pasar.",
+      "Pendataan setiap produk UMKM yang ada di Desa Pulau Pahawang dan membantu meningkatkan UMKM yang ada dengan promosi melalui website.",
   },
 ];
 
@@ -82,14 +82,6 @@ const ProfileSection = () => {
         >
           Dosen Pembimbing Lapangan KKN Tematik Pahawang
         </p>
-        <p
-          className={`text-base ${
-            theme === "dark" ? "text-gray-400" : "text-gray-600"
-          }`}
-        >
-          Berkomitmen untuk membangun masyarakat desa yang mandiri dan
-          berkelanjutan melalui program kerja inovatif.
-        </p>
       </div>
     </div>
   );
@@ -113,19 +105,20 @@ const ProgramKerjaSection = () => {
           Program Kerja KKN Tematik ITERA
         </h2>
         <p
-          className={`text-center text-lg sm:text-xl mb-8 ${
+          className={`text-sm sm:text-base lg:text-lg leading-loose text-justify lg:text-justify mb-8 ${
             theme === "dark" ? "text-gray-400" : "text-gray-700"
           }`}
         >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-          pulvinar tortor nisl, eu tempus neque gravida nec. Sed sollicitudin
-          felis hendrerit, scelerisque enim in, ornare purus. Nulla eget tempor
-          sapien. Praesent eget augue augue. Fusce ultrices dolor vel dolor
-          tincidunt, at consectetur arcu viverra. Aliquam pellentesque nulla eu
-          pellentesque imperdiet. Mauris hendrerit interdum libero non lobortis.
-          Nulla quis dapibus est, sit amet suscipit magna. Duis tempor dolor eu
-          vulputate varius. Maecenas fermentum consectetur turpis, vel suscipit
-          arcu condimentum ut.
+          Program kerja pada KKN-T adalah program yang telah direncanakan ketika
+          pengajuan proposal dengan berlandaskan pada potensi dan atau
+          permasalahan pada desa tujuan. Program kerja pada KKN-T dibagi menjadi
+          dua (2) yaitu program kerja pokok dan tambahan. Program kerja pokok
+          merupakan program kerja wajib yang dilakukan oleh seluruh peserta
+          dalam kelompok KKN-T. Sementara itu, program kerja tambahan merupakan
+          program kerja yang bersifat membantu program yang telah dan atau
+          sedang berjalan di lokasi mitra KKN-T. Program kerja tambahan dapat
+          berupa pengembangan, percepatan, dan atau membantu program yang sedang
+          berlangsung di desa.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {programKerjaData.map((program, index) => (
@@ -288,15 +281,13 @@ export default function Profil() {
               theme === "dark" ? "text-gray-300" : "text-gray-700"
             }`}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-            pulvinar tortor nisl, eu tempus neque gravida nec. Sed sollicitudin
-            felis hendrerit, scelerisque enim in, ornare purus. Nulla eget
-            tempor sapien. Praesent eget augue augue. Fusce ultrices dolor vel
-            dolor tincidunt, at consectetur arcu viverra. Aliquam pellentesque
-            nulla eu pellentesque imperdiet. Mauris hendrerit interdum libero
-            non lobortis. Nulla quis dapibus est, sit amet suscipit magna. Duis
-            tempor dolor eu vulputate varius. Maecenas fermentum consectetur
-            turpis, vel suscipit arcu condimentum ut.
+            KKN-T merupakan salah satu program mahasiswa yaitu Merdeka
+            Belajar-Kampus Merdeka (MBKM). Kuliah Kerja Nyata Tematik dirancang
+            untuk memberikan pengalaman belajar kepada mahasiswa untuk hidup di
+            tengah masyarakat di luar kampus yang secara langsung bersama-sama
+            masyarakat mengidentifikasi potensi dan menangani masalah sehingga
+            diharapkan mampu mengembangkan potensi desa/daerah dan meramu solusi
+            untuk permasalahan yang dihadapi masyarakat pedesaan.
           </p>
           <hr
             className={`border-t-2 ${
