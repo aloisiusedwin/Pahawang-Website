@@ -1,5 +1,10 @@
 "use client";
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, A11y } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/autoplay";
+import "swiper/css/pagination";
 import ScrollToTopButton from "@/components/ScrollToTop";
 import SmoothScroll from "@/components/SmoothScrolling";
 import Video from "@/components/Header/HeaderVideo";
@@ -18,76 +23,11 @@ const dokumentasiFoto = [
   { image: "/images/konservasi/terumbu4.jpg" },
   { image: "/images/konservasi/terumbu5.jpg" },
   { image: "/images/konservasi/terumbu6.jpg" },
+  { image: "/images/konservasi/terumbu7.jpg" },
 ];
 
 const ProgramKerjaSection = () => {
   const { theme } = useTheme();
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
-  const animationFrameId = useRef<number | null>(null);
-
-  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-    setIsDragging(true);
-    if (containerRef.current) {
-      const container = containerRef.current;
-      setStartX(e.pageX - container.offsetLeft);
-      setScrollLeft(container.scrollLeft);
-    }
-  };
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!isDragging) return;
-    e.preventDefault();
-    if (containerRef.current) {
-      const container = containerRef.current;
-      const x = e.pageX - container.offsetLeft;
-      const walk = (x - startX) * 2;
-
-      if (animationFrameId.current !== null) {
-        cancelAnimationFrame(animationFrameId.current);
-      }
-      animationFrameId.current = requestAnimationFrame(() => {
-        container.scrollLeft = scrollLeft - walk;
-      });
-    }
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-    if (animationFrameId.current !== null) {
-      cancelAnimationFrame(animationFrameId.current);
-    }
-  };
-
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    const handleScroll = () => {
-      if (container.scrollLeft <= 0) {
-        container.scrollLeft = container.scrollWidth - container.clientWidth;
-      } else if (
-        container.scrollLeft >=
-        container.scrollWidth - container.clientWidth
-      ) {
-        container.scrollLeft = 0;
-      }
-    };
-
-    container.addEventListener("scroll", handleScroll);
-
-    return () => {
-      container.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const infiniteData = [
-    ...dokumentasiFoto,
-    ...dokumentasiFoto,
-    ...dokumentasiFoto,
-  ];
 
   return (
     <section
@@ -106,39 +46,45 @@ const ProgramKerjaSection = () => {
         <p
           className={`text-center text-lg sm:text-xl mb-8 ${
             theme === "dark" ? "text-gray-400" : "text-gray-700"
-          }`}
+          } ${window.innerWidth <= 640 ? "text-justify" : "text-center"}`}
         >
-          Geser ke kiri atau kanan untuk menjelajahi momen penting dalam program
-          konservasi kami.
+          Berikut ini merupakan dokumentasi momen penting dalam program konservasi kami.
         </p>
 
-        {/* Scrollable Container */}
-        <div
-          ref={containerRef}
-          className="flex gap-6 overflow-x-auto py-4 scrollbar-hide"
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
-          onMouseLeave={handleMouseUp}
+        {/* Swiper Slider */}
+        <Swiper
+          modules={[Autoplay, Pagination, A11y]}
+          spaceBetween={16}
+          slidesPerView={1}
+          loop={true}
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: false,
+          }}
+          pagination={{ clickable: true }}
+          breakpoints={{
+            480: { slidesPerView: 1.5 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          className="py-4"
         >
-          {infiniteData.map((item, index) => (
-            <div
-              key={index}
-              className="flex-shrink-0 w-72 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300"
-            >
-              <img
-                src={item.image}
-                alt={`Dokumentasi ${index + 1}`}
-                className="w-full h-48 rounded-lg object-cover"
-              />
-            </div>
+          {dokumentasiFoto.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div className="rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <img
+                  src={item.image}
+                  alt={`Dokumentasi ${index + 1}`}
+                  className="w-full h-40 sm:h-48 md:h-64 lg:h-72 rounded-lg object-cover"
+                />
+              </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
     </section>
   );
 };
-
 
 export default function Profil() {
   const { theme } = useTheme();
