@@ -20,41 +20,97 @@ const scrollToTop = () => {
 
 const data = [
   {
+    image: "./images/penginapan/teras.jpeg",
+    title: "Teras Pahawang",
+    label: "Penginapan Pulau Pahawang",
+    description:
+      "Pilihan villa nyaman di Pulau Pahawang dengan berbagai fasilitas, seperti akses pantai dan pengalaman menginap yang berkesan.",
+    specifications: [
+      "Seluruh cottage",
+      "2 orang",
+      "1 kamar tidur",
+      "1 kamar mandi",
+      "1 tempat tidur",
+      "50 m²"
+    ],
+    phoneNumber: "6281995731245",
+  },
+  {
     image: "./images/penginapan/andreas.jpeg",
-    title: "Andreas Resort",
-    label:
-      "Asbak olahan dari limbah yang diperoleh dari sampah-sampah sekitar Pulau Pahawang.",
+    title: "Andreas Resort Villa Air Pahawang",
+    label: "Penginapan Pulau Pahawang",
     description:
-      "Asbak bambu unik yang dibuat dari limbah bambu, menghadirkan keindahan dan kesederhanaan dari Pulau Pahawang.",
-    specifications: ["Material: Bambu", "Dimensi: 10x10 cm", "Berat: 200 gram"],
-    phoneNumber: "628123456789",
+      "Pilihan villa nyaman di Pulau Pahawang dengan berbagai fasilitas, seperti akses pantai, Wi-Fi, dan pengalaman menginap yang berkesan.",
+    specifications: [
+      "Kamar mandi pribadi",
+      "Ber-AC",
+      "Dapur",
+      "Lemari es",
+      "Mesin pembuat kopi",
+      "Akses ke pantai",
+      "Snorkeling",
+      "Wi-Fi gratis",
+      "Wi-Fi di area publik",
+      "Tempat kerja dengan internet publik"
+    ],
+    phoneNumber: "628118888513",
   },
   {
-    image: "./images/produk/pembohong.png",
-    title: "Villa Cakrawala",
-    label: "Dodol mangrove khas pahawang cik. enak loh langsung diborong der.",
+    image: "./images/penginapan/mangrove.jpeg",
+    title: "Villa Mangrove Pulau Pahawang",
+    label: "Penginapan Pulau Pahawang",
     description:
-      "Dodol mangrove khas Pahawang, dibuat dengan bahan alami dari hutan mangrove setempat.",
+      "Pilihan villa nyaman di Pulau Pahawang dengan berbagai fasilitas, seperti akses pantai dan pengalaman menginap yang berkesan.",
     specifications: [
-      "Rasa: Original, Pandan",
-      "Berat: 500 gram",
-      "Bahan: Tepung ketan, mangrove",
+      "Di tepi pantai",
+      "Kamar Tidur",
+      "Kamar Mandi",
     ],
-    phoneNumber: "628987654321",
+    phoneNumber: "6281286158696",
   },
   {
-    image: "./images/produk/pajamass.jpg",
-    title: "Villa Penggetahan",
-    label:
-      "Ikan asin tawar dari Pulau Pahawang yang diolah secara higienis untuk rasa terbaik.",
+    image: "./images/penginapan/nadiya.jpeg",
+    title: "La Nadiya Villa Pahawang",
+    label: "Penginapan Pulau Pahawang",
     description:
-      "Ikan asin tawar khas Pulau Pahawang, cocok sebagai lauk atau bahan masakan.",
+      "Villa, food and beverage and tourism destination",
     specifications: [
-      "Berat: 1 kg",
-      "Jenis: Ikan tawar",
-      "Proses: Pengeringan alami",
+      "Di tepi pantai",
+      "Wi-Fi",
+      "Ber-AC",
+      "Sarapan"
     ],
-    phoneNumber: "628111223344",
+    phoneNumber: "62817858085",
+  },
+  {
+    image: "./images/penginapan/nadiya.jpeg",
+    title: "Villa Kembar",
+    label: "Penginapan Pulau Pahawang",
+    description:
+      "Pilihan villa nyaman di Pulau Pahawang dengan berbagai fasilitas, seperti akses pantai, Wi-Fi, dan pengalaman menginap yang berkesan.",
+    specifications: [
+      "Kamar Mandi Pribad",
+      "Wi-Fi",
+      "Ber-AC",
+      "Sarapan",
+      "Perlengkapan Mandi",
+      "Televisi"
+    ],
+    phoneNumber: "08127289425",
+  },
+  {
+    image: "./images/penginapan/nadiya.jpeg",
+    title: "De'Boer Pahawang",
+    label: "Penginapan Pulau Pahawang",
+    description:
+      " Swasana Alam,  pantai dan perbukitan yang sejuk. Rasa hidangan laut di sajikan langsung dari alam. Membuka pintu dan jendela kamar menyatu  dengan alam, pantai dan debur ombak. Bersantai di tepi pantai atau berenang di air laut yang tenang. Bersantap dengan hidangan khas laut dengan menu pilihan.",
+    specifications: [
+      "Double Bed dan Single Bed",
+      "Air Mineral, kopi dan Teh",
+      "Teko Pemanas Air listrik",
+      "Perlengkapan Mandi",
+    ],
+    phoneNumber: "087798908789",
   },
 ];
 
