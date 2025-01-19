@@ -1,3 +1,4 @@
+// Import dependencies
 "use client";
 
 import React, { useEffect } from "react";
@@ -17,7 +18,7 @@ const montserrat = Montserrat({
 
 const dusunData = [
   {
-    images: ["./images/sand.jpg", "./images/maledives01.jpg"],
+    images: ["./images/dusun/suakbuah.jpg"],
     name: "Dusun I Suak Buah",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu arcu commodo, eleifend mauris in, vulputate lorem.",
@@ -25,7 +26,7 @@ const dusunData = [
     contactInfo: "+62 831-3137-4581",
   },
   {
-    images: ["./images/maledives01.jpg"],
+    images: ["./images/dusun/suakbuah.jpg"],
     name: "Dusun II Penggetahan",
     description:
       "Surga bawah laut dengan terumbu karang yang masih alami, cocok untuk snorkeling.",
@@ -33,7 +34,7 @@ const dusunData = [
     contactInfo: "+62 813 4567 8901",
   },
   {
-    images: ["./images/maledives02.jpg"],
+    images: ["./images/dusun/suakbuah.jpg"],
     name: "Dusun III Jeralangan",
     description:
       "Memiliki hutan mangrove yang lebat dan menjadi rumah bagi berbagai spesies burung.",
@@ -41,7 +42,7 @@ const dusunData = [
     contactInfo: "+62 814 5678 9012",
   },
   {
-    images: ["./images/maledives01.jpg"],
+    images: ["./images/dusun/suakbuah.jpg"],
     name: "Dusun IV Kalangan",
     description:
       "Destinasi populer untuk homestay dan pengalaman hidup bersama warga lokal.",
@@ -49,7 +50,7 @@ const dusunData = [
     contactInfo: "+62 815 6789 0123",
   },
   {
-    images: ["./images/maledives02.jpg"],
+    images: ["./images/dusun/suakbuah.jpg"],
     name: "Dusun V Pahawang",
     description:
       "Jantung pulau dengan berbagai aktivitas budaya dan seni tradisional.",
@@ -57,7 +58,7 @@ const dusunData = [
     contactInfo: "+62 816 7890 1234",
   },
   {
-    images: ["./images/sand.jpg"],
+    images: ["./images/dusun/suakbuah.jpg"],
     name: "Dusun VI Cukuh Nyai",
     description:
       "Dusun kecil yang menawarkan ketenangan dan keindahan alam tropis.",
@@ -84,7 +85,7 @@ export default function Profil() {
           loop
           autoPlay
           muted
-          src={"/videos/profil  .mp4"}
+          src={"/videos/profil.mp4"}
           className="object-cover w-full h-[40vh] md:h-[60vh] lg:h-[85vh]"
         />
         <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-8 text-center overflow-hidden">
@@ -124,16 +125,21 @@ export default function Profil() {
           />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        {/* Dusun list layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 py-8">
           {dusunData.map((dusun, index) => (
-            <CardDusun
+            <div
               key={index}
-              images={dusun.images}
-              name={dusun.name}
-              description={dusun.description}
-              location={dusun.location}
-              contactInfo={dusun.contactInfo}
-            />
+              className="w-full bg-white shadow-lg rounded-lg p-4"
+            >
+              <CardDusun
+                images={dusun.images}
+                name={dusun.name}
+                description={dusun.description}
+                location={dusun.location}
+                contactInfo={dusun.contactInfo}
+              />
+            </div>
           ))}
         </div>
       </div>
