@@ -21,7 +21,7 @@ const dusunData = [
     images: ["./images/dusun/suakbuah.jpg"],
     name: "Dusun I Suak Buah",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu arcu commodo, eleifend mauris in, vulputate lorem.",
+      "Dusun Suak Buah merupakan sentral pendidikan. Di dusun tersebut terdapat sekolah mulai dari SD dan SMP. Keseharian masyarakat dusun Suak Buah berfokus di sektor perkebunan yaitu kelapa. Produk UMKM yang dikerjakan oleh ibu-ibu PKK di dusun Suak Buah yaitu olahan mangrove seperti dodol mangrove dan sirup mangrove.",
     location: "Pulau Pahawang, Lampung",
     contactInfo: "+62 831-3137-4581",
   },
@@ -29,7 +29,7 @@ const dusunData = [
     images: ["./images/dusun/suakbuah.jpg"],
     name: "Dusun II Penggetahan",
     description:
-      "Surga bawah laut dengan terumbu karang yang masih alami, cocok untuk snorkeling.",
+      "Di Dusun Penggetahan, terdapat balai desa yang menjadi lokasi administrasi desa. Mata pencaharian yang terdapat di Dusun Penggetahan yakni pertanian coklat dan kelapa, nelayan, jasa transportasi, serta penginapan (Villa Teras). ",
     location: "Pulau Pahawang, Lampung",
     contactInfo: "+62 813 4567 8901",
   },
@@ -37,7 +37,7 @@ const dusunData = [
     images: ["./images/dusun/suakbuah.jpg"],
     name: "Dusun III Jeralangan",
     description:
-      "Memiliki hutan mangrove yang lebat dan menjadi rumah bagi berbagai spesies burung.",
+      "Masyarakat Dusun Jelarangan banyak bergerak di sektor pariwisata yang didukung dengan banyaknya villa penginapan, rumah makan, pantai, spot snorkeling dan diving. Karena keunggulannya di bidang pariwisata, menjadikan masyarakat Dusun Jelarangan memiliki potensi untuk menjadi pemandu wisata. Selain itu, terdapat Kelompok Konservasi Terumbu Karang yang diinisiasi oleh masyarakat setempat. Dengan adanya kelompok konservasi tersebut, menjadikan lokasi tersebut sebagai lokasi wisata yang dikenal dengan nama Sea Walker.",
     location: "Pulau Pahawang, Lampung",
     contactInfo: "+62 814 5678 9012",
   },
@@ -45,7 +45,7 @@ const dusunData = [
     images: ["./images/dusun/suakbuah.jpg"],
     name: "Dusun IV Kalangan",
     description:
-      "Destinasi populer untuk homestay dan pengalaman hidup bersama warga lokal.",
+      "Dusun Kalangan menjadi satu-satunya dusun yang terpisah dengan dusun lainnya yang berada di Pulau Pahawang besar. Dusun Kalangan memiliki berbagai sektor ekonomi yang beragam. Sektor ekonomi yang terdapat di dusun ini yaitu nelayan, pertanian kelapa, penginapan (Villa Mangrove), dan area penanaman mangrove yang hasilnya dimanfaatkan dalam pembuatan produk UMKM seperti dodol mangrove. ",
     location: "Pulau Pahawang, Lampung",
     contactInfo: "+62 815 6789 0123",
   },
@@ -53,7 +53,7 @@ const dusunData = [
     images: ["./images/dusun/suakbuah.jpg"],
     name: "Dusun V Pahawang",
     description:
-      "Jantung pulau dengan berbagai aktivitas budaya dan seni tradisional.",
+      "Letak Dusun Pahawang berbatasan langsung dengan Dusun II Penggetahan, dimana fasilitas yang terdapat di Dusun ini yaitu fasilitas kesehatan yaitu Puskesmas dan Sekolah Menengah Atas. Masyarakat Dusun Pahawang ini banyak bermata pencaharian di sektor perkebunan kelapa, jasa transportasi kapal, dan beberapa penginapan (Villa Family dan Andreas Ressort). Selain itu, masyarakat Dusun Penggetahan juga memproduksi beberapa produk UMKM seperti kerupuk ikan dan kemplang.",
     location: "Pulau Pahawang, Lampung",
     contactInfo: "+62 816 7890 1234",
   },
@@ -61,7 +61,7 @@ const dusunData = [
     images: ["./images/dusun/suakbuah.jpg"],
     name: "Dusun VI Cukuh Nyai",
     description:
-      "Dusun kecil yang menawarkan ketenangan dan keindahan alam tropis.",
+      "Sama seperti Dusun Jelarangan, mata pencaharian di Dusun ini banyak berfokus di sektor wisata dengan didukung banyaknya villa, seperti Villa Turi dan Villa La Nadiya. Produk UMKM yang dapat ditemukan di Dusun ini yaitu Virgin Coconut Oil (VCO).",
     location: "Pulau Pahawang, Lampung",
     contactInfo: "+62 817 8901 2345",
   },
@@ -114,9 +114,9 @@ export default function Profil() {
               theme === "dark" ? "text-gray-300" : "text-gray-700"
             }`}
           >
-            Setiap dusun di Pulau Pahawang memiliki daya tarik unik yang siap
-            dijelajahi. Dari pantai berpasir putih hingga hutan mangrove yang
-            asri, temukan pesona masing-masing dusun!
+            Desa Pulau Pahawang terbagi menjadi 6 dusun. Di setiap dusunnya
+            memiliki daya tarik dan potensi unik yang mewakili beberapa sektor
+            dengan pesona memukau mata.
           </p>
           <hr
             className={`border-t-2 ${
@@ -128,10 +128,7 @@ export default function Profil() {
         {/* Dusun list layout */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 py-8">
           {dusunData.map((dusun, index) => (
-            <div
-              key={index}
-              className="w-full shadow-lg rounded-lg p-4"
-            >
+            <div key={index} className="w-full shadow-lg rounded-lg p-4">
               <CardDusun
                 images={dusun.images}
                 name={dusun.name}

@@ -23,8 +23,7 @@ const data = [
     image: "./images/penginapan/teras pahawang.jpg",
     title: "Teras Pahawang",
     label: "Penginapan Pulau Pahawang",
-    description:
-      "Pilihan villa nyaman di Pulau Pahawang dengan berbagai fasilitas, seperti akses pantai dan pengalaman menginap yang berkesan.",
+    description: "Penginapan dengan nuansa asri pinggir pantai.",
     specifications: [
       "Seluruh cottage",
       "2 orang",
@@ -32,50 +31,41 @@ const data = [
       "1 kamar mandi",
       "1 tempat tidur",
       "50 m²",
+      "Dusun Penggetahan, Desa Pulau Pahawang",
     ],
     phoneNumber: "6281995731245",
-  },
-  {
-    image: "./images/penginapan/andreas.jpeg",
-    title: "Andreas Resort Villa Air Pahawang",
-    label: "Penginapan Pulau Pahawang",
-    description:
-      "Pilihan villa nyaman di Pulau Pahawang dengan berbagai fasilitas, seperti akses pantai, Wi-Fi, dan pengalaman menginap yang berkesan.",
-    specifications: [
-      "Kamar mandi pribadi",
-      "Ber-AC",
-      "Dapur",
-      "Lemari es",
-      "Mesin pembuat kopi",
-      "Akses ke pantai",
-      "Snorkeling",
-      "Wi-Fi gratis",
-      "Wi-Fi di area publik",
-      "Tempat kerja dengan internet publik",
-    ],
-    phoneNumber: "628118888513",
   },
   {
     image: "./images/penginapan/villa mangrove.jpg",
     title: "Villa Mangrove Pulau Pahawang",
     label: "Penginapan Pulau Pahawang",
-    description:
-      "Pilihan villa nyaman di Pulau Pahawang dengan berbagai fasilitas, seperti akses pantai dan pengalaman menginap yang berkesan.",
-    specifications: ["Di tepi pantai", "Kamar Tidur", "Kamar Mandi"],
+    description: "Penginapan dengan sensasi menginap di atas laut.",
+    specifications: [
+      "Di tepi pantai",
+      "Kamar Tidur",
+      "Kamar Mandi",
+      "Dusun Kalangan, Desa Pulau Pahawang",
+    ],
     phoneNumber: "6281286158696",
   },
   {
     image: "./images/penginapan/la nadiya.jpg",
     title: "La Nadiya Villa Pahawang",
     label: "Penginapan Pulau Pahawang",
-    description: "Villa, food and beverage and tourism destination",
-    specifications: ["Di tepi pantai", "Wi-Fi", "Ber-AC", "Sarapan"],
+    description: "Penginapan dengan pemandangan hijau Pulau Pahawang.",
+    specifications: [
+      "Di tepi pantai",
+      "Wi-Fi",
+      "Ber-AC",
+      "Sarapan",
+      "Dusun Cukuh Nyai, Desa Pulau Pahawang",
+    ],
     phoneNumber: "62817858085",
   },
   {
     image: "./images/penginapan/villa kembar.jpg",
     title: "Villa Kembar",
-    label: "Penginapan Pulau Pahawang",
+    label: "Penginapan dengan nuansa asri pinggir pantai.",
     description:
       "Pilihan villa nyaman di Pulau Pahawang dengan berbagai fasilitas, seperti akses pantai, Wi-Fi, dan pengalaman menginap yang berkesan.",
     specifications: [
@@ -92,13 +82,13 @@ const data = [
     image: "./images/penginapan/de boer.png",
     title: "De'Boer Pahawang",
     label: "Penginapan Pulau Pahawang",
-    description:
-      " Swasana Alam,  pantai dan perbukitan yang sejuk. Rasa hidangan laut di sajikan langsung dari alam. Membuka pintu dan jendela kamar menyatu  dengan alam, pantai dan debur ombak. Bersantai di tepi pantai atau berenang di air laut yang tenang. Bersantap dengan hidangan khas laut dengan menu pilihan.",
+    description: "Penginapan dengan nuansa tenang di pinggir pantai.",
     specifications: [
       "Double Bed dan Single Bed",
       "Air Mineral, kopi dan Teh",
       "Teko Pemanas Air listrik",
       "Perlengkapan Mandi",
+      "Dusun Cukuh Nyai, Desa Pulau Pahawang",
     ],
     phoneNumber: "087798908789",
   },

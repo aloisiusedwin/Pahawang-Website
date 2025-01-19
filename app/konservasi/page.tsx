@@ -134,11 +134,13 @@ export default function Profil() {
               theme === "dark" ? "text-gray-400" : "text-gray-700"
             }`}
           >
-            Konservasi terumbu karang merupakan upaya untuk melindungi dan
-            memulihkan ekosistem laut yang vital bagi kehidupan bawah laut dan
-            masyarakat pesisir. Terumbu karang menyediakan habitat bagi berbagai
-            jenis biota laut, mendukung ekonomi lokal, dan melindungi garis
-            pantai dari abrasi.
+            Terumbu karang, dikenal sebagai "hutan hujan lautan," adalah
+            ekosistem kaya yang menjadi habitat 25% spesies laut. Namun,
+            pencemaran, aktivitas ilegal, dan hama telah merusak 50% terumbu
+            karang di Pulau Pahawang. Masyarakat setempat membentuk "Kelompok
+            Konservasi Terumbu Karang" yang berhasil memulihkan kerusakan
+            menggunakan metode paralon, rak, dan substrat, menanam hingga 500
+            bibit dalam 3 - 4 hari.
           </p>
           <hr
             className={`border-t-2 mb-4 lg:mb-1 mt-5 ${

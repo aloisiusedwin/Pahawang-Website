@@ -22,8 +22,7 @@ const data = [
   {
     image: "./images/produk/dodol.jpg",
     title: "Dodol Mangrove",
-    label:
-      "Asbak olahan dari limbah yang diperoleh dari sampah-sampah sekitar Pulau Pahawang.",
+    label: "Dodol Mangrove adalah camilan kenyal khas berbahan buah mangrove.",
     description:
       "Dodol Mangrove adalah camilan kenyal khas berbahan buah mangrove (Sonneratia caseolaris). Rasanya manis dengan sedikit asam, aromanya khas, dan kaya akan antioksidan serta serat.",
     specifications: [
@@ -152,15 +151,12 @@ export default function Home() {
               theme === "dark" ? "text-gray-300" : "text-gray-700"
             }`}
           >
-            Temukan keindahan Pulau Pahawang dalam setiap produk UMKM yang
-            dihasilkan dengan penuh cinta dan dedikasi. Mulai dari kerajinan
-            tangan unik, makanan khas yang menggugah selera, hingga produk alami
-            yang mencerminkan kekayaan alamnya, semuanya dirancang untuk membawa
-            pesona Pahawang ke dalam hidup Anda. Setiap item tidak hanya cocok
-            untuk dijadikan oleh-oleh spesial, tetapi juga sebagai koleksi
-            pribadi yang sarat cerita dan makna. Dukung kreativitas lokal dan
-            bawa pulang kehangatan budaya Pahawang melalui produk-produk
-            istimewa ini!
+            Produk UMKM di Desa Pulau Pahawang merupakan hasil karya penuh
+            kreativitas dari kelompok ibu-ibu setempat. Menggunakan bahan-bahan
+            alami yang melimpah di sekitar Pulau Pahawang, setiap produk
+            mencerminkan kekayaan alam dan kearifan tradisional. Dengan sentuhan
+            tangan terampil, setiap produk yang dihasilkan memberikan kesan
+            mendalam tentang keindahan dan budaya Pulau Pahawang.
           </p>
           <hr
             className={`border-t-2 ${
