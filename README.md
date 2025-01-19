@@ -17,7 +17,7 @@ Website ini dikembangkan sebagai platform digital untuk mendukung edukasi, infor
 
 ## Cara Akses
 
-Website ini dapat diakses melalui URL: [Masukkan URL website di sini]
+Website ini dapat diakses melalui URL: https://www.pahawang.my.id
 
 ## Tujuan Proyek
 
