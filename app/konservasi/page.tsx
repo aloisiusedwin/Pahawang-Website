@@ -46,7 +46,7 @@ const KonservasiSecrtion = () => {
         <p
           className={`text-center text-lg sm:text-xl mb-8 ${
             theme === "dark" ? "text-gray-400" : "text-gray-700"
-          } ${window.innerWidth <= 640 ? "text-justify" : "text-center"}`}
+          }`}
         >
           Berikut ini merupakan dokumentasi momen penting dalam program konservasi kami.
         </p>
