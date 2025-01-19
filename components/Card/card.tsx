@@ -96,7 +96,7 @@ const Modal = ({
                 onClick={handleWhatsAppClick}
                 className="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-lg"
               >
-                Pesan / Hubungi Penjual
+                Pesan / Hubungi
               </button>
             </div>
           </div>

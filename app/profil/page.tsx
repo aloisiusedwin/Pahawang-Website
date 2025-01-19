@@ -130,7 +130,7 @@ export default function Profil() {
           {dusunData.map((dusun, index) => (
             <div
               key={index}
-              className="w-full bg-white shadow-lg rounded-lg p-4"
+              className="w-full shadow-lg rounded-lg p-4"
             >
               <CardDusun
                 images={dusun.images}

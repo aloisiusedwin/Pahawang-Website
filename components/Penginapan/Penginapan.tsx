@@ -10,33 +10,33 @@ const Penginapan = () => {
 
   const list = [
     {
-      img: "https://i.imgur.com/Ql4jRdB.png",
-      title: "Vila Hijau",
+      img: "/images/penginapan/teras pahawang.jpg",
+      title: "Teras Pahawang",
       type: "Vila",
     },
     {
-      img: "https://i.imgur.com/Ql4jRdB.png",
-      title: "Homestay Asri",
+      img: "/images/penginapan/andreas.jpeg",
+      title: "Andreas Resort",
       type: "Homestay",
     },
     {
-      img: "https://i.imgur.com/Ql4jRdB.png",
-      title: "Resort Pantai",
+      img: "/images/penginapan/villa mangrove.jpg",
+      title: "Villa Mangrove",
       type: "Resort",
     },
     {
-      img: "https://i.imgur.com/Ql4jRdB.png",
-      title: "Penginapan Nyaman",
+      img: "/images/penginapan/la nadiya.jpg",
+      title: "La Nadiya",
       type: "Penginapan",
     },
     {
-      img: "https://i.imgur.com/Ql4jRdB.png",
-      title: "Guest House Ceria",
+      img: "/images/penginapan/villa kembar.jpg",
+      title: "Villa Kembar",
       type: "Guest House",
     },
     {
-      img: "https://i.imgur.com/Ql4jRdB.png",
-      title: "Hotel Tropis",
+      img: "/images/penginapan/de boer.png",
+      title: "De'Boer Pahawang",
       type: "Hotel",
     },
   ];

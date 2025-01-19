@@ -20,7 +20,7 @@ const scrollToTop = () => {
 
 const data = [
   {
-    image: "./images/penginapan/teras.jpeg",
+    image: "./images/penginapan/teras pahawang.jpg",
     title: "Teras Pahawang",
     label: "Penginapan Pulau Pahawang",
     description:
@@ -31,7 +31,7 @@ const data = [
       "1 kamar tidur",
       "1 kamar mandi",
       "1 tempat tidur",
-      "50 m²"
+      "50 m²",
     ],
     phoneNumber: "6281995731245",
   },
@@ -51,55 +51,45 @@ const data = [
       "Snorkeling",
       "Wi-Fi gratis",
       "Wi-Fi di area publik",
-      "Tempat kerja dengan internet publik"
+      "Tempat kerja dengan internet publik",
     ],
     phoneNumber: "628118888513",
   },
   {
-    image: "./images/penginapan/mangrove.jpeg",
+    image: "./images/penginapan/villa mangrove.jpg",
     title: "Villa Mangrove Pulau Pahawang",
     label: "Penginapan Pulau Pahawang",
     description:
       "Pilihan villa nyaman di Pulau Pahawang dengan berbagai fasilitas, seperti akses pantai dan pengalaman menginap yang berkesan.",
-    specifications: [
-      "Di tepi pantai",
-      "Kamar Tidur",
-      "Kamar Mandi",
-    ],
+    specifications: ["Di tepi pantai", "Kamar Tidur", "Kamar Mandi"],
     phoneNumber: "6281286158696",
   },
   {
-    image: "./images/penginapan/nadiya.jpeg",
+    image: "./images/penginapan/la nadiya.jpg",
     title: "La Nadiya Villa Pahawang",
     label: "Penginapan Pulau Pahawang",
-    description:
-      "Villa, food and beverage and tourism destination",
-    specifications: [
-      "Di tepi pantai",
-      "Wi-Fi",
-      "Ber-AC",
-      "Sarapan"
-    ],
+    description: "Villa, food and beverage and tourism destination",
+    specifications: ["Di tepi pantai", "Wi-Fi", "Ber-AC", "Sarapan"],
     phoneNumber: "62817858085",
   },
   {
-    image: "./images/penginapan/nadiya.jpeg",
+    image: "./images/penginapan/villa kembar.jpg",
     title: "Villa Kembar",
     label: "Penginapan Pulau Pahawang",
     description:
       "Pilihan villa nyaman di Pulau Pahawang dengan berbagai fasilitas, seperti akses pantai, Wi-Fi, dan pengalaman menginap yang berkesan.",
     specifications: [
-      "Kamar Mandi Pribad",
+      "Kamar Mandi Pribadi",
       "Wi-Fi",
       "Ber-AC",
       "Sarapan",
       "Perlengkapan Mandi",
-      "Televisi"
+      "Televisi",
     ],
     phoneNumber: "08127289425",
   },
   {
-    image: "./images/penginapan/nadiya.jpeg",
+    image: "./images/penginapan/de boer.png",
     title: "De'Boer Pahawang",
     label: "Penginapan Pulau Pahawang",
     description:
@@ -156,7 +146,7 @@ export default function Home() {
             Penginapan Pulau Pahawang
           </h2>
           <p
-            className={`text-sm sm:text-base lg:text-lg leading-loose text-center lg:text-justify ${
+            className={`text-sm sm:text-base lg:text-lg leading-loose text-justify lg:text-justify${
               theme === "dark" ? "text-gray-300" : "text-gray-700"
             }`}
           >
