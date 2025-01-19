@@ -11,7 +11,7 @@ const Tentang = () => {
     <section
       id="Tentang"
       className={`relative flex padding-container items-center py-10 ${
-        theme === "dark" ? "bg-gray-800 text-white" : "bg-[#E6F9F4] text-black"
+        theme === "dark" ? "bg-gray-800 text-white" : "bg-white text-black"
       }`}
     >
       <div className="flex h-[400px]">

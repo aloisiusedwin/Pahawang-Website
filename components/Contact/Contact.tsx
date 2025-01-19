@@ -48,7 +48,7 @@ const Contact = () => {
     <section
       id="contact"
       className={`flex justify-center items-center min-h-screen p-4 ${
-        theme === "dark" ? "bg-gray-800 text-white" : "bg-[#E6F9F4] text-black"
+        theme === "dark" ? "bg-gray-800 text-white" : "bg-white text-black"
       }`}
     >
       <div

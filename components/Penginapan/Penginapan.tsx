@@ -45,7 +45,7 @@ const Penginapan = () => {
     <section
       id="Proker"
       className={`py-2 bg-cover bg-no-repeat bg-center p-8 ${
-        theme === "dark" ? "bg-gray-800 text-white" : "bg-[#E6F9F4] text-black"
+        theme === "dark" ? "bg-gray-800 text-white" : "bg-white text-black"
       }`}
     >
       <div className="max-w-7xl mx-auto my-8">

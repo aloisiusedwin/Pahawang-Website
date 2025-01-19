@@ -30,7 +30,7 @@ const Produk = () => {
     <section
       id="Produk"
       className={`py-2 bg-cover bg-no-repeat bg-center p-8 ${
-        theme === "dark" ? "bg-gray-800" : "bg-[#E6F9F4]"
+        theme === "dark" ? "bg-gray-800" : "bg-white"
       }`}
     >
       <div className="max-w-7xl mx-auto my-8">

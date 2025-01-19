@@ -27,10 +27,8 @@ const Modal = ({
       <div
         className={`${
           theme === "dark" ? "bg-gray-800 text-white" : "bg-white text-black"
-        } p-8 rounded-lg shadow-xl w-11/12 h-5/6 flex flex-col md:flex-row gap-4 overflow-hidden relative`}
+        } p-6 rounded-lg shadow-xl w-[90%] max-w-3xl flex flex-col gap-6 overflow-hidden relative`}
       >
-        {/* Button Close */}
-        {/* Close Button */}
         <button
           className={`absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full ${
             theme === "dark"
@@ -43,52 +41,56 @@ const Modal = ({
           ✕
         </button>
 
-        {/* Gambar Produk */}
-        {details.image && (
-          <div className="w-full md:w-1/2 h-full flex justify-center items-center">
-            <img
-              src={details.image}
-              alt={details.title}
-              className="w-full h-full object-cover rounded-lg"
-            />
-          </div>
-        )}
+        <div className="flex flex-col md:flex-row gap-4">
+          {details.image && (
+            <div className="w-full h-full md:w-1/2 flex justify-center items-center">
+              <img
+                src={details.image}
+                alt={details.title}
+                className="w-full h-full object-cover rounded-lg max-h-48 md:max-h-[500px]"
+              />
+            </div>
+          )}
 
-        {/* Konten Produk */}
-        <div className="w-full md:w-1/2 h-full flex flex-col justify-between p-4 overflow-y-auto">
-          <div>
-            <h2 className="text-4xl font-bold mb-4 text-center">
-              {details.title}
-            </h2>
-            <p className="text-xl font-light mb-4 text-center">
-              {details.label}
-            </p>
-            <hr
-              className={`my-4 ${
-                theme === "dark" ? "border-gray-600" : "border-gray-300"
-              }`}
-            />
-
-            <div className="text-left">
-              <h2 className="text-xl font-semibold mb-2">Deskripsi</h2>
-              <p
-                className={`mb-4 ${
-                  theme === "dark" ? "text-gray-300" : "text-gray-700"
-                }`}
-              >
-                {details.description}
+          <div className="w-full md:w-1/2 flex flex-col overflow-y-auto max-h-[60vh]">
+            <div>
+              <h2 className="text-xl md:text-2xl font-bold mb-2 text-center">
+                {details.title}
+              </h2>
+              <p className="text-sm md:text-md font-light mb-4 text-center">
+                {details.label}
               </p>
-
-              <h2 className="text-xl font-semibold mb-2">Spesifikasi</h2>
-              <ul
-                className={`list-disc list-inside mb-4 ${
-                  theme === "dark" ? "text-gray-300" : "text-gray-700"
+              <hr
+                className={`my-4 ${
+                  theme === "dark" ? "border-gray-600" : "border-gray-300"
                 }`}
-              >
-                {details.specifications.map((spec: string, index: number) => (
-                  <li key={index}>{spec}</li>
-                ))}
-              </ul>
+              />
+
+              <div>
+                <h2 className="text-md md:text-lg font-semibold mb-2">
+                  Deskripsi
+                </h2>
+                <p
+                  className={`mb-4 ${
+                    theme === "dark" ? "text-gray-300" : "text-gray-700"
+                  }`}
+                >
+                  {details.description}
+                </p>
+
+                <h2 className="text-md md:text-lg font-semibold mb-2">
+                  Spesifikasi
+                </h2>
+                <ul
+                  className={`list-disc list-inside mb-4 ${
+                    theme === "dark" ? "text-gray-300" : "text-gray-700"
+                  }`}
+                >
+                  {details.specifications.map((spec: string, index: number) => (
+                    <li key={index}>{spec}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
             <div className="text-center mt-4">

@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <footer
       className={`${
-        theme === "dark" ? "bg-black text-white" : "bg-white text-black"
+        theme === "dark" ? "bg-black text-white" : "bg-black text-white"
       } padding-container py-2 lg:py-6 w-[100vw] flex justify-center lg:justify-between`}
     >
       <div className="max-container flex items-center lg:items-start w-full lg:flex-row flex-col justify-center lg:justify-between">
@@ -32,19 +32,19 @@ const Footer = () => {
             <li className="text-center">
               <a
                 className={`text-xs lg:text-sm hover:text-[#00df9a] ${
-                  theme === "dark" ? "text-white" : "text-black"
+                  theme === "dark" ? "text-white" : "text-white"
                 }`}
-                href="#Tentang"
+                href="/profil"
               >
-                Tentang
+                Profil
               </a>
             </li>
             <li className="text-center">
               <a
                 className={`text-xs lg:text-sm hover:text-[#00df9a] ${
-                  theme === "dark" ? "text-white" : "text-black"
+                  theme === "dark" ? "text-white" : "text-white"
                 }`}
-                href="#Produk"
+                href="/produk"
               >
                 Produk
               </a>
@@ -52,11 +52,11 @@ const Footer = () => {
             <li className="text-center">
               <a
                 className={`text-xs lg:text-sm hover:text-[#00df9a] ${
-                  theme === "dark" ? "text-white" : "text-black"
+                  theme === "dark" ? "text-white" : "text-white"
                 }`}
-                href="#gallery"
+                href="/penginapan"
               >
-                Gallery
+                Penginapan
               </a>
             </li>
           </ul>
@@ -67,21 +67,21 @@ const Footer = () => {
             <a href="#" className="mx-1">
               <i
                 className={`bx bxl-facebook-square text-lg hover:text-[#00df9a] ${
-                  theme === "dark" ? "text-white" : "text-black"
+                  theme === "dark" ? "text-white" : "text-white"
                 }`}
               ></i>
             </a>
             <a href="#" className="mx-1">
               <i
                 className={`bx bxl-instagram text-lg hover:text-[#00df9a] ${
-                  theme === "dark" ? "text-white" : "text-black"
+                  theme === "dark" ? "text-white" : "text-white"
                 }`}
               ></i>
             </a>
             <a href="#" className="mx-1">
               <i
                 className={`bx bxl-tiktok text-lg hover:text-[#00df9a] ${
-                  theme === "dark" ? "text-white" : "text-black"
+                  theme === "dark" ? "text-white" : "text-white"
                 }`}
               ></i>
             </a>

@@ -106,7 +106,7 @@ const EventPage = () => {
         "Foto bersama dengan warga dusun Jeralangan setelah acara pembukaan KKN Tematik ITERA di Pahawang. Acara dihadiri oleh kepala desa dan tokoh masyarakat setempat.",
       location: "Dusun Jeralangan, Pahawang",
       driveLink:
-        "https://drive.google.com/drive/folders/1-8ahp20UoqQrBApdnSsNQsdoiIoa0_x2?usp=drive_link",
+        "https://drive.google.com/drive/folders/1-n2LBnCy5VOEJMaTh-d9I_mJvepGJoqQ?usp=drive_link",
     },
     {
       id: 8,
@@ -116,7 +116,7 @@ const EventPage = () => {
       description: "Rekap Dokumentasi Hari ke-2",
       location: "Dusun Jeralangan",
       driveLink:
-        "https://drive.google.com/drive/folders/1-8sVULmCaC0vDwk3JzZmYIhATLcQjxPx?usp=drive_link",
+        "https://drive.google.com/drive/folders/1-oWObZTFPOVXKlwwwbmW_mHEQAsCyPxA?usp=drive_link",
     },
     {
       id: 9,
@@ -126,7 +126,7 @@ const EventPage = () => {
       description: "Rekap Dokumentasi Hari ke-3",
       location: "Dusun Jeralangan",
       driveLink:
-        "https://drive.google.com/drive/folders/1-Aiih0H40-3aBp85ruakzsa8BafdxeKK?usp=drive_link",
+        "https://drive.google.com/drive/folders/1-pbuFN9AtBtQBNsIdB2CpVUFXdyGrxrt?usp=drive_link",
     },
     {
       id: 10,
@@ -136,7 +136,7 @@ const EventPage = () => {
       description: "Rekap Dokumentasi Hari ke-4",
       location: "Dusun Kalangan",
       driveLink:
-        "https://drive.google.com/drive/folders/1-DOB3P2JjqAd7p6iJsmJ5fOjnZxiOwAb?usp=drive_link",
+        "https://drive.google.com/drive/folders/1-rk3bma4odzcbggQwZLu-5jz3mhPakEA?usp=drive_link",
     },
     {
       id: 11,
@@ -146,7 +146,7 @@ const EventPage = () => {
       description: "Rekap Dokumentasi Hari ke-5",
       location: "Dusun Jeralangan",
       driveLink:
-        "https://drive.google.com/drive/folders/1-_hmgZkUhPf2RQBaI1vWzNHVb6JEcBmn?usp=drive_link",
+        "https://drive.google.com/drive/folders/1-tegOjHb0wxacZo1kLYMilhureElgfzE?usp=drive_link",
     },
     {
       id: 12,
@@ -156,7 +156,7 @@ const EventPage = () => {
       description: "Rekap Dokumentasi Hari ke-6",
       location: "Dusun Kalangan",
       driveLink:
-        "https://drive.google.com/drive/folders/1-gA-U9NTNAfBiYfcDlru3iQpFmd0cxgb?usp=drive_link",
+        "https://drive.google.com/drive/folders/1-xdWyTO2IyoDQ20t_dRBFiifgl7HQqq-?usp=drive_link",
     },
     {
       id: 13,
@@ -167,7 +167,7 @@ const EventPage = () => {
         "Foto bersama dengan warga dusun Jeralangan setelah acara pembukaan KKN Tematik ITERA di Pahawang. Acara dihadiri oleh kepala desa dan tokoh masyarakat setempat.",
       location: "Dusun Jeralangan, Pahawang",
       driveLink:
-        "https://drive.google.com/drive/folders/1-8ahp20UoqQrBApdnSsNQsdoiIoa0_x2?usp=drive_link",
+        "https://drive.google.com/drive/folders/1-ykXptZyfknnSLH6OqPTMr2p4y15No8m?usp=drive_link",
     },
     {
       id: 14,
@@ -177,7 +177,7 @@ const EventPage = () => {
       description: "Rekap Dokumentasi Hari ke-2",
       location: "Dusun Jeralangan",
       driveLink:
-        "https://drive.google.com/drive/folders/1-8sVULmCaC0vDwk3JzZmYIhATLcQjxPx?usp=drive_link",
+        "https://drive.google.com/drive/folders/100zo6SZ6bJEv6VNGxHHvWQHxISOITc2G?usp=drive_link",
     },
     {
       id: 15,
@@ -187,7 +187,7 @@ const EventPage = () => {
       description: "Rekap Dokumentasi Hari ke-3",
       location: "Dusun Jeralangan",
       driveLink:
-        "https://drive.google.com/drive/folders/1-Aiih0H40-3aBp85ruakzsa8BafdxeKK?usp=drive_link",
+        "https://drive.google.com/drive/folders/105ngEVw6EcDCY2iU5spu7QsI6Q0FH11z?usp=drive_link",
     },
     {
       id: 16,
@@ -197,7 +197,7 @@ const EventPage = () => {
       description: "Rekap Dokumentasi Hari ke-4",
       location: "Dusun Kalangan",
       driveLink:
-        "https://drive.google.com/drive/folders/1-DOB3P2JjqAd7p6iJsmJ5fOjnZxiOwAb?usp=drive_link",
+        "https://drive.google.com/drive/folders/10G0pkNT7DGBf9PyI759HUednLdFzVZ5c?usp=drive_link",
     },
     {
       id: 17,
@@ -207,7 +207,7 @@ const EventPage = () => {
       description: "Rekap Dokumentasi Hari ke-5",
       location: "Dusun Jeralangan",
       driveLink:
-        "https://drive.google.com/drive/folders/1-_hmgZkUhPf2RQBaI1vWzNHVb6JEcBmn?usp=drive_link",
+        "https://drive.google.com/drive/folders/10M7L0ftAm9r4Pl0pFCOVowSU4feV2DfF?usp=drive_link",
     },
     {
       id: 18,
