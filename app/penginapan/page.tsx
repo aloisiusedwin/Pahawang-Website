@@ -33,7 +33,7 @@ const data = [
       "50 m²",
       "Dusun Penggetahan, Desa Pulau Pahawang",
     ],
-    phoneNumber: "6281995731245",
+    phoneNumber: "6283836065696",
   },
   {
     image: "./images/penginapan/villa mangrove.jpg",
@@ -46,7 +46,7 @@ const data = [
       "Kamar Mandi",
       "Dusun Kalangan, Desa Pulau Pahawang",
     ],
-    phoneNumber: "6281286158696",
+    phoneNumber: "6283836065696",
   },
   {
     image: "./images/penginapan/la nadiya.jpg",
@@ -60,7 +60,7 @@ const data = [
       "Sarapan",
       "Dusun Cukuh Nyai, Desa Pulau Pahawang",
     ],
-    phoneNumber: "62817858085",
+    phoneNumber: "6283836065696",
   },
   {
     image: "./images/penginapan/villa kembar.jpg",
@@ -76,7 +76,7 @@ const data = [
       "Perlengkapan Mandi",
       "Televisi",
     ],
-    phoneNumber: "08127289425",
+    phoneNumber: "6283836065696",
   },
   {
     image: "./images/penginapan/de boer.png",
@@ -90,7 +90,7 @@ const data = [
       "Perlengkapan Mandi",
       "Dusun Cukuh Nyai, Desa Pulau Pahawang",
     ],
-    phoneNumber: "087798908789",
+    phoneNumber: "6283836065696",
   },
 ];
 

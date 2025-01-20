@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Link from "next/link"; 
+import Link from "next/link";
 import { useTheme } from "next-themes";
 import { Card, CardFooter, Image } from "@nextui-org/react";
 
@@ -85,6 +85,21 @@ const Produk = () => {
             </Link>
           ))}
         </div>
+
+        <div className="text-center mt-10">
+          <Link href="/produk">
+            <button
+              className={`px-6 py-2 rounded-lg font-semibold transform transition duration-300 hover:scale-105 ${
+                theme === "dark"
+                  ? "bg-green-300 text-gray-800 hover:bg-green-400"
+                  : "bg-green-900 text-white hover:bg-green-700"
+              }`}
+            >
+              Lihat Produk Lainnya
+            </button>
+          </Link>
+        </div>
+
         <hr
           className={`border-t-2 ${
             theme === "dark" ? "border-gray-700" : "border-gray-300"

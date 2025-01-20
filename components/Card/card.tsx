@@ -15,9 +15,9 @@ const Modal = ({
   if (!isOpen) return null;
 
   const handleWhatsAppClick = () => {
-    const phoneNumber = details.phoneNumber || "6281234567890"; // Gunakan nomor dari props
+    const phoneNumber = details.phoneNumber || "6281274448461";
     const message = encodeURIComponent(
-      `Halo, saya tertarik dengan produk ${details.title}. Bisakah saya mendapatkan informasi lebih lanjut?`
+      `Halo, saya tertarik dengan ${details.title} Pahawang. Bisakah saya mendapatkan informasi lebih lanjut?`
     );
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
   };
@@ -162,13 +162,13 @@ const ProdukTemplate = ({ cards, backgroundImage }: ProdukTemplateProps) => {
   const openModal = (product: CardProps) => {
     setSelectedProduct(product);
     setIsModalOpen(true);
-    document.body.style.overflow = "hidden"; // Disable background scrolling
+    document.body.style.overflow = "hidden";
   };
 
   const closeModal = () => {
     setSelectedProduct(null);
     setIsModalOpen(false);
-    document.body.style.overflow = "auto"; // Re-enable background scrolling
+    document.body.style.overflow = "auto";
   };
 
   return (

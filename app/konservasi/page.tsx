@@ -48,7 +48,8 @@ const KonservasiSecrtion = () => {
             theme === "dark" ? "text-gray-400" : "text-gray-700"
           }`}
         >
-          Berikut ini merupakan dokumentasi momen penting dalam program konservasi kami.
+          Berikut ini merupakan dokumentasi momen penting dalam program
+          konservasi kami.
         </p>
 
         {/* Swiper Slider */}
@@ -152,7 +153,43 @@ export default function Profil() {
 
       <KonservasiSecrtion />
 
-      {/* Scroll To Top Button */}
+      <section
+        className={`py-16 px-4 sm:px-8 ${
+          theme === "dark" ? "bg-gray-900" : "bg-white"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto">
+          <h2
+            className={`text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 text-center ${
+              theme === "dark" ? "text-green-200" : "text-green-900"
+            }`}
+          >
+            Tertarik untuk Mendukung Konservasi?
+          </h2>
+          <p
+            className={`text-sm sm:text-base lg:text-lg text-center mb-8 ${
+              theme === "dark" ? "text-gray-400" : "text-gray-700"
+            }`}
+          >
+            Jika Anda ingin berkontribusi dalam program konservasi terumbu
+            karang atau mendapatkan informasi lebih lanjut, hubungi kami
+            melalui:
+          </p>
+          <div className="text-center">
+            <p
+              className={`text-lg sm:text-xl font-semibold mt-2 ${
+                theme === "dark" ? "text-gray-300" : "text-gray-800"
+              }`}
+            >
+              Telepon:{" "}
+              <a href="tel:+6281234567890" className="underline">
+                +62 838-0970-4662
+              </a>
+            </p>
+          </div>
+        </div>
+      </section>
+
       <ScrollToTopButton />
       <SmoothScroll />
     </div>

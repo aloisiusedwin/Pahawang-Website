@@ -5,6 +5,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import Image from "next/image";
 import logo from "./../public/images/logo/logo.png";
+import bumdes from "./../public/images/logo/bumdes.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { ModeToggle } from "@/components/ModeToggle";
 import { useTheme } from "next-themes";
@@ -40,7 +41,7 @@ const Navbar = () => {
       transition: {
         delay: i * 0.1,
         duration: 0.3,
-      }
+      },
     }),
   };
 
@@ -83,13 +84,22 @@ const Navbar = () => {
           transition={{ duration: 0.5 }}
         >
           <Link href="/">
-            <img
-              className="lg:w-[120px] h-auto w-[60px]"
-              src={logo.src}
-              alt="logo"
-              width="150"
-              height="143"
-            />
+            <div className="flex items-center gap-4">
+              <img
+                className="lg:w-[120px] h-auto w-[60px]"
+                src={logo.src}
+                alt="logo"
+                width="150"
+                height="143"
+              />
+              <img
+                className="lg:w-[120px] h-auto w-[60px]"
+                src={bumdes.src}
+                alt="bumdes"
+                width="100"
+                height="100"
+              />
+            </div>
           </Link>
         </motion.div>
 
@@ -130,7 +140,9 @@ const Navbar = () => {
                 animate="visible"
                 exit="exit"
                 className={`absolute top-20 left-0 flex flex-col gap-5 p-3 w-full ${
-                  theme === "dark" ? "bg-black text-white" : "bg-white text-black"
+                  theme === "dark"
+                    ? "bg-black text-white"
+                    : "bg-white text-black"
                 }`}
               >
                 {NAV_LINKS.map((link, index) => (

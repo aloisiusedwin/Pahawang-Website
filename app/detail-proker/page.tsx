@@ -8,6 +8,9 @@ import bg03 from "@/public/images/program kerja/maggot.jpg";
 import bg04 from "@/public/images/program kerja/pemilahan.png";
 import bg05 from "@/public/images/program kerja/proker-bg.jpg";
 import bg06 from "@/public/images/program kerja/umkm.jpg";
+import img1 from "@/public/images/program kerja/umkm.jpg";
+import img2 from "@/public/images/program kerja/umkm.jpg";
+
 
 const DetailProgramKerja = () => {
   const router = useRouter();
@@ -25,6 +28,7 @@ const DetailProgramKerja = () => {
       name: "Pemilahan dan Pengolahan Sampah Anorganik",
       background: bg04,
       videos: ["https://www.youtube.com/embed/zDzuU-7glZ8?si=FgMCb08np1HMbQVK"],
+      images: [img2, img1],
       kegiatan: [
         "Sosialisasi dan edukasi masyarakat tentang jenis sampah anorganik dan alat pengolahannya.",
         "Pelaksanaan praktik pemilahan sampah dan monitoring.",
@@ -49,6 +53,7 @@ const DetailProgramKerja = () => {
       name: "Pembuatan Website",
       background: bg05,
       videos: ["https://www.youtube.com/embed/OdmH_Vbzsn4?si=2QeiRUD3geNzgcPy"],
+      images: [img2, img1],
       kegiatan: [
         "Desain menggunakan Figma dan pengembangan dengan Next.js.",
         "Pengembangan platform untuk tutorial pelestarian lingkungan.",
@@ -71,6 +76,7 @@ const DetailProgramKerja = () => {
       name: "Kampanye Kebersihan",
       background: bg02,
       videos: ["/videos/kampanye.mp4"],
+      images: [img2, img1],
       kegiatan: [
         "Mengidentifikasi area dengan permasalahan sampah terbesar.",
         "Pengadaan dan pembuatan tempat sampah yang menarik.",
@@ -96,6 +102,7 @@ const DetailProgramKerja = () => {
       name: "Pemberdayaan Maggot",
       background: bg03,
       videos: ["/videos/maggot.mp4"],
+      images: [img2, img1],
       kegiatan: [
         "Sosialisasi awal dan edukasi masyarakat, terkait penggunaan maggot dalam pengolahan sampah organik.",
         "Penyediaan sarana dan prasarana untuk budidaya maggot dan melakukan pendampingan untuk memonitoring perkembangan maggot.",
@@ -119,6 +126,7 @@ const DetailProgramKerja = () => {
       name: "Asbak Portable",
       background: bg01,
       videos: ["/videos/asbak.mp4"],
+      images: [img2, img1],
       kegiatan: [
         "Melakukan kegiatan sosialisasi tentang pentingnya menjaga kebersihan lingkungan dan edukasi mengenai penggunaan asbak portable.",
         "Pembuatan asbak dengan bahan baku yang ramah lingkungan.",
@@ -141,6 +149,7 @@ const DetailProgramKerja = () => {
       name: "Peningkatan UMKM",
       background: bg06,
       videos: ["/videos/umkm.mp4"],
+      images: [img2, img1],
       kegiatan: [
         "Melakukan peningkatan kualitas baik itu dari segi rasa, tekstur, dan kemasan pada dodol olahan mangrove.",
         "Melakukan branding dan promosi produk dodol olahan mangrove yang lebih baik lewat sosial media.",
@@ -158,7 +167,6 @@ const DetailProgramKerja = () => {
       ],
     },
   ];
-
   if (!slug) {
     return <p>Loading...</p>;
   }
@@ -191,7 +199,7 @@ const DetailProgramKerja = () => {
             {program.name}
           </h1>
         </div>
-        <div className="flex flex-col md:flex-row gap-12 mb-10 p-6">
+        <div className="flex flex-col md:flex-row gap-12 mb-1 p-6">
           <div className="md:w-1/2">
             <div className="space-y-4">
               {program.videos.map((video, index) => (
@@ -238,6 +246,20 @@ const DetailProgramKerja = () => {
               </ul>
             </div>
           </div>
+        </div>
+        <div className="flex flex-wrap justify-center items-center gap-6 py-10">
+          {program.images?.map((image, index) => (
+            <div
+              key={index}
+              className="relative group overflow-hidden rounded-lg shadow-lg transform transition duration-300 hover:scale-105"
+            >
+              <img
+                src={image.src}
+                alt={`Gambar ${index + 1} - ${program.name}`}
+                className="w-80 h-auto object-cover" 
+              />
+            </div>
+          ))}
         </div>
       </div>
     </div>

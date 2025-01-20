@@ -1,23 +1,18 @@
 "use client";
 
 import React from "react";
-import { useTheme } from "next-themes"; // Import useTheme for theme detection
+import { useTheme } from "next-themes";
 import { Card, CardFooter, Image } from "@nextui-org/react";
 import Link from "next/link";
 
 const Penginapan = () => {
-  const { theme } = useTheme(); // Get the current theme (light or dark)
+  const { theme } = useTheme();
 
   const list = [
     {
       img: "/images/penginapan/teras pahawang.jpg",
       title: "Teras Pahawang",
       type: "Vila",
-    },
-    {
-      img: "/images/penginapan/andreas.jpeg",
-      title: "Andreas Resort",
-      type: "Homestay",
     },
     {
       img: "/images/penginapan/villa mangrove.jpg",
@@ -66,10 +61,10 @@ const Penginapan = () => {
           Anda dengan fasilitas terbaik dan suasana tenang yang membuat
           pengalaman semakin berkesan.
         </p>
-        <div className="mx-auto grid md:grid-cols-3 gap-8 mt-10">
-          {list.map((item, index) => (
+        <div className="mx-auto flex flex-wrap justify-center gap-8 mt-10">
+          {list.slice(0, 3).map((item, index) => (
             <Link href="/penginapan" key={index}>
-              <Card className="w-full h-[300px] transform transition duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
+              <Card className="w-[300px] h-[300px] transform transition duration-300 hover:scale-105 hover:shadow-xl cursor-pointer">
                 <Image
                   removeWrapper
                   alt={item.title}
@@ -101,6 +96,20 @@ const Penginapan = () => {
               </Card>
             </Link>
           ))}
+        </div>
+
+        <div className="text-center mt-10">
+          <Link href="/penginapan">
+            <button
+              className={`px-6 py-2 rounded-lg font-semibold transform transition duration-300 hover:scale-105 ${
+                theme === "dark"
+                  ? "bg-green-300 text-gray-800 hover:bg-green-400"
+                  : "bg-green-900 text-white hover:bg-green-700"
+              }`}
+            >
+              Lihat Penginapan Lainnya
+            </button>
+          </Link>
         </div>
 
         <hr

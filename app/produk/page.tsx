@@ -30,7 +30,7 @@ const data = [
       "Dimensi: 10x10 cm",
       "Berat: 200 gram",
     ],
-    phoneNumber: "6283135302496",
+    phoneNumber: "6281274448461",
   },
   {
     image: "./images/produk/kemplang tunu1.JPG",
@@ -45,7 +45,7 @@ const data = [
       "Kemasan: Plastik vakum atau kertas kraft.",
       "Sambal: Cabe rawit, cabe merah, gula merah, asam, garam",
     ],
-    phoneNumber: "6285357626147",
+    phoneNumber: "6281274448461",
   },
   {
     image: "./images/produk/kerupuk.JPG",
@@ -59,7 +59,7 @@ const data = [
       "Kemasan: Plastik vakum",
       "Berat: ±250 gram per kemasan",
     ],
-    phoneNumber: "6285357626147",
+    phoneNumber: "6281274448461",
   },
   {
     image: "./images/produk/rempeyek kacang.jpg",
@@ -73,7 +73,7 @@ const data = [
       "Kemasan: Plastik",
       "Berat: ±200 gram per kemasan.",
     ],
-    phoneNumber: "6283167990520",
+    phoneNumber: "6281274448461",
   },
   {
     image: "./images/produk/keripik pisang.jpg",
@@ -87,7 +87,7 @@ const data = [
       "Proses Produksi: Pisang dikupas, diserut tipis, digoreng hingga renyah, diberi bumbu perasa, dan dikemas.",
       "Berat: ±200 gram per kemasan.",
     ],
-    phoneNumber: "628388728220",
+    phoneNumber: "6281274448461",
   },
   {
     image: "./images/produk/VCO.jpg",
@@ -101,7 +101,7 @@ const data = [
       "Manfaat: Mengatasi gangguan kulit akibat jamur dan bakteri. Menstimulus sistem kekebalan tubuh. Membantu produksi ASI pada ibu menyusui. Memiliki sifat anti inflamasi. Menyuburkan dan menyehatkan rambut.",
       "Kemasan: Tersedia dalam kemasan 250 ml, 100 ml, dan 60 ml.",
     ],
-    phoneNumber: "6282175638853",
+    phoneNumber: "6281274448461",
   },
 ];
 

@@ -64,21 +64,22 @@ const Footer = () => {
         <div className="flex-col text-center">
           <h3 className="uppercase text-sm lg:text-base mb-2">Social Media</h3>
           <div className="flex justify-center">
-            <a href="#" className="mx-1">
-              <i
-                className={`bx bxl-facebook-square text-lg hover:text-[#00df9a] ${
-                  theme === "dark" ? "text-white" : "text-white"
-                }`}
-              ></i>
-            </a>
-            <a href="#" className="mx-1">
+            <a
+              href="https://www.instagram.com/kkn.tematik_pahawang/"
+              target="_blank"
+              className="mx-1"
+            >
               <i
                 className={`bx bxl-instagram text-lg hover:text-[#00df9a] ${
                   theme === "dark" ? "text-white" : "text-white"
                 }`}
               ></i>
             </a>
-            <a href="#" className="mx-1">
+            <a
+              href="https://www.tiktok.com/@kkntematikpahawangitera"
+              target="_blank"
+              className="mx-1"
+            >
               <i
                 className={`bx bxl-tiktok text-lg hover:text-[#00df9a] ${
                   theme === "dark" ? "text-white" : "text-white"
