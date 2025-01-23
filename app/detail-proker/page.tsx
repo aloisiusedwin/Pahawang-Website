@@ -75,7 +75,7 @@ const DetailProgramKerja = () => {
     {
       name: "Kampanye Kebersihan",
       background: bg02,
-      videos: ["/videos/kampanye.mp4"],
+      videos: ["https://www.youtube.com/embed/XjOwFHeDmcM?si=pJcUzHX-wN9K7bSG"],
       images: [img2, img1],
       kegiatan: [
         "Mengidentifikasi area dengan permasalahan sampah terbesar.",
@@ -101,7 +101,7 @@ const DetailProgramKerja = () => {
     {
       name: "Pemberdayaan Maggot",
       background: bg03,
-      videos: ["/videos/maggot.mp4"],
+      videos: ["https://www.youtube.com/embed/t8WwoaW8e2Q?si=ZV3unzJ0vhEKHcJc"],
       images: [img2, img1],
       kegiatan: [
         "Sosialisasi awal dan edukasi masyarakat, terkait penggunaan maggot dalam pengolahan sampah organik.",
@@ -125,7 +125,7 @@ const DetailProgramKerja = () => {
     {
       name: "Asbak Portable",
       background: bg01,
-      videos: ["/videos/asbak.mp4"],
+      videos: ["https://www.youtube.com/embed/3dLnbjVyE1I?si=-8FTu6qEzicC_IJC"],
       images: [img2, img1],
       kegiatan: [
         "Melakukan kegiatan sosialisasi tentang pentingnya menjaga kebersihan lingkungan dan edukasi mengenai penggunaan asbak portable.",
@@ -148,7 +148,7 @@ const DetailProgramKerja = () => {
     {
       name: "Peningkatan UMKM",
       background: bg06,
-      videos: ["/videos/umkm.mp4"],
+      videos: ["https://www.youtube.com/embed/r0CJZXh--x8?si=hQE-AHYIyBPD2vYI"],
       images: [img2, img1],
       kegiatan: [
         "Melakukan peningkatan kualitas baik itu dari segi rasa, tekstur, dan kemasan pada dodol olahan mangrove.",

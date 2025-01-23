@@ -10,6 +10,8 @@ import SmoothScroll from "@/components/SmoothScrolling";
 import Video from "@/components/Header/HeaderVideo";
 import { Montserrat } from "next/font/google";
 import { useTheme } from "next-themes";
+import { useState} from "react";
+import { Alert } from "@nextui-org/react";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -89,10 +91,22 @@ const KonservasiSecrtion = () => {
 
 export default function Profil() {
   const { theme } = useTheme();
+  const [popupVisible, setPopupVisible] = useState(false);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText("+6283809704662").then(() => {
+      setPopupVisible(true);
+      setTimeout(() => setPopupVisible(false), 3000);
+    });
+  };
+
+  const openWhatsApp = () => {
+    window.open("https://wa.me/6283809704662", "_blank");
+  };
 
   return (
     <div
@@ -181,15 +195,37 @@ export default function Profil() {
                 theme === "dark" ? "text-gray-300" : "text-gray-800"
               }`}
             >
-              Telepon:{" "}
-              <a href="tel:+6281234567890" className="underline">
+              Telepon:
+              <a href="tel:+6283809704662" className="underline">
                 +62 838-0970-4662
               </a>
             </p>
+            <div className="mt-4 flex justify-center gap-4">
+              <button
+                onClick={copyToClipboard}
+                className="px-4 py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600"
+              >
+                Salin Nomor
+              </button>
+              <button
+                onClick={openWhatsApp}
+                className="px-4 py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600"
+              >
+                Hubungi via WhatsApp
+              </button>
+            </div>
           </div>
+
+          {popupVisible && (
+            <div className="fixed bottom-4 left-4 w-64 duration-300">
+              <Alert
+                color="success"
+                title="Nomor telepon telah disalin ke clipboard"
+              />
+            </div>
+          )}
         </div>
       </section>
-
       <ScrollToTopButton />
       <SmoothScroll />
     </div>
