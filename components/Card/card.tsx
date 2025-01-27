@@ -27,7 +27,7 @@ const Modal = ({
       <div
         className={`${
           theme === "dark" ? "bg-gray-800 text-white" : "bg-white text-black"
-        } p-6 rounded-lg shadow-xl w-[90%] max-w-3xl flex flex-col gap-6 overflow-hidden relative`}
+        } p-6 rounded-lg shadow-xl w-[90%] max-w-4xl flex flex-col gap-6 overflow-hidden relative max-h-[80vh]`}
       >
         <button
           className={`absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full ${
@@ -41,23 +41,23 @@ const Modal = ({
           ✕
         </button>
 
-        <div className="flex flex-col md:flex-row gap-4">
+        <div className="flex flex-col md:flex-row gap-8">
           {details.image && (
             <div className="w-full h-full md:w-1/2 flex justify-center items-center">
               <img
                 src={details.image}
                 alt={details.title}
-                className="w-full h-full object-cover rounded-lg max-h-48 md:max-h-[500px]"
+                className="w-full h-full object-cover rounded-lg max-h-[600px]"
               />
             </div>
           )}
 
-          <div className="w-full md:w-1/2 flex flex-col overflow-y-auto max-h-[60vh]">
+          <div className="w-full md:w-1/2 flex flex-col overflow-y-auto">
             <div>
-              <h2 className="text-xl md:text-2xl font-bold mb-2 text-center">
+              <h2 className="text-2xl md:text-3xl font-bold mb-2 text-center">
                 {details.title}
               </h2>
-              <p className="text-sm md:text-md font-light mb-4 text-center">
+              <p className="text-md md:text-lg font-light mb-4 text-center">
                 {details.label}
               </p>
               <hr
@@ -67,7 +67,7 @@ const Modal = ({
               />
 
               <div>
-                <h2 className="text-md md:text-lg font-semibold mb-2">
+                <h2 className="text-lg md:text-xl font-semibold mb-2">
                   Deskripsi
                 </h2>
                 <p
@@ -78,7 +78,7 @@ const Modal = ({
                   {details.description}
                 </p>
 
-                <h2 className="text-md md:text-lg font-semibold mb-2">
+                <h2 className="text-lg md:text-xl font-semibold mb-2">
                   Spesifikasi
                 </h2>
                 <ul
@@ -96,7 +96,7 @@ const Modal = ({
             <div className="text-center mt-4">
               <button
                 onClick={handleWhatsAppClick}
-                className="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-lg"
+                className="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-lg"
               >
                 Pesan / Hubungi
               </button>

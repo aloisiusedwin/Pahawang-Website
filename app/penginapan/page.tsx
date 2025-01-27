@@ -92,6 +92,21 @@ const data = [
     ],
     phoneNumber: "6283836065696",
   },
+  {
+    image: "./images/penginapan/batik.jpg",
+    title: "Villa Batik Pahawang",
+    label: "Penginapan Pulau Pahawang",
+    description:
+      "Villa Batik Pahawang menawarkan suasana tenang di pinggir pantai, dikelilingi oleh keindahan alam dan udara segar. Tempat yang sempurna untuk bersantai dan menikmati momen berharga bersama keluarga atau teman.",
+    specifications: [
+      "Area lounge dan ruang TV bersama untuk kenyamanan maksimal.",
+      "Dilengkapi dengan pendingin udara (AC) di setiap ruangan.",
+      "Ruang tamu yang luas, cocok untuk berkumpul bersama.",
+      "Area outbound untuk aktivitas luar ruangan yang menyenangkan.",
+      "Terletak di Dusun Jeralangan, Desa Pulau Pahawang, dengan akses mudah ke spot wisata.",
+    ],
+    phoneNumber: "6283836065696",
+  },
 ];
 
 export default function Home() {
