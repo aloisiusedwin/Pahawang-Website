@@ -7,9 +7,7 @@ const DocumentarySection = () => {
 
   return (
     <div
-      className={`py-10 ${
-        theme === "dark" ? "bg-[#1F3D3B]" : "bg-[#99e9d4]"
-      }`}
+      className={`py-10 ${theme === "dark" ? "bg-[#1F3D3B]" : "bg-[#99e9d4]"}`}
     >
       <div
         className={`min-h-screen w-full flex flex-col md:flex-row items-center gap-12 px-8 ${
@@ -25,7 +23,7 @@ const DocumentarySection = () => {
               theme === "dark" ? "text-white" : "text-[#1F3D3B]"
             }`}
           >
-            Menyelamatkan Surga Bawah Laut: Konservasi Terumbu Karang Pahawang
+            Surga Bawah Laut yang Terancam : Konservasi Terumbu Karang Pahawang
           </h2>
           <p
             className={`text-lg md:text-xl text-justify ${
@@ -45,7 +43,7 @@ const DocumentarySection = () => {
         <div className="flex-1 rounded-lg overflow-hidden shadow-lg">
           <iframe
             className="w-full h-[500px]"
-            src="https://www.youtube.com/embed/aGGBGcjdjXA?si=Emx9tRNcpd-tPHQz"
+            src="https://www.youtube.com/embed/z9miK69NDTE?si=YCr_6GwXDThNAZ2X"
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
