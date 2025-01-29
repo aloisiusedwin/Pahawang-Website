@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import ScrollToTopButton from "@/components/ScrollToTop";
 import SmoothScroll from "@/components/SmoothScrolling";
@@ -11,6 +11,68 @@ const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["400", "700"],
 });
+
+const PavingSection = () => {
+  const { theme } = useTheme();
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div
+      className={`mb-8 py-12 w-full rounded-lg overflow-hidden shadow-lg ${
+        theme === "dark" ? "bg-[#1F3D3B]" : "bg-[#99e9d4]"
+      }`}
+    >
+      <div
+        className={`w-full flex flex-col md:flex-row items-center gap-12 px-4 md:px-8 min-h-[500px] ${
+          theme === "dark" ? "text-white" : "text-black"
+        }`}
+      >
+        <div className="flex-1 text-center md:text-left">
+          <h2
+            className={`text-3xl md:text-4xl font-bold mb-6 ${
+              theme === "dark" ? "text-white" : "text-[#1F3D3B]"
+            }`}
+          >
+            Pengelolaan Sampah Berkelanjutan: Mesin Paving Block Plastik
+            Pahawang
+          </h2>
+          <p
+            className={`text-lg md:text-xl text-justify ${
+              theme === "dark" ? "text-[#A3FFCC]" : "text-[#1F3D3B]"
+            }`}
+          >
+            Poster ini berisi tahapan serta himbauan dalam penggunaan mesin
+            paving block yang dapat dikelola dan dikembangkan oleh masyarakat
+            Desa Pulau Pahawang.
+          </p>
+        </div>
+        <div
+          className="flex-1 rounded-lg overflow-hidden shadow-lg cursor-pointer"
+          onClick={() => setIsOpen(true)}
+        >
+          <img
+            className="w-full h-auto max-h-[400px] object-contain"
+            src="/images/program kerja/Poster Paving Block.jpg"
+            alt="Paving Image"
+          />
+        </div>
+      </div>
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50"
+          onClick={() => setIsOpen(false)}
+        >
+          <img
+            className="max-w-full max-h-full rounded-lg"
+            src="/images/program kerja/Poster Paving Block.jpg"
+            alt="Enlarged Paving Image"
+          />
+        </div>
+      )}
+    </div>
+  );
+};
+
 
 const programKerjaData = [
   {
@@ -97,10 +159,11 @@ const ProgramKerjaSection = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-8 ">
         <ProfileSection />
+        <PavingSection />
         <h2
           className={`text-4xl font-extrabold text-center ${
             theme === "dark" ? "text-green-200" : "text-green-900"
-          } mb-10`}
+          } mb-10 mt-10`}
         >
           Program Kerja KKN Tematik ITERA
         </h2>
