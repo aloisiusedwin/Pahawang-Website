@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useTheme } from "next-themes"; // Import useTheme for theme detection
+import { useTheme } from "next-themes";
 
 const Modal = ({
   isOpen,
@@ -10,7 +10,7 @@ const Modal = ({
   onClose: () => void;
   details: any;
 }) => {
-  const { theme } = useTheme(); // Get the current theme (light or dark)
+  const { theme } = useTheme();
 
   if (!isOpen) return null;
 
@@ -27,7 +27,7 @@ const Modal = ({
       <div
         className={`${
           theme === "dark" ? "bg-gray-800 text-white" : "bg-white text-black"
-        } p-6 rounded-lg shadow-xl w-[90%] max-w-4xl flex flex-col gap-6 overflow-hidden relative max-h-[80vh]`}
+        } p-6 rounded-lg shadow-xl w-[90%] max-w-4xl flex flex-col gap-6 overflow-hidden relative max-h-[90vh]`}
       >
         <button
           className={`absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full ${
@@ -41,17 +41,16 @@ const Modal = ({
           ✕
         </button>
 
-        <div className="flex flex-col md:flex-row gap-8">
+        <div className="flex flex-col md:flex-row gap-8 overflow-y-auto">
           {details.image && (
-            <div className="w-full h-full md:w-1/2 flex justify-center items-center">
+            <div className="w-full md:w-1/2 flex justify-center items-center">
               <img
                 src={details.image}
                 alt={details.title}
-                className="w-full h-full object-cover rounded-lg max-h-[600px]"
+                className="w-full h-auto max-h-[200px] md:max-h-[600px] object-cover rounded-lg"
               />
             </div>
           )}
-
           <div className="w-full md:w-1/2 flex flex-col overflow-y-auto">
             <div>
               <h2 className="text-2xl md:text-3xl font-bold mb-2 text-center">
@@ -66,7 +65,7 @@ const Modal = ({
                 }`}
               />
 
-              <div>
+              <div className="overflow-y-auto max-h-[50vh]">
                 <h2 className="text-lg md:text-xl font-semibold mb-2">
                   Deskripsi
                 </h2>
@@ -77,7 +76,6 @@ const Modal = ({
                 >
                   {details.description}
                 </p>
-
                 <h2 className="text-lg md:text-xl font-semibold mb-2">
                   Spesifikasi
                 </h2>
@@ -92,7 +90,6 @@ const Modal = ({
                 </ul>
               </div>
             </div>
-
             <div className="text-center mt-4">
               <button
                 onClick={handleWhatsAppClick}
