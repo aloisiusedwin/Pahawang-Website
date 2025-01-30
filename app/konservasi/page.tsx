@@ -28,7 +28,7 @@ const dokumentasiFoto = [
   { image: "/images/konservasi/terumbu7.jpg" },
 ];
 
-const KonservasiSecrtion = () => {
+const KonservasiSection = () => {
   const { theme } = useTheme();
 
   return (
@@ -165,7 +165,7 @@ export default function Profil() {
         </div>
       </section>
 
-      <KonservasiSecrtion />
+      <KonservasiSection />
 
       <section
         className={`py-16 px-4 sm:px-8 ${
