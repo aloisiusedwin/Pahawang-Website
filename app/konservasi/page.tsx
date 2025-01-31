@@ -219,38 +219,6 @@ export default function Profil() {
               theme === "dark" ? "text-green-200" : "text-green-900"
             }`}
           >
-            Wisata Sea Walker Pahawang
-          </h2>
-          <p
-            className={`text-sm sm:text-base lg:text-lg leading-loose text-justify lg:text-justify ${
-              theme === "dark" ? "text-gray-400" : "text-gray-700"
-            }`}
-          >
-            Pahawang menawarkan berbagai wahana air, seperti banana boat, donat boat, snorkeling, jetski, dan sea walker diving. 
-            Sea walker diving adalah aktivitas berjalan di bawah air menggunakan helm khusus untuk menyelam. 
-            Pengunjung dapat merasakan pengalaman snorkeling dengan cara yang unik menggunakan diving helmet. 
-            Menariknya, wahana ini bertujuan untuk melindungi terumbu karang dengan memungkinkan wisatawan berjalan mengelilinginya tanpa merusaknya. 
-            Selama aktivitas, pengunjung akan didampingi oleh pemandu atau instruktur selam profesional, sehingga keamanan dan kenyamanan tetap terjaga. 
-            Peralatan selam yang digunakan juga telah memenuhi standar keselamatan dan kelengkapan. 
-            Selain itu, wisatawan dapat belajar lebih banyak tentang terumbu karang, menjadikan tempat ini sebagai destinasi wisata edukasi dan konservasi terumbu karang di Lampung. 
-          </p>
-          <hr
-            className={`border-t-2 mb-4 lg:mb-1 mt-5 ${
-              theme === "dark" ? "border-gray-700" : "border-gray-300"
-            }`}
-          />
-        </div>
-      </section>
-
-      <SeawalkerSection />
-      
-      <section className="max-w-7xl mx-auto mt-12 px-4 sm:px-8">
-        <div className="max-w-7xl mx-auto">
-          <h2
-            className={`text-2xl sm:text-4xl lg:text-6xl font-bold mb-4 text-center lg:text-left ${
-              theme === "dark" ? "text-green-200" : "text-green-900"
-            }`}
-          >
             Konservasi Terumbu Karang
           </h2>
           <p
@@ -275,6 +243,38 @@ export default function Profil() {
       </section>
 
       <KonservasiSection />
+
+      <section className="max-w-7xl mx-auto mt-12 px-4 sm:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h2
+            className={`text-2xl sm:text-4xl lg:text-6xl font-bold mb-4 text-center lg:text-left ${
+              theme === "dark" ? "text-green-200" : "text-green-900"
+            }`}
+          >
+            Wisata Sea Walker Pahawang
+          </h2>
+          <p
+            className={`text-sm sm:text-base lg:text-lg leading-loose text-justify lg:text-justify ${
+              theme === "dark" ? "text-gray-400" : "text-gray-700"
+            }`}
+          >
+            Pahawang menawarkan berbagai wahana air, seperti banana boat, donat boat, snorkeling, jetski, dan sea walker diving. 
+            Sea walker diving adalah aktivitas berjalan di bawah air menggunakan helm khusus untuk menyelam. 
+            Pengunjung dapat merasakan pengalaman snorkeling dengan cara yang unik menggunakan diving helmet. 
+            Menariknya, wahana ini bertujuan untuk melindungi terumbu karang dengan memungkinkan wisatawan berjalan mengelilinginya tanpa merusaknya. 
+            Selama aktivitas, pengunjung akan didampingi oleh pemandu atau instruktur selam profesional, sehingga keamanan dan kenyamanan tetap terjaga. 
+            Peralatan selam yang digunakan juga telah memenuhi standar keselamatan dan kelengkapan. 
+            Selain itu, wisatawan dapat belajar lebih banyak tentang terumbu karang, menjadikan tempat ini sebagai destinasi wisata edukasi dan konservasi terumbu karang di Lampung. 
+          </p>
+          <hr
+            className={`border-t-2 mb-4 lg:mb-1 mt-5 ${
+              theme === "dark" ? "border-gray-700" : "border-gray-300"
+            }`}
+          />
+        </div>
+      </section>
+
+      <SeawalkerSection />
 
       <section
         className={`py-16 px-4 sm:px-8 ${
