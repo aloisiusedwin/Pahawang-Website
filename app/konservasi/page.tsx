@@ -92,6 +92,7 @@ const KonservasiSection = () => {
 export default function Profil() {
   const { theme } = useTheme();
   const [popupVisible, setPopupVisible] = useState(false);
+  const [popupRekeningVisible, setPopupRekeningVisible] = useState(false);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -101,6 +102,13 @@ export default function Profil() {
     navigator.clipboard.writeText("+6283809704662").then(() => {
       setPopupVisible(true);
       setTimeout(() => setPopupVisible(false), 3000);
+    });
+  };
+
+  const copyRekening = () => {
+    navigator.clipboard.writeText("4100304009216").then(() => {
+      setPopupRekeningVisible(true);
+      setTimeout(() => setPopupRekeningVisible(false), 3000);
     });
   };
 
@@ -202,6 +210,12 @@ export default function Profil() {
             </p>
             <div className="mt-4 flex justify-center gap-4">
               <button
+                onClick={copyRekening}
+                className="px-4 py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600"
+              >
+                Donasi Konservasi
+              </button>
+              <button
                 onClick={copyToClipboard}
                 className="px-4 py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600"
               >
@@ -221,6 +235,15 @@ export default function Profil() {
               <Alert
                 color="success"
                 title="Nomor telepon telah disalin ke clipboard"
+              />
+            </div>
+          )}
+
+          {popupRekeningVisible && (
+            <div className="fixed bottom-4 left-4 w-64 duration-300">
+              <Alert
+                color="success"
+                title="Nomor rekening telah disalin ke clipboard"
               />
             </div>
           )}
