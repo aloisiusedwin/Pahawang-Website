@@ -25,8 +25,17 @@ const dokumentasiFoto = [
   { image: "/images/konservasi/terumbu4.jpg" },
   { image: "/images/konservasi/terumbu5.jpg" },
   { image: "/images/konservasi/terumbu6.jpg" },
-  { image: "/images/konservasi/terumbu7.jpg" },
 ];
+
+const dokumentasiSeawalker = [
+  { image: "/images/konservasi/seawalker.jpg" },
+  { image: "/images/konservasi/seawalker1.jpg" },
+  { image: "/images/konservasi/seawalker3.jpg" },
+  { image: "/images/konservasi/seawalker4.jpg" },
+  { image: "/images/konservasi/seawalker5.jpg" },
+  { image: "/images/konservasi/seawalker7.jpg" },
+];
+
 
 const KonservasiSection = () => {
   const { theme } = useTheme();
@@ -73,6 +82,67 @@ const KonservasiSection = () => {
           className="py-4"
         >
           {dokumentasiFoto.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div className="rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
+                <img
+                  src={item.image}
+                  alt={`Dokumentasi ${index + 1}`}
+                  className="w-full h-40 sm:h-48 md:h-64 lg:h-72 rounded-lg object-cover"
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </section>
+  );
+};
+
+const SeawalkerSection = () => {
+  const { theme } = useTheme();
+
+  return (
+    <section
+      className={`py-16 px-4 sm:px-8 ${
+        theme === "dark" ? "bg-gray-900" : "bg-white"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto">
+        <h2
+          className={`text-4xl font-extrabold text-center ${
+            theme === "dark" ? "text-green-200" : "text-green-900"
+          } mb-10`}
+        >
+          Dokumentasi Konservasi Terumbu Karang
+        </h2>
+        <p
+          className={`text-center text-lg sm:text-xl mb-8 ${
+            theme === "dark" ? "text-gray-400" : "text-gray-700"
+          }`}
+        >
+          Berikut ini merupakan dokumentasi momen penting dalam program
+          konservasi kami.
+        </p>
+
+        {/* Swiper Slider */}
+        <Swiper
+          modules={[Autoplay, Pagination, A11y]}
+          spaceBetween={16}
+          slidesPerView={1}
+          loop={true}
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: false,
+          }}
+          pagination={{ clickable: true }}
+          breakpoints={{
+            480: { slidesPerView: 1.5 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          className="py-4"
+        >
+          {dokumentasiSeawalker.map((item, index) => (
             <SwiperSlide key={index}>
               <div className="rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300">
                 <img
@@ -143,6 +213,38 @@ export default function Profil() {
         </div>
       </div>
 
+      <section className="max-w-7xl mx-auto mt-12 px-4 sm:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h2
+            className={`text-2xl sm:text-4xl lg:text-6xl font-bold mb-4 text-center lg:text-left ${
+              theme === "dark" ? "text-green-200" : "text-green-900"
+            }`}
+          >
+            Wisata Sea Walker Pahawang
+          </h2>
+          <p
+            className={`text-sm sm:text-base lg:text-lg leading-loose text-justify lg:text-justify ${
+              theme === "dark" ? "text-gray-400" : "text-gray-700"
+            }`}
+          >
+            Pahawang menawarkan berbagai wahana air, seperti banana boat, donat boat, snorkeling, jetski, dan sea walker diving. 
+            Sea walker diving adalah aktivitas berjalan di bawah air menggunakan helm khusus untuk menyelam. 
+            Pengunjung dapat merasakan pengalaman snorkeling dengan cara yang unik menggunakan diving helmet. 
+            Menariknya, wahana ini bertujuan untuk melindungi terumbu karang dengan memungkinkan wisatawan berjalan mengelilinginya tanpa merusaknya. 
+            Selama aktivitas, pengunjung akan didampingi oleh pemandu atau instruktur selam profesional, sehingga keamanan dan kenyamanan tetap terjaga. 
+            Peralatan selam yang digunakan juga telah memenuhi standar keselamatan dan kelengkapan. 
+            Selain itu, wisatawan dapat belajar lebih banyak tentang terumbu karang, menjadikan tempat ini sebagai destinasi wisata edukasi dan konservasi terumbu karang di Lampung. 
+          </p>
+          <hr
+            className={`border-t-2 mb-4 lg:mb-1 mt-5 ${
+              theme === "dark" ? "border-gray-700" : "border-gray-300"
+            }`}
+          />
+        </div>
+      </section>
+
+      <SeawalkerSection />
+      
       <section className="max-w-7xl mx-auto mt-12 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto">
           <h2
