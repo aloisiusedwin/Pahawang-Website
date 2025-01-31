@@ -167,8 +167,15 @@ export default function Profil() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
-  const copyToClipboard = () => {
+  const copyToClipboardKonservasi = () => {
     navigator.clipboard.writeText("+6283809704662").then(() => {
+      setPopupVisible(true);
+      setTimeout(() => setPopupVisible(false), 3000);
+    });
+  };
+
+  const copyToClipboardSeaWalker = () => {
+    navigator.clipboard.writeText("+6282282798407").then(() => {
       setPopupVisible(true);
       setTimeout(() => setPopupVisible(false), 3000);
     });
@@ -265,6 +272,7 @@ export default function Profil() {
             Selama aktivitas, pengunjung akan didampingi oleh pemandu atau instruktur selam profesional, sehingga keamanan dan kenyamanan tetap terjaga. 
             Peralatan selam yang digunakan juga telah memenuhi standar keselamatan dan kelengkapan. 
             Selain itu, wisatawan dapat belajar lebih banyak tentang terumbu karang, menjadikan tempat ini sebagai destinasi wisata edukasi dan konservasi terumbu karang di Lampung. 
+            Mengenai harga wahana sea walker ini dikenakan 160rb/orang selama 15 menit termasuk dokumentasi, donasi terumbu karang, guide.
           </p>
           <hr
             className={`border-t-2 mb-4 lg:mb-1 mt-5 ${
@@ -304,9 +312,19 @@ export default function Profil() {
                 theme === "dark" ? "text-gray-300" : "text-gray-800"
               }`}
             >
-              Telepon:
+              Telepon Konservasi:
               <a href="tel:+6283809704662" className="underline">
                 +62 838-0970-4662
+              </a>
+            </p>
+            <p
+              className={`text-lg sm:text-xl font-semibold mt-2 ${
+                theme === "dark" ? "text-gray-300" : "text-gray-800"
+              }`}
+            >
+              Telepon Sea Walker:
+              <a href="tel:+6282282798407" className="underline">
+                +62 822-8279-8407
               </a>
             </p>
             <div className="mt-4 flex justify-center gap-4">
@@ -317,10 +335,16 @@ export default function Profil() {
                 Donasi Konservasi (bank lampung)
               </button>
               <button
-                onClick={copyToClipboard}
+                onClick={copyToClipboardKonservasi}
                 className="px-4 py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600"
               >
-                Salin Nomor
+                Salin Nomor Konservasi
+              </button>
+              <button
+                onClick={copyToClipboardSeaWalker}
+                className="px-4 py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600"
+              >
+                Salin Nomor Sea Walker
               </button>
               <button
                 onClick={openWhatsApp}
