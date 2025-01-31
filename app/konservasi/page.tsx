@@ -113,15 +113,14 @@ const SeawalkerSection = () => {
             theme === "dark" ? "text-green-200" : "text-green-900"
           } mb-10`}
         >
-          Dokumentasi Konservasi Terumbu Karang
+          Dokumentasi Wisata Sea Walker
         </h2>
         <p
           className={`text-center text-lg sm:text-xl mb-8 ${
             theme === "dark" ? "text-gray-400" : "text-gray-700"
           }`}
         >
-          Berikut ini merupakan dokumentasi momen penting dalam program
-          konservasi kami.
+          Berikut ini merupakan dokumentasi wisata sea walker.
         </p>
 
         {/* Swiper Slider */}
