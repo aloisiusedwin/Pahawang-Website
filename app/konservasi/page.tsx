@@ -213,7 +213,7 @@ export default function Profil() {
                 onClick={copyRekening}
                 className="px-4 py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600"
               >
-                Donasi Konservasi
+                Donasi Konservasi (bank lampung)
               </button>
               <button
                 onClick={copyToClipboard}
@@ -243,7 +243,7 @@ export default function Profil() {
             <div className="fixed bottom-4 left-4 w-64 duration-300">
               <Alert
                 color="success"
-                title="Nomor rekening telah disalin ke clipboard"
+                title="Nomor rekening bank lampung telah disalin ke clipboard"
               />
             </div>
           )}
