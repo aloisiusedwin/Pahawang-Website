@@ -308,7 +308,7 @@ export default function Profil() {
           </p>
           <div className="text-center">
             <p
-              className={`text-lg sm:text-xl font-semibold mt-2 ${
+              className={`text-base sm:text-lg md:text-xl font-semibold mt-2 ${
                 theme === "dark" ? "text-gray-300" : "text-gray-800"
               }`}
             >
@@ -318,7 +318,7 @@ export default function Profil() {
               </a>
             </p>
             <p
-              className={`text-lg sm:text-xl font-semibold mt-2 ${
+              className={`text-base sm:text-lg md:text-xl font-semibold mt-2 ${
                 theme === "dark" ? "text-gray-300" : "text-gray-800"
               }`}
             >
@@ -327,33 +327,35 @@ export default function Profil() {
                 +62 822-8279-8407
               </a>
             </p>
-            <div className="mt-4 flex justify-center gap-4">
+            <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4 max-w-lg mx-auto">
               <button
                 onClick={copyRekening}
-                className="px-4 py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600"
+                className="px-3 py-2 sm:px-4 sm:py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600 text-sm sm:text-base w-full"
               >
-                Donasi Konservasi (bank lampung)
+                Donasi Konservasi
               </button>
               <button
                 onClick={copyToClipboardKonservasi}
-                className="px-4 py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600"
+                className="px-3 py-2 sm:px-4 sm:py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600 text-sm sm:text-base w-full"
               >
-                Salin Nomor Konservasi
+                Salin Konservasi
               </button>
               <button
                 onClick={copyToClipboardSeaWalker}
-                className="px-4 py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600"
+                className="px-3 py-2 sm:px-4 sm:py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600 text-sm sm:text-base w-full"
               >
-                Salin Nomor Sea Walker
+                Salin Sea Walker
               </button>
               <button
                 onClick={openWhatsApp}
-                className="px-4 py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600"
+                className="px-3 py-2 sm:px-4 sm:py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600 text-sm sm:text-base w-full"
               >
-                Hubungi via WhatsApp
+                WhatsApp
               </button>
             </div>
           </div>
+
+
 
           {popupVisible && (
             <div className="fixed bottom-4 left-4 w-64 duration-300">
