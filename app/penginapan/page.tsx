@@ -36,6 +36,21 @@ const data = [
     phoneNumber: "6283836065696",
   },
   {
+    image: "./images/penginapan/villaturi.jpg",
+    title: "Villa Turi",
+    label: "Penginapan Pulau Pahawang",
+    description: "Penginapan dengan nuansa asri pinggir pantai.",
+    specifications: [
+      "Kapasitas 15 orang",
+      "AC",
+      "2 kamar tidur besar",
+      "2 kamar mandi",
+      "Extra bed 2 unit",
+      "Dusun Cukuh Nyai, Desa Pulau Pahawang",
+    ],
+    phoneNumber: "6283836065696",
+  },
+  {
     image: "./images/penginapan/villa mangrove.jpg",
     title: "Villa Mangrove Pulau Pahawang",
     label: "Penginapan Pulau Pahawang",
