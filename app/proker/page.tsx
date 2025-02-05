@@ -149,6 +149,50 @@ const ProfileSection = () => {
   );
 };
 
+type SmallCardProps = {
+  title: string;
+  image: string;
+  link: string;
+};
+
+const SmallCard = ({ title, image, link }: SmallCardProps) => {
+  const router = useRouter();
+  const { theme } = useTheme();
+
+  return (
+    <div
+      className={`flex flex-row items-center ${
+        theme === "dark" ? "bg-[#1F3D3B]" : "bg-[#99e9d4]"
+      } shadow-md rounded-lg p-4 cursor-pointer hover:shadow-lg transition relative`}
+      onClick={() => router.push(link)}
+    >
+      <div className="w-2/3 sm:text-left pr-4">
+        <h3
+          className={`text-xs md:text-lg font-semibold ${
+            theme === "dark" ? "text-white" : "text-[#1F3D3B]"
+          }`}
+        >
+          {title}
+        </h3>
+        <p
+          className={`mt-2 text-xs md:text-sm ${
+            theme === "dark" ? "text-[#A3FFCC]" : "text-[#1F3D3B]"
+          }`}
+        >
+          Klik untuk melihat artikel
+        </p>
+      </div>
+      <div className="w-1/3">
+        <img
+          src={image}
+          alt={title}
+          className="w-full md:h-40 sm:h-24 object-cover rounded-md"
+        />
+      </div>
+    </div>
+  );
+};
+
 const ProgramKerjaSection = () => {
   const router = useRouter();
   const { theme } = useTheme();
@@ -160,6 +204,11 @@ const ProgramKerjaSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-8 ">
         <ProfileSection />
         <PavingSection />
+        <SmallCard
+          title="Mahasiswa KKN ITERA Lakukan Analisis Komposisi Paving Blok Berbahan Dasar Sampah dan Pengembangan Website Promosi Desa"
+          image="/images/program kerja/artikel.jpg"
+          link="/artikel"
+        />
         <h2
           className={`text-4xl font-extrabold text-center ${
             theme === "dark" ? "text-green-200" : "text-green-900"
