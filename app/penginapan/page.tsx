@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Video from "@/components/Header/HeaderVideo";
-import { HeaderHeroText } from "@/components/Header/HeaderHero";
 import ProdukTemplate from "@/components/Card/card";
 import ScrollToTopButton from "@/components/ScrollToTop";
 import SmoothScroll from "@/components/SmoothScrolling";
@@ -18,117 +17,17 @@ const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
-const data = [
-  {
-    image: "./images/penginapan/teras pahawang.jpg",
-    title: "Teras Pahawang",
-    label: "Penginapan Pulau Pahawang",
-    description: "Penginapan dengan nuansa asri pinggir pantai.",
-    specifications: [
-      "Seluruh cottage",
-      "2 orang",
-      "1 kamar tidur",
-      "1 kamar mandi",
-      "1 tempat tidur",
-      "50 m²",
-      "Dusun Penggetahan, Desa Pulau Pahawang",
-    ],
-    phoneNumber: "6283836065696",
-  },
-  {
-    image: "./images/penginapan/villaturi.jpg",
-    title: "Villa Turi",
-    label: "Penginapan Pulau Pahawang",
-    description: "Penginapan dengan nuansa asri pinggir pantai.",
-    specifications: [
-      "Kapasitas 15 orang",
-      "AC",
-      "2 kamar tidur besar",
-      "2 kamar mandi",
-      "Extra bed 2 unit",
-      "Dusun Cukuh Nyai, Desa Pulau Pahawang",
-    ],
-    phoneNumber: "6283836065696",
-  },
-  {
-    image: "./images/penginapan/villa mangrove.jpg",
-    title: "Villa Mangrove Pulau Pahawang",
-    label: "Penginapan Pulau Pahawang",
-    description: "Penginapan dengan sensasi menginap di atas laut.",
-    specifications: [
-      "Di tepi pantai",
-      "Kamar Tidur",
-      "Kamar Mandi",
-      "Dusun Kalangan, Desa Pulau Pahawang",
-    ],
-    phoneNumber: "6283836065696",
-  },
-  {
-    image: "./images/penginapan/la nadiya.jpg",
-    title: "La Nadiya Villa Pahawang",
-    label: "Penginapan Pulau Pahawang",
-    description: "Penginapan dengan pemandangan hijau Pulau Pahawang.",
-    specifications: [
-      "Di tepi pantai",
-      "Wi-Fi",
-      "Ber-AC",
-      "Sarapan",
-      "Dusun Cukuh Nyai, Desa Pulau Pahawang",
-    ],
-    phoneNumber: "6283836065696",
-  },
-  {
-    image: "./images/penginapan/villa kembar.jpg",
-    title: "Villa Kembar",
-    label: "Penginapan dengan nuansa asri pinggir pantai.",
-    description:
-      "Pilihan villa nyaman di Pulau Pahawang dengan berbagai fasilitas, seperti akses pantai, Wi-Fi, dan pengalaman menginap yang berkesan.",
-    specifications: [
-      "Kamar Mandi Pribadi",
-      "Wi-Fi",
-      "Ber-AC",
-      "Sarapan",
-      "Perlengkapan Mandi",
-      "Televisi",
-    ],
-    phoneNumber: "6283836065696",
-  },
-  {
-    image: "./images/penginapan/de boer.png",
-    title: "De'Boer Pahawang",
-    label: "Penginapan Pulau Pahawang",
-    description: "Penginapan dengan nuansa tenang di pinggir pantai.",
-    specifications: [
-      "Double Bed dan Single Bed",
-      "Air Mineral, kopi dan Teh",
-      "Teko Pemanas Air listrik",
-      "Perlengkapan Mandi",
-      "Dusun Cukuh Nyai, Desa Pulau Pahawang",
-    ],
-    phoneNumber: "6283836065696",
-  },
-  {
-    image: "./images/penginapan/batik.jpg",
-    title: "Villa Batik Pahawang",
-    label: "Penginapan Pulau Pahawang",
-    description:
-      "Villa Batik Pahawang menawarkan suasana tenang di pinggir pantai, dikelilingi oleh keindahan alam dan udara segar. Tempat yang sempurna untuk bersantai dan menikmati momen berharga bersama keluarga atau teman.",
-    specifications: [
-      "Area lounge dan ruang TV bersama untuk kenyamanan maksimal.",
-      "Dilengkapi dengan pendingin udara (AC) di setiap ruangan.",
-      "Ruang tamu yang luas, cocok untuk berkumpul bersama.",
-      "Area outbound untuk aktivitas luar ruangan yang menyenangkan.",
-      "Terletak di Dusun Jeralangan, Desa Pulau Pahawang, dengan akses mudah ke spot wisata.",
-    ],
-    phoneNumber: "6283836065696",
-  },
-];
-
 export default function Home() {
   const { theme } = useTheme();
+  const [penginapan, setPenginapan] = useState<any[]>([]);
 
   useEffect(() => {
-    scrollToTop(); 
+    scrollToTop();
+    // Mengambil data penginapan dari API
+    fetch("/api/penginapan")
+      .then((response) => response.json())
+      .then((data) => setPenginapan(data))
+      .catch((error) => console.error("Error fetching penginapan:", error));
   }, []);
 
   return (
@@ -187,12 +86,17 @@ export default function Home() {
           />
         </div>
 
-        {/* Products */}
+        {/* Display Penginapan */}
         <ProdukTemplate
-          cards={data.map((card) => ({
-            ...card,
+          cards={penginapan.map((card) => ({
+            image: card.image,
+            title: card.title,
+            label: card.label,
+            description: card.description,
+            specifications: card.specifications,
+            phoneNumber: card.phoneNumber,
             onClick: () => {
-              console.log(`Klik pada produk: ${card.title}`);
+              console.log(`Klik pada penginapan: ${card.title}`);
             },
           }))}
           backgroundImage={`${

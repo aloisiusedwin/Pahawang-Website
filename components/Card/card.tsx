@@ -22,6 +22,11 @@ const Modal = ({
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
   };
 
+  // Split the specifications string into an array if needed (by commas)
+  const specifications = details.specifications.split(',').map((spec: string, index: number) => (
+    <li key={index}>{spec.trim()}</li>
+  ));
+
   return (
     <div className="fixed inset-0 bg-gray-700 bg-opacity-50 flex justify-center items-center z-50">
       <div
@@ -84,9 +89,7 @@ const Modal = ({
                     theme === "dark" ? "text-gray-300" : "text-gray-700"
                   }`}
                 >
-                  {details.specifications.map((spec: string, index: number) => (
-                    <li key={index}>{spec}</li>
-                  ))}
+                  {specifications}
                 </ul>
               </div>
             </div>
@@ -110,7 +113,7 @@ type CardProps = {
   title: string;
   label: string;
   description: string;
-  specifications: string[];
+  specifications: string; // Now it's a simple string instead of an array
   phoneNumber: string;
   onClick: () => void;
 };
@@ -151,9 +154,7 @@ type ProdukTemplateProps = {
 };
 
 const ProdukTemplate = ({ cards, backgroundImage }: ProdukTemplateProps) => {
-  const [selectedProduct, setSelectedProduct] = useState<CardProps | null>(
-    null
-  );
+  const [selectedProduct, setSelectedProduct] = useState<CardProps | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = (product: CardProps) => {
